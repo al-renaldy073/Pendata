@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Tujuan: &#8212; My sample book</title>
+    <title>Data Understanding &#8212; My sample book</title>
   
   
   
@@ -57,10 +57,13 @@
     <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'Data Understanding';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="prev" title="Business Understanding" href="Business%20Understanding.html" />
+    <link rel="next" title="Data Preparation" href="Data%20Preparation.html" />
+    <link rel="prev" title="Data Mining" href="Business%20Understanding.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -180,8 +183,11 @@
         </ul>
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="Business%20Understanding.html">Business Understanding</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Tujuan:</a></li>
 
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Data Understanding</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Data%20Preparation.html">Data Preparation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Modelling.html">Modelling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Deployment.html">Deployment</a></li>
 </ul>
 
     </div>
@@ -367,7 +373,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Tujuan:</h1>
+    <h1>Data Understanding</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -377,16 +383,16 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Tujuan:</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-detail">Langkah Detail:</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pengumpulan-data">1. Pengumpulan Data</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#deskripsi-struktur-data">2. Deskripsi Struktur Data</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exploratory-data-analysis-eda">3. Exploratory Data Analysis (EDA)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#identifikasi-masalah-data">4. Identifikasi Masalah Data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pengertian-data-understanding">Pengertian Data Understanding</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tujuan-data-understanding">Tujuan Data Understanding</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mengapa-data-understanding-penting">Mengapa Data Understanding Penting?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tahapan-dalam-data-understanding">Tahapan dalam Data Understanding</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#contoh-sederhana">Contoh Sederhana</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hubungan-dengan-tahap-lain">Hubungan dengan Tahap Lain</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kesalahan-umum-dalam-data-understanding">Kesalahan Umum dalam Data Understanding</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ringkasan">Ringkasan</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kesimpulan">Kesimpulan</a></li>
 </ul>
-</li>
-</ul>
-
             </nav>
         </div>
     </div>
@@ -397,57 +403,162 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-<h1 class="rubric" id="data-understanding">Data Understanding</h1>
-<p>Tahap ini berfokus pada eksplorasi dan pemahaman karakteristik data.</p>
-<section id="tujuan">
-<h1>Tujuan:<a class="headerlink" href="#tujuan" title="Link to this heading">#</a></h1>
-<ul class="simple">
+  <section id="data-understanding">
+<h1>Data Understanding<a class="headerlink" href="#data-understanding" title="Link to this heading">#</a></h1>
+<section id="pengertian-data-understanding">
+<h2>Pengertian Data Understanding<a class="headerlink" href="#pengertian-data-understanding" title="Link to this heading">#</a></h2>
+<p>Data Understanding adalah tahap dalam proses Data Mining yang bertujuan untuk memahami karakteristik, struktur, dan kualitas data yang akan digunakan dalam analisis.</p>
+<p>Setelah pada tahap sebelumnya kita memahami masalah bisnis, maka pada tahap ini kita mulai memahami:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Data apa yang tersedia dan apakah data tersebut mampu menjawab masalah bisnis?
+</pre></div>
+</div>
+<p>Tahap ini menjadi jembatan antara kebutuhan bisnis dan proses teknis analisis data.</p>
+</section>
+<section id="tujuan-data-understanding">
+<h2>Tujuan Data Understanding<a class="headerlink" href="#tujuan-data-understanding" title="Link to this heading">#</a></h2>
+<p>Tujuan utama tahap ini adalah:</p>
+<ol class="arabic simple">
+<li><p>Mengumpulkan data yang relevan</p></li>
+<li><p>Mengenali struktur dan tipe data</p></li>
 <li><p>Menilai kualitas data</p></li>
 <li><p>Mengidentifikasi pola awal</p></li>
-<li><p>Mendeteksi anomali</p></li>
-</ul>
+<li><p>Menemukan potensi masalah dalam data</p></li>
+</ol>
+<p>Tahap ini membantu memastikan bahwa data benar-benar sesuai dengan tujuan proyek.</p>
 </section>
-<section id="langkah-detail">
-<h1>Langkah Detail:<a class="headerlink" href="#langkah-detail" title="Link to this heading">#</a></h1>
-<section id="pengumpulan-data">
-<h2>1. Pengumpulan Data<a class="headerlink" href="#pengumpulan-data" title="Link to this heading">#</a></h2>
+<section id="mengapa-data-understanding-penting">
+<h2>Mengapa Data Understanding Penting?<a class="headerlink" href="#mengapa-data-understanding-penting" title="Link to this heading">#</a></h2>
+<p>Tanpa memahami data dengan baik:</p>
 <ul class="simple">
-<li><p>Sumber data bisa berupa:</p></li>
-<li><p>Database internal</p></li>
-<li><p>API</p></li>
-<li><p>File CSV/Excel</p></li>
-<li><p>Data publik</p></li>
+<li><p>Model bisa dibangun dari data yang salah</p></li>
+<li><p>Analisis menjadi tidak akurat</p></li>
+<li><p>Kesimpulan bisa menyesatkan</p></li>
 </ul>
+<p>Contoh:
+Jika ingin memprediksi churn pelanggan tetapi data tidak memiliki informasi riwayat transaksi, maka prediksi menjadi kurang akurat.</p>
 </section>
-<section id="deskripsi-struktur-data">
-<h2>2. Deskripsi Struktur Data<a class="headerlink" href="#deskripsi-struktur-data" title="Link to this heading">#</a></h2>
+<section id="tahapan-dalam-data-understanding">
+<h2>Tahapan dalam Data Understanding<a class="headerlink" href="#tahapan-dalam-data-understanding" title="Link to this heading">#</a></h2>
+<ol class="arabic">
+<li><p>Pengumpulan Data (Data Collection)
+Data dapat berasal dari berbagai sumber, seperti:</p>
+<ul class="simple">
+<li><p>Database internal perusahaan</p></li>
+<li><p>File CSV atau Excel</p></li>
+<li><p>API</p></li>
+<li><p>Data publik</p></li>
+<li><p>Sistem transaksi</p></li>
+</ul>
+<p>Pada tahap ini, penting untuk memastikan bahwa data yang dikumpulkan relevan dengan tujuan bisnis.</p>
+</li>
+<li><p>Deskripsi Data (Describing Data)
+Langkah berikutnya adalah memahami struktur data.</p>
+<p>Hal-hal yang diperiksa:</p>
 <ul class="simple">
 <li><p>Jumlah baris dan kolom</p></li>
-<li><p>Tipe data (numerik, kategorikal, datetime)</p></li>
-<li><p>Distribusi nilai</p></li>
+<li><p>Nama variabel</p></li>
+<li><p>Tipe data (numerik, kategorikal, teks, tanggal)</p></li>
+<li><p>Rentang nilai setiap variabel</p></li>
 </ul>
-</section>
-<section id="exploratory-data-analysis-eda">
-<h2>3. Exploratory Data Analysis (EDA)<a class="headerlink" href="#exploratory-data-analysis-eda" title="Link to this heading">#</a></h2>
-<p>Dilakukan dengan:</p>
+<p>Contoh:</p>
 <ul class="simple">
-<li><p>Statistik deskriptif (mean, median, std)</p></li>
-<li><p>Visualisasi (histogram, boxplot, heatmap)</p></li>
-<li><p>Korelasi antar variabel</p></li>
+<li><p>Kolom “Umur” bertipe numerik</p></li>
+<li><p>Kolom “Jenis Kelamin” bertipe kategorikal</p></li>
+<li><p>Kolom “Tanggal Transaksi” bertipe datetime</p></li>
 </ul>
-</section>
-<section id="identifikasi-masalah-data">
-<h2>4. Identifikasi Masalah Data<a class="headerlink" href="#identifikasi-masalah-data" title="Link to this heading">#</a></h2>
+</li>
+<li><p>Exploratory Data Analysis (EDA)
+Exploratory Data Analysis (EDA) bertujuan untuk menemukan pola awal dalam data.</p>
+<p>Kegiatan yang dilakukan:</p>
 <ul class="simple">
-<li><p>Missing values</p></li>
-<li><p>Outliers</p></li>
-<li><p>Duplikasi</p></li>
-<li><p>Inkonsistensi format
-Output tahap ini:</p></li>
-<li><p>Insight awal</p></li>
-<li><p>Laporan kualitas data</p></li>
-<li><p>Hipotesis awal</p></li>
+<li><p>Menghitung statistik deskriptif (mean, median, standar deviasi)</p></li>
+<li><p>Melihat distribusi data (histogram)</p></li>
+<li><p>Menganalisis hubungan antar variabel (korelasi)</p></li>
+<li><p>Mengidentifikasi outlier</p></li>
 </ul>
+<p>EDA membantu memahami karakteristik data sebelum masuk ke tahap pembersihan dan pemodelan.</p>
+</li>
+<li><p>Evaluasi Kualitas Data
+Data dunia nyata sering memiliki masalah, seperti:</p>
+<ul class="simple">
+<li><p>Missing values (nilai kosong)</p></li>
+<li><p>Duplikasi data</p></li>
+<li><p>Kesalahan input</p></li>
+<li><p>Outlier ekstrem</p></li>
+<li><p>Inkonsistensi format</p></li>
+</ul>
+<p>Pada tahap ini, semua potensi masalah tersebut diidentifikasi untuk diperbaiki pada tahap Data Preparation.</p>
+</li>
+</ol>
+</section>
+<section id="contoh-sederhana">
+<h2>Contoh Sederhana<a class="headerlink" href="#contoh-sederhana" title="Link to this heading">#</a></h2>
+<p>Misalkan kita memiliki data pelanggan dengan kolom:</p>
+<ul class="simple">
+<li><p>ID Pelanggan</p></li>
+<li><p>Umur</p></li>
+<li><p>Pendapatan</p></li>
+<li><p>Jumlah Transaksi</p></li>
+<li><p>Status Churn</p></li>
+</ul>
+<p>Pada tahap Data Understanding, kita:</p>
+<ol class="arabic simple">
+<li><p>Menghitung rata-rata umur</p></li>
+<li><p>Melihat distribusi pendapatan</p></li>
+<li><p>Mengecek apakah ada nilai kosong</p></li>
+<li><p>Melihat hubungan antara jumlah transaksi dan status churn</p></li>
+</ol>
+<p>Dari sini kita mulai mendapatkan insight awal.</p>
+</section>
+<section id="hubungan-dengan-tahap-lain">
+<h2>Hubungan dengan Tahap Lain<a class="headerlink" href="#hubungan-dengan-tahap-lain" title="Link to this heading">#</a></h2>
+<p>Data Understanding berada di antara:</p>
+<p>Business Understanding <span class="math notranslate nohighlight">\(\rightarrow\)</span> Data Understanding <span class="math notranslate nohighlight">\(\rightarrow\)</span> Data Preparation</p>
+<p>Jika pada tahap ini ditemukan bahwa data tidak lengkap atau tidak relevan, maka kita mungkin perlu:</p>
+<ul class="simple">
+<li><p>Mengumpulkan data tambahan</p></li>
+<li><p>Mengubah tujuan analisis</p></li>
+<li><p>Kembali ke tahap Business Understanding</p></li>
+</ul>
+<p>Proses ini bersifat iteratif.</p>
+</section>
+<section id="kesalahan-umum-dalam-data-understanding">
+<h2>Kesalahan Umum dalam Data Understanding<a class="headerlink" href="#kesalahan-umum-dalam-data-understanding" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p>Tidak melakukan eksplorasi data secara menyeluruh</p></li>
+<li><p>Langsung masuk ke modelling tanpa EDA</p></li>
+<li><p>Mengabaikan missing values</p></li>
+<li><p>Tidak memeriksa distribusi data</p></li>
+</ol>
+</section>
+<section id="ringkasan">
+<h2>Ringkasan<a class="headerlink" href="#ringkasan" title="Link to this heading">#</a></h2>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Aspek</p></th>
+<th class="head"><p>Penjelasan</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Fokus</p></td>
+<td><p>Memahami karakteristik data</p></td>
+</tr>
+<tr class="row-odd"><td><p>Tujuan</p></td>
+<td><p>Menilai kualitas dan relevansi data</p></td>
+</tr>
+<tr class="row-even"><td><p>Kegiatan</p></td>
+<td><p>EDA, statistik deskriptif, evaluasi kualitas</p></td>
+</tr>
+<tr class="row-odd"><td><p>Output</p></td>
+<td><p>Insight awal &amp; identifikasi masalah data</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="kesimpulan">
+<h2>Kesimpulan<a class="headerlink" href="#kesimpulan" title="Link to this heading">#</a></h2>
+<p>Data Understanding adalah tahap penting dalam proses Data Mining yang bertujuan untuk memahami struktur, kualitas, dan pola dalam data. Tahap ini memastikan bahwa data yang digunakan benar-benar sesuai untuk menjawab masalah bisnis dan siap untuk diproses lebih lanjut pada tahap Data Preparation.</p>
 </section>
 </section>
 
@@ -487,8 +598,17 @@ Output tahap ini:</p></li>
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Business Understanding</p>
+        <p class="prev-next-title">Data Mining</p>
       </div>
+    </a>
+    <a class="right-next"
+       href="Data%20Preparation.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Data Preparation</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
     </a>
 </div>
                 </footer>
@@ -506,16 +626,16 @@ Output tahap ini:</p></li>
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Tujuan:</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-detail">Langkah Detail:</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pengumpulan-data">1. Pengumpulan Data</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#deskripsi-struktur-data">2. Deskripsi Struktur Data</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exploratory-data-analysis-eda">3. Exploratory Data Analysis (EDA)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#identifikasi-masalah-data">4. Identifikasi Masalah Data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pengertian-data-understanding">Pengertian Data Understanding</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tujuan-data-understanding">Tujuan Data Understanding</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mengapa-data-understanding-penting">Mengapa Data Understanding Penting?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tahapan-dalam-data-understanding">Tahapan dalam Data Understanding</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#contoh-sederhana">Contoh Sederhana</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hubungan-dengan-tahap-lain">Hubungan dengan Tahap Lain</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kesalahan-umum-dalam-data-understanding">Kesalahan Umum dalam Data Understanding</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ringkasan">Ringkasan</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kesimpulan">Kesimpulan</a></li>
 </ul>
-</li>
-</ul>
-
   </nav></div>
 
 </div></div>

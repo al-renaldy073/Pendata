@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Data Mining &#8212; My sample book</title>
+    <title>Data Preparation &#8212; My sample book</title>
   
   
   
@@ -57,11 +57,13 @@
     <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'Business Understanding';</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Data Preparation';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Data Understanding" href="Data%20Understanding.html" />
-    <link rel="prev" title="Welcome to your Jupyter Book" href="intro.html" />
+    <link rel="next" title="Modelling" href="Modelling.html" />
+    <link rel="prev" title="Data Understanding" href="Data%20Understanding.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -180,10 +182,10 @@
             </li>
         </ul>
         <ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Business Understanding</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Business%20Understanding.html">Business Understanding</a></li>
 
 <li class="toctree-l1"><a class="reference internal" href="Data%20Understanding.html">Data Understanding</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Data%20Preparation.html">Data Preparation</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Data Preparation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Modelling.html">Modelling</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Deployment.html">Deployment</a></li>
 </ul>
@@ -257,7 +259,7 @@
       
       
       
-      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2FBusiness Understanding.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2FData Preparation.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -287,7 +289,7 @@
       
       
       
-      <li><a href="_sources/Business Understanding.md" target="_blank"
+      <li><a href="_sources/Data Preparation.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -371,7 +373,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Data Mining</h1>
+    <h1>Data Preparation</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -381,30 +383,15 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Data Mining</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pengertian-data-mining">Pengertian Data Mining</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tujuan-data-mining">Tujuan Data Mining</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mengapa-data-mining-penting">Mengapa Data Mining Penting?</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#proses-data-mining">Proses Data Mining</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#teknik-dalam-data-mining">Teknik dalam Data Mining</a></li>
-</ul>
-</li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#business-understanding">Business Understanding</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tujuan-business-understanding">Tujuan Business Understanding</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mengapa-business-understanding-penting">Mengapa Business Understanding Penting?</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-langkah-dalam-business-understanding">Langkah-Langkah dalam Business Understanding</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#contoh-studi-kasus">Contoh Studi Kasus</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hubungan-business-understanding-dengan-tahap-lain">Hubungan Business Understanding dengan Tahap Lain</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#kesalahan-umum-dalam-business-understanding">Kesalahan Umum dalam Business Understanding</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#output-dari-business-understanding">Output dari Business Understanding</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pengertian-data-preparation">Pengertian Data Preparation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tujuan-data-preparation">Tujuan Data Preparation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#proses-dalam-data-preparation">Proses dalam Data Preparation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hubungan-dengan-tahap-lain">Hubungan dengan Tahap Lain</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#contoh-sederhana">Contoh Sederhana</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kesalahan-umum-dalam-data-preparation">Kesalahan Umum dalam Data Preparation</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ringkasan">Ringkasan</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kesimpulan">Kesimpulan</a></li>
 </ul>
-</li>
-</ul>
-
             </nav>
         </div>
     </div>
@@ -415,253 +402,180 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section id="data-mining">
-<h1>Data Mining<a class="headerlink" href="#data-mining" title="Link to this heading">#</a></h1>
-<section id="pengertian-data-mining">
-<h2>Pengertian Data Mining<a class="headerlink" href="#pengertian-data-mining" title="Link to this heading">#</a></h2>
-<p>Data Mining adalah proses mengekstraksi pola, hubungan, atau informasi yang bernilai dari kumpulan data dalam jumlah besar menggunakan teknik statistik, machine learning, dan basis data.</p>
-<p>Secara sederhana:</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Data Mining adalah proses menemukan pengetahuan tersembunyi di dalam data.
+  <section id="data-preparation">
+<h1>Data Preparation<a class="headerlink" href="#data-preparation" title="Link to this heading">#</a></h1>
+<section id="pengertian-data-preparation">
+<h2>Pengertian Data Preparation<a class="headerlink" href="#pengertian-data-preparation" title="Link to this heading">#</a></h2>
+<p>Data Preparation adalah tahap dalam proses Data Mining yang bertujuan untuk membersihkan, memperbaiki, dan mengubah data mentah menjadi data yang siap digunakan untuk proses pemodelan (Modelling).</p>
+<p>Jika pada tahap Data Understanding kita memahami data, maka pada tahap ini kita:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Memperbaiki dan menyiapkan data agar bisa digunakan oleh algoritma machine learning
 </pre></div>
 </div>
-<p>Data Mining merupakan bagian dari proses yang lebih besar yaitu Knowledge Discovery in Databases (KDD).</p>
+<p>Tahap ini sering menjadi tahap yang paling memakan waktu (sekitar 60–80% waktu proyek data mining).</p>
 </section>
-<section id="tujuan-data-mining">
-<h2>Tujuan Data Mining<a class="headerlink" href="#tujuan-data-mining" title="Link to this heading">#</a></h2>
-<p>Tujuan utama Data Mining adalah:</p>
-<ol class="arabic simple">
-<li><p>Mengidentifikasi pola tersembunyi</p></li>
-<li><p>Membuat prediksi</p></li>
-<li><p>Mengelompokkan data</p></li>
-<li><p>Mendukung pengambilan keputusan</p></li>
-<li><p>Mengoptimalkan strategi bisnis</p></li>
-</ol>
-<p>Contoh:</p>
-<ul class="simple">
-<li><p>Memprediksi pelanggan yang akan berhenti berlangganan</p></li>
-<li><p>Mengelompokkan pelanggan berdasarkan perilaku belanja</p></li>
-<li><p>Mendeteksi transaksi penipuan</p></li>
-</ul>
-</section>
-<section id="mengapa-data-mining-penting">
-<h2>Mengapa Data Mining Penting?<a class="headerlink" href="#mengapa-data-mining-penting" title="Link to this heading">#</a></h2>
-<p>Di era digital, organisasi memiliki data dalam jumlah besar (big data). Tanpa teknik analisis yang tepat, data tersebut hanya menjadi arsip.</p>
-<p>Data Mining membantu:</p>
-<ul class="simple">
-<li><p>Mengubah data menjadi informasi</p></li>
-<li><p>Mengubah informasi menjadi pengetahuan</p></li>
-<li><p>Mengubah pengetahuan menjadi keputusan</p></li>
-</ul>
-</section>
-<section id="proses-data-mining">
-<h2>Proses Data Mining<a class="headerlink" href="#proses-data-mining" title="Link to this heading">#</a></h2>
-<p>Proses Data Mining umumnya mengikuti metodologi CRISP-DM (Cross Industry Standard Process for Data Mining) yang terdiri dari:</p>
-<ol class="arabic simple">
-<li><p>Business Understanding</p></li>
-<li><p>Data Understanding</p></li>
-<li><p>Data Preparation</p></li>
-<li><p>Modelling</p></li>
-<li><p>Evaluation</p></li>
-<li><p>Deployment</p></li>
-</ol>
-<p>Setiap tahap saling berhubungan dan bersifat iteratif.
-<img alt="img_p31" src="https://hackmd.io/_uploads/ryrcU7gOZg.jpg" /></p>
-</section>
-<section id="teknik-dalam-data-mining">
-<h2>Teknik dalam Data Mining<a class="headerlink" href="#teknik-dalam-data-mining" title="Link to this heading">#</a></h2>
-<p>Beberapa teknik utama dalam Data Mining:</p>
-<ol class="arabic simple">
-<li><p>Classification
-Digunakan untuk memprediksi kategori/kelas.
-Contoh:
-Email spam atau bukan
-Lulus atau tidak lulus</p></li>
-<li><p>Regression
-Digunakan untuk memprediksi nilai numerik.
-Contoh:
-Prediksi harga rumah
-Prediksi penjualan</p></li>
-<li><p>Clustering
-Mengelompokkan data berdasarkan kemiripan.
-Contoh:
-Segmentasi pelanggan</p></li>
-<li><p>Association Rule
-Menemukan hubungan antar item.
-Contoh:
-Market basket analysis (roti sering dibeli bersama susu)</p></li>
-<li><p>Anomaly Detection
-Mendeteksi data yang menyimpang.
-Contoh:
-Deteksi fraud</p></li>
-</ol>
-</section>
-</section>
-<section id="business-understanding">
-<h1>Business Understanding<a class="headerlink" href="#business-understanding" title="Link to this heading">#</a></h1>
-<p>Business Understanding adalah tahap pertama dalam proses Data Mining yang bertujuan untuk memahami permasalahan bisnis secara menyeluruh sebelum melakukan analisis data atau membangun model.
-Tahap ini menekankan bahwa:</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Proyek data harus dimulai dari kebutuhan bisnis, bukan dari algoritma.
-</pre></div>
-</div>
-<p>Business Understanding memastikan bahwa analisis yang dilakukan benar-benar menjawab masalah nyata dan memberikan nilai bagi organisasi.</p>
-<section id="tujuan-business-understanding">
-<h2>Tujuan Business Understanding<a class="headerlink" href="#tujuan-business-understanding" title="Link to this heading">#</a></h2>
+<section id="tujuan-data-preparation">
+<h2>Tujuan Data Preparation<a class="headerlink" href="#tujuan-data-preparation" title="Link to this heading">#</a></h2>
 <p>Tujuan utama tahap ini adalah:</p>
 <ol class="arabic simple">
-<li><p>Mengidentifikasi masalah bisnis secara jelas</p></li>
-<li><p>Menentukan tujuan proyek</p></li>
-<li><p>Memahami kebutuhan stakeholder</p></li>
-<li><p>Menentukan kriteria keberhasilan (success criteria)</p></li>
-<li><p>Menyusun rencana awal proyek</p></li>
+<li><p>Membersihkan data dari kesalahan</p></li>
+<li><p>Mengatasi missing values</p></li>
+<li><p>Menghilangkan duplikasi</p></li>
+<li><p>Menangani outlier</p></li>
+<li><p>Mengubah format data agar sesuai untuk pemodelan</p></li>
+<li><p>Membuat fitur baru (feature engineering)</p></li>
 </ol>
-<p>Dengan kata lain, tahap ini menjadi fondasi seluruh proses Data Mining.</p>
 </section>
-<section id="mengapa-business-understanding-penting">
-<h2>Mengapa Business Understanding Penting?<a class="headerlink" href="#mengapa-business-understanding-penting" title="Link to this heading">#</a></h2>
-<p>Banyak proyek data gagal karena:</p>
-<ul class="simple">
-<li><p>Tujuan tidak jelas</p></li>
-<li><p>Masalah bisnis tidak dipahami</p></li>
-<li><p>Model dibuat tanpa arah</p></li>
-<li><p>Hasil tidak bisa digunakan</p></li>
-</ul>
-<p>Contoh kesalahan umum:</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Tim data membuat model klasifikasi dengan akurasi tinggi, tetapi model tersebut tidak menjawab kebutuhan manajemen.
-</pre></div>
-</div>
-<p>Business Understanding mencegah kesalahan seperti itu.</p>
-</section>
-<section id="langkah-langkah-dalam-business-understanding">
-<h2>Langkah-Langkah dalam Business Understanding<a class="headerlink" href="#langkah-langkah-dalam-business-understanding" title="Link to this heading">#</a></h2>
+<section id="proses-dalam-data-preparation">
+<h2>Proses dalam Data Preparation<a class="headerlink" href="#proses-dalam-data-preparation" title="Link to this heading">#</a></h2>
 <ol class="arabic">
-<li><p>Identifikasi Masalah Bisnis
-Langkah pertama adalah mendefinisikan masalah secara spesifik.</p>
-<p>Pertanyaan yang perlu dijawab:</p>
+<li><p>Data Cleaning (Pembersihan Data)
+Ini adalah langkah paling penting.</p>
+<ul>
+<li><p>Mengatasi Missing Values
+Contoh masalah:</p>
 <ul class="simple">
-<li><p>Masalah apa yang sedang terjadi?</p></li>
-<li><p>Mengapa masalah tersebut penting?</p></li>
-<li><p>Siapa yang terdampak?</p></li>
-<li><p>Apa dampak finansial atau operasionalnya?</p></li>
+<li><p>Kolom “Pendapatan” kosong</p></li>
+<li><p>Kolom “Umur” tidak terisi</p></li>
 </ul>
-<p>Contoh:</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span> Tingkat churn pelanggan meningkat 20% dalam satu tahun terakhir.
-</pre></div>
-</div>
-<p>Masalah harus ditulis secara jelas dan terukur.</p>
-</li>
-<li><p>Menentukan Tujuan Bisnis (Business Objective)
-Setelah masalah diidentifikasi, tentukan tujuan yang ingin dicapai.</p>
-<p>Tujuan harus:</p>
+<p>Solusi:</p>
 <ul class="simple">
-<li><p>Spesifik</p></li>
-<li><p>Terukur</p></li>
-<li><p>Realistis</p></li>
-<li><p>Memiliki batas waktu*</p></li>
-</ul>
-<p>Contoh:</p>
-<ul class="simple">
-<li><p>Mengurangi churn sebesar 10% dalam 6 bulan</p></li>
-<li><p>Meningkatkan penjualan 15% dalam satu tahun</p></li>
+<li><p>Menghapus baris yang kosong</p></li>
+<li><p>Mengisi dengan mean/median</p></li>
+<li><p>Mengisi dengan nilai tertentu (misalnya 0 atau “Unknown”)</p></li>
 </ul>
 </li>
-<li><p>Menerjemahkan ke Tujuan Data Mining
-Masalah bisnis perlu diterjemahkan menjadi tujuan analitis.</p>
+<li><p>Menghapus Data Duplikat
+Data yang sama bisa tercatat lebih dari satu kali.
+Duplikasi dapat menyebabkan hasil analisis menjadi bias.</p></li>
+<li><p>Menangani Outlier
+Outlier adalah nilai yang terlalu jauh dari distribusi normal.</p>
 <p>Contoh:
-Masalah bisnis:</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span> Banyak pelanggan berhenti berlangganan.
-</pre></div>
-</div>
-<p>Tujuan Data Mining:</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span> Membangun model klasifikasi untuk memprediksi pelanggan yang berpotensi churn.
-</pre></div>
-</div>
-<p>Tahap ini menghubungkan dunia bisnis dengan dunia teknis.</p>
-</li>
-<li><p>Menentukan KPI (Key Performance Indicator)
-KPI digunakan untuk mengukur keberhasilan proyek.</p>
-<p>Contoh KPI:</p>
+Jika rata-rata umur pelanggan 30–40 tahun, tetapi ada umur 150 tahun, itu kemungkinan kesalahan input.</p>
+<p>Outlier bisa:</p>
 <ul class="simple">
-<li><p>Akurasi model minimal 85%</p></li>
-<li><p>Penurunan churn sebesar 10%</p></li>
-<li><p>Peningkatan ROI sebesar 5%</p></li>
+<li><p>Dihapus</p></li>
+<li><p>Diubah</p></li>
+<li><p>Dibiarkan jika memang valid</p></li>
 </ul>
-<p>Tanpa KPI, keberhasilan proyek sulit diukur.</p>
 </li>
-<li><p>Identifikasi Stakeholder
-Stakeholder adalah pihak yang berkepentingan terhadap hasil proyek.</p>
+</ul>
+</li>
+<li><p>Data Transformation (Transformasi Data)
+Data sering perlu diubah agar sesuai dengan algoritma.</p>
+<ul>
+<li><p>Normalisasi / Standardisasi
+Beberapa algoritma sensitif terhadap skala data.
+Contoh:</p>
+<ul class="simple">
+<li><p>Pendapatan: 1.000.000 – 100.000.000</p></li>
+<li><p>Jumlah transaksi: 1 – 50</p></li>
+</ul>
+<p>Jika tidak dinormalisasi, model bisa bias pada variabel dengan nilai besar.</p>
+</li>
+<li><p>Encoding Data Kategorikal
+Algoritma machine learning tidak bisa membaca teks.</p>
+<p>Contoh:
+Jenis Kelamin:</p>
+<ul class="simple">
+<li><p>Laki-laki</p></li>
+<li><p>Perempuan</p></li>
+</ul>
+<p>Diubah menjadi:</p>
+<ul class="simple">
+<li><p>0 dan 1</p></li>
+</ul>
+<p>Teknik:</p>
+<ul class="simple">
+<li><p>Label Encoding</p></li>
+<li><p>One Hot Encoding</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Feature Engineering
+Feature Engineering adalah proses membuat variabel baru yang lebih informatif.</p>
 <p>Contoh:</p>
+<ul>
+<li><p>Dari “Tanggal Transaksi” dibuat:</p>
 <ul class="simple">
-<li><p>Manajemen</p></li>
-<li><p>Tim pemasaran</p></li>
-<li><p>Tim IT</p></li>
-<li><p>Pengguna sistem</p></li>
-</ul>
-<p>Pemahaman kebutuhan stakeholder penting agar solusi sesuai dengan kebutuhan mereka.</p>
-</li>
-<li><p>Identifikasi Batasan dan Risiko
-Beberapa hal yang perlu dipertimbangkan:</p>
-<ul class="simple">
-<li><p>Ketersediaan data</p></li>
-<li><p>Kualitas data</p></li>
-<li><p>Waktu pengerjaan</p></li>
-<li><p>Anggaran</p></li>
-<li><p>Risiko kesalahan model</p></li>
-</ul>
-<p>Contoh risiko:</p>
-<ul class="simple">
-<li><p>Data tidak lengkap</p></li>
-<li><p>Model bias</p></li>
-<li><p>Sistem tidak siap menerima model</p></li>
+<li><p>Hari</p></li>
+<li><p>Bulan</p></li>
+<li><p>Tahun</p></li>
 </ul>
 </li>
-</ol>
-</section>
-<section id="contoh-studi-kasus">
-<h2>Contoh Studi Kasus<a class="headerlink" href="#contoh-studi-kasus" title="Link to this heading">#</a></h2>
-<p><strong>Kasus: Perusahaan Retail</strong>
-Masalah:
-Penjualan menurun dalam 3 bulan terakhir.
-Business Understanding:</p>
-<ol class="arabic simple">
-<li><p>Mengidentifikasi penyebab penurunan</p></li>
-<li><p>Menentukan tujuan: meningkatkan repeat purchase</p></li>
-<li><p>KPI: kenaikan penjualan 10%</p></li>
-<li><p>Tujuan data mining: segmentasi pelanggan menggunakan clustering</p></li>
-</ol>
-<p>Dengan pendekatan ini, proyek menjadi lebih terarah.</p>
-</section>
-<section id="hubungan-business-understanding-dengan-tahap-lain">
-<h2>Hubungan Business Understanding dengan Tahap Lain<a class="headerlink" href="#hubungan-business-understanding-dengan-tahap-lain" title="Link to this heading">#</a></h2>
-<p>Business Understanding menjadi dasar bagi:</p>
+<li><p>Dari “Total Belanja” dibuat:</p>
 <ul class="simple">
-<li><p>Data Understanding</p></li>
-<li><p>Data Preparation</p></li>
-<li><p>Modelling</p></li>
-<li><p>Deployment</p></li>
+<li><p>Rata-rata belanja per bulan</p></li>
 </ul>
-<p>Jika tahap pertama salah, maka seluruh proses berikutnya akan ikut salah.</p>
-<p>Proses ini bersifat iteratif. Jika hasil modelling tidak sesuai, bisa jadi masalahnya ada pada tahap Business Understanding.</p>
-<section id="kesalahan-umum-dalam-business-understanding">
-<h3>Kesalahan Umum dalam Business Understanding<a class="headerlink" href="#kesalahan-umum-dalam-business-understanding" title="Link to this heading">#</a></h3>
-<ol class="arabic simple">
-<li><p>Tujuan terlalu umum</p></li>
-<li><p>Tidak melibatkan stakeholder</p></li>
-<li><p>Tidak menetapkan KPI</p></li>
-<li><p>Langsung membangun model tanpa memahami masalah</p></li>
+<p>Fitur yang baik akan meningkatkan akurasi model.</p>
+</li>
+</ul>
+</li>
+<li><p>Feature Selection
+Tidak semua variabel perlu digunakan.</p>
+<p>Tujuannya:</p>
+<ul class="simple">
+<li><p>Mengurangi kompleksitas model</p></li>
+<li><p>Menghindari overfitting</p></li>
+<li><p>Mempercepat proses training</p></li>
+</ul>
+<p>Contoh:
+Kolom ID biasanya tidak perlu digunakan dalam model prediksi.</p>
+</li>
+<li><p>Data Splitting
+Sebelum masuk ke tahap modelling, data dibagi menjadi:</p>
+<ul class="simple">
+<li><p>Training set (untuk melatih model)</p></li>
+<li><p>Testing set (untuk menguji model)</p></li>
+</ul>
+<p>Contoh umum:</p>
+<ul class="simple">
+<li><p>80% training</p></li>
+<li><p>20% testing</p></li>
+</ul>
+</li>
 </ol>
 </section>
+<section id="hubungan-dengan-tahap-lain">
+<h2>Hubungan dengan Tahap Lain<a class="headerlink" href="#hubungan-dengan-tahap-lain" title="Link to this heading">#</a></h2>
+<p>Alur prosesnya:</p>
+<p>Business Understanding
+<span class="math notranslate nohighlight">\(\downarrow\)</span>
+Data Understanding
+<span class="math notranslate nohighlight">\(\downarrow\)</span>
+Data Preparation
+<span class="math notranslate nohighlight">\(\downarrow\)</span>
+Modelling</p>
+<p>Jika pada tahap modelling hasilnya kurang baik, sering kali kita kembali ke tahap Data Preparation untuk memperbaiki fitur atau membersihkan data lebih lanjut.</p>
+<p>Proses ini bersifat iteratif.</p>
 </section>
-<section id="output-dari-business-understanding">
-<h2>Output dari Business Understanding<a class="headerlink" href="#output-dari-business-understanding" title="Link to this heading">#</a></h2>
-<p>Di akhir tahap ini biasanya dihasilkan:</p>
+<section id="contoh-sederhana">
+<h2>Contoh Sederhana<a class="headerlink" href="#contoh-sederhana" title="Link to this heading">#</a></h2>
+<p>Misalnya kita ingin memprediksi churn pelanggan.</p>
+<p>Data mentah memiliki:</p>
 <ul class="simple">
-<li><p>Dokumen definisi masalah</p></li>
-<li><p>Tujuan bisnis</p></li>
-<li><p>Tujuan analitik</p></li>
-<li><p>KPI</p></li>
-<li><p>Rencana proyek awal</p></li>
+<li><p>Umur (ada yang kosong)</p></li>
+<li><p>Pendapatan (format berbeda-beda)</p></li>
+<li><p>Status pelanggan (aktif/tidak aktif)</p></li>
 </ul>
-<p>Dokumen ini menjadi panduan untuk tahap selanjutnya.</p>
+<p>Pada tahap Data Preparation kita:</p>
+<ul class="simple">
+<li><p>Mengisi umur yang kosong dengan median</p></li>
+<li><p>Mengubah format pendapatan menjadi numerik</p></li>
+<li><p>Mengubah status menjadi 0 dan 1</p></li>
+<li><p>Menghapus data duplikat</p></li>
+<li><p>Membagi data menjadi training dan testing</p></li>
+</ul>
+<p>Setelah itu, data siap digunakan untuk modelling.</p>
+</section>
+<section id="kesalahan-umum-dalam-data-preparation">
+<h2>Kesalahan Umum dalam Data Preparation<a class="headerlink" href="#kesalahan-umum-dalam-data-preparation" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p>Menghapus terlalu banyak data tanpa analisis</p></li>
+<li><p>Mengabaikan outlier</p></li>
+<li><p>Tidak melakukan normalisasi saat diperlukan</p></li>
+<li><p>Data leakage (mencampur data testing saat training)</p></li>
+</ol>
 </section>
 <section id="ringkasan">
 <h2>Ringkasan<a class="headerlink" href="#ringkasan" title="Link to this heading">#</a></h2>
@@ -673,16 +587,16 @@ Business Understanding:</p>
 </thead>
 <tbody>
 <tr class="row-even"><td><p>Fokus</p></td>
-<td><p>Memahami masalah bisnis</p></td>
+<td><p>Menyiapkan data agar siap diproses</p></td>
 </tr>
-<tr class="row-odd"><td><p>Tujuan</p></td>
-<td><p>Menentukan arah proyek</p></td>
+<tr class="row-odd"><td><p>Kegiatan</p></td>
+<td><p>Cleaning, transformasi, feature engineering</p></td>
 </tr>
 <tr class="row-even"><td><p>Output</p></td>
-<td><p>Business objective &amp; KPI</p></td>
+<td><p>Dataset bersih dan siap modelling</p></td>
 </tr>
-<tr class="row-odd"><td><p>Dampak</p></td>
-<td><p>Menentukan keberhasilan proyek</p></td>
+<tr class="row-odd"><td><p>Tantangan</p></td>
+<td><p>Missing values, outlier, inkonsistensi</p></td>
 </tr>
 </tbody>
 </table>
@@ -690,7 +604,7 @@ Business Understanding:</p>
 </section>
 <section id="kesimpulan">
 <h2>Kesimpulan<a class="headerlink" href="#kesimpulan" title="Link to this heading">#</a></h2>
-<p>Business Understanding adalah tahap awal dan paling penting dalam proses Data Mining. Tahap ini memastikan bahwa seluruh analisis data dan pembangunan model dilakukan untuk menjawab kebutuhan bisnis yang nyata dan memberikan nilai strategis bagi organisasi.</p>
+<p>Data Preparation adalah tahap penting dalam Data Mining yang bertujuan untuk membersihkan dan mengubah data mentah menjadi data yang siap digunakan oleh algoritma machine learning. Tanpa tahap ini, model yang dihasilkan bisa tidak akurat atau bahkan salah.</p>
 </section>
 </section>
 
@@ -725,20 +639,20 @@ Business Understanding:</p>
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="intro.html"
+       href="Data%20Understanding.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Welcome to your Jupyter Book</p>
+        <p class="prev-next-title">Data Understanding</p>
       </div>
     </a>
     <a class="right-next"
-       href="Data%20Understanding.html"
+       href="Modelling.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Data Understanding</p>
+        <p class="prev-next-title">Modelling</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -758,30 +672,15 @@ Business Understanding:</p>
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Data Mining</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pengertian-data-mining">Pengertian Data Mining</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tujuan-data-mining">Tujuan Data Mining</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mengapa-data-mining-penting">Mengapa Data Mining Penting?</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#proses-data-mining">Proses Data Mining</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#teknik-dalam-data-mining">Teknik dalam Data Mining</a></li>
-</ul>
-</li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#business-understanding">Business Understanding</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tujuan-business-understanding">Tujuan Business Understanding</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mengapa-business-understanding-penting">Mengapa Business Understanding Penting?</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-langkah-dalam-business-understanding">Langkah-Langkah dalam Business Understanding</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#contoh-studi-kasus">Contoh Studi Kasus</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hubungan-business-understanding-dengan-tahap-lain">Hubungan Business Understanding dengan Tahap Lain</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#kesalahan-umum-dalam-business-understanding">Kesalahan Umum dalam Business Understanding</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#output-dari-business-understanding">Output dari Business Understanding</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pengertian-data-preparation">Pengertian Data Preparation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tujuan-data-preparation">Tujuan Data Preparation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#proses-dalam-data-preparation">Proses dalam Data Preparation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hubungan-dengan-tahap-lain">Hubungan dengan Tahap Lain</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#contoh-sederhana">Contoh Sederhana</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kesalahan-umum-dalam-data-preparation">Kesalahan Umum dalam Data Preparation</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ringkasan">Ringkasan</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kesimpulan">Kesimpulan</a></li>
 </ul>
-</li>
-</ul>
-
   </nav></div>
 
 </div></div>

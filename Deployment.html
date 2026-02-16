@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Penambangan Data</title>
+    <title>Deployment &#8212; My sample book</title>
   
   
   
@@ -59,10 +59,10 @@
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'intro';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Deployment';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Markdown Files" href="markdown.html" />
+    <link rel="prev" title="Modelling" href="Modelling.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -125,8 +125,6 @@
       
       
       
-        
-      
       <div class="bd-sidebar-primary bd-sidebar">
         
 
@@ -145,7 +143,7 @@
     
   
 
-<a class="navbar-brand logo" href="#">
+<a class="navbar-brand logo" href="intro.html">
   
   
   
@@ -176,18 +174,19 @@
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
-            <li class="toctree-l1 current active">
-                <a class="reference internal" href="#">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
                     Halaman Depan
                 </a>
             </li>
         </ul>
-        <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="Business Understanding.html">Business Understanding</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Data Understanding.html">Data Understanding</a></li>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="Business%20Understanding.html">Business Understanding</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="Data%20Understanding.html">Data Understanding</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Data%20Preparation.html">Data Preparation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Modelling.html">Modelling</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Deployment.html">Deployment</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Deployment</a></li>
 </ul>
 
     </div>
@@ -259,7 +258,7 @@
       
       
       
-      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fintro.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2FDeployment.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -289,7 +288,7 @@
       
       
       
-      <li><a href="_sources/intro.md" target="_blank"
+      <li><a href="_sources/Deployment.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -360,7 +359,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
 </div></div>
       
     </div>
@@ -371,11 +372,27 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Selamat datang di catatan saya</h1>
+    <h1>Deployment</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pengertian-deployment">Pengertian Deployment</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tujuan-deployment">Tujuan Deployment</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#contoh-penerapan-deployment">Contoh Penerapan Deployment</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bentuk-bentuk-deployment">Bentuk-Bentuk Deployment</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#monitoring-dan-maintenance">Monitoring dan Maintenance</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hubungan-dengan-tahap-lain">Hubungan dengan Tahap Lain</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tantangan-dalam-deployment">Tantangan dalam Deployment</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ringkasan">Ringkasan</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kesimpulan">Kesimpulan</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -385,21 +402,141 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="welcome-to-your-jupyter-book">
-<h1>Selamat datang di catatan saya<a class="headerlink" href="#Selamat-datang-di-catatan-saya" title="Link to this heading">#</a></h1>
-<p>Catatan ini saya buat selama menempuh mata kuliah Penambangan Data pada semester empat di Universitas Trunojoyo Madura</p>
-<p>Nama : Rian Renaldy <br>
-NIM : 240411100053 <br>
-Dosen Pengampu : MULA'AB, S.Si., M.kom</p>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="Business Understanding.html">Business Understanding</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Data Understanding.html">Data Understanding</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Data%20Preparation.html">Data Preparation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Modelling.html">Modelling</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Deployment.html">Deployment</a></li>
-</ul>
+  <section id="deployment">
+<h1>Deployment<a class="headerlink" href="#deployment" title="Link to this heading">#</a></h1>
+<section id="pengertian-deployment">
+<h2>Pengertian Deployment<a class="headerlink" href="#pengertian-deployment" title="Link to this heading">#</a></h2>
+<p>Deployment adalah tahap di mana model yang sudah dibuat dan dievaluasi pada tahap Modelling diimplementasikan atau diterapkan ke dalam sistem nyata agar dapat digunakan untuk membantu pengambilan keputusan.</p>
+<p>Jika pada tahap Modelling kita membuat model, maka pada tahap Deployment kita:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Menggunakan model tersebut dalam lingkungan nyata (real-world environment).
+</pre></div>
 </div>
+</section>
+<section id="tujuan-deployment">
+<h2>Tujuan Deployment<a class="headerlink" href="#tujuan-deployment" title="Link to this heading">#</a></h2>
+<p>Tujuan utama tahap Deployment adalah:</p>
+<ol class="arabic simple">
+<li><p>Mengintegrasikan model ke sistem bisnis</p></li>
+<li><p>Menghasilkan prediksi secara otomatis</p></li>
+<li><p>Memberikan manfaat nyata bagi organisasi</p></li>
+<li><p>Memantau performa model secara berkala</p></li>
+</ol>
+<p>Model yang bagus tetapi tidak digunakan dalam sistem nyata tidak akan memberikan nilai bisnis.</p>
+</section>
+<section id="contoh-penerapan-deployment">
+<h2>Contoh Penerapan Deployment<a class="headerlink" href="#contoh-penerapan-deployment" title="Link to this heading">#</a></h2>
+<p>Beberapa contoh penerapan model dalam dunia nyata:</p>
+<ul class="simple">
+<li><p>Sistem rekomendasi produk pada e-commerce</p></li>
+<li><p>Prediksi churn pelanggan di perusahaan telekomunikasi</p></li>
+<li><p>Sistem deteksi fraud pada perbankan</p></li>
+<li><p>Prediksi permintaan barang di perusahaan retail</p></li>
+</ul>
+<p>Model bekerja di belakang sistem dan memberikan output secara otomatis.</p>
+</section>
+<section id="bentuk-bentuk-deployment">
+<h2>Bentuk-Bentuk Deployment<a class="headerlink" href="#bentuk-bentuk-deployment" title="Link to this heading">#</a></h2>
+<p>Deployment bisa dilakukan dalam beberapa cara:</p>
+<hr class="docutils" />
+<ol class="arabic">
+<li><p>Laporan atau Dashboard
+Model digunakan untuk menghasilkan laporan atau visualisasi yang ditampilkan melalui dashboard (misalnya menggunakan Power BI atau Tableau).</p>
+<p>Contoh:
+Manajer dapat melihat pelanggan yang berpotensi churn melalui dashboard.</p>
+</li>
+<li><p>Integrasi ke Aplikasi
+Model diintegrasikan ke dalam aplikasi web atau sistem internal perusahaan.</p>
+<p>Contoh:
+Saat pelanggan melakukan transaksi, sistem langsung menghitung skor risiko.</p>
+</li>
+<li><p>API (Application Programming Interface)
+Model dijadikan layanan API sehingga dapat dipanggil oleh sistem lain.</p>
+<p>Contoh:
+Aplikasi memanggil API untuk mendapatkan prediksi harga.</p>
+</li>
+<li><p>Sistem Otomatis (Automation)
+Model berjalan secara otomatis untuk mendukung proses bisnis.</p>
+<p>Contoh:
+Sistem otomatis menolak transaksi jika terdeteksi fraud.</p>
+</li>
+</ol>
+</section>
+<section id="monitoring-dan-maintenance">
+<h2>Monitoring dan Maintenance<a class="headerlink" href="#monitoring-dan-maintenance" title="Link to this heading">#</a></h2>
+<p>Deployment bukan tahap akhir yang benar-benar selesai. Model perlu dipantau, Mengapa?</p>
+<p>Karena data bisa berubah seiring waktu (data drift).</p>
+<p>Hal yang dipantau:</p>
+<ul class="simple">
+<li><p>Akurasi model</p></li>
+<li><p>Perubahan pola data</p></li>
+<li><p>Error sistem</p></li>
+</ul>
+<p>Jika performa menurun, maka perlu:</p>
+<ul class="simple">
+<li><p>Melatih ulang model (retraining)</p></li>
+<li><p>Memperbarui data</p></li>
+<li><p>Mengubah fitur</p></li>
+</ul>
+</section>
+<section id="hubungan-dengan-tahap-lain">
+<h2>Hubungan dengan Tahap Lain<a class="headerlink" href="#hubungan-dengan-tahap-lain" title="Link to this heading">#</a></h2>
+<p>Alur lengkap proses Data Mining:</p>
+<p>Business Understanding
+<span class="math notranslate nohighlight">\(\downarrow\)</span>
+Data Understanding
+<span class="math notranslate nohighlight">\(\downarrow\)</span>
+Data Preparation
+<span class="math notranslate nohighlight">\(\downarrow\)</span>
+Modelling
+<span class="math notranslate nohighlight">\(\downarrow\)</span>
+Deployment</p>
+<p>Namun proses ini bersifat iteratif.</p>
+<p>Jika pada tahap Deployment model tidak memberikan dampak yang diharapkan, maka bisa kembali ke:</p>
+<ul class="simple">
+<li><p>Modelling</p></li>
+<li><p>Data Preparation</p></li>
+<li><p>Bahkan Business Understanding</p></li>
+</ul>
+</section>
+<section id="tantangan-dalam-deployment">
+<h2>Tantangan dalam Deployment<a class="headerlink" href="#tantangan-dalam-deployment" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p>Integrasi dengan sistem lama</p></li>
+<li><p>Masalah keamanan data</p></li>
+<li><p>Performa sistem</p></li>
+<li><p>Perubahan kebutuhan bisnis</p></li>
+<li><p>Kurangnya monitoring</p></li>
+</ol>
+</section>
+<section id="ringkasan">
+<h2>Ringkasan<a class="headerlink" href="#ringkasan" title="Link to this heading">#</a></h2>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Aspek</p></th>
+<th class="head"><p>Penjelasan</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Fokus</p></td>
+<td><p>Implementasi model ke sistem nyata</p></td>
+</tr>
+<tr class="row-odd"><td><p>Tujuan</p></td>
+<td><p>Memberikan nilai bisnis</p></td>
+</tr>
+<tr class="row-even"><td><p>Bentuk</p></td>
+<td><p>Dashboard, API, aplikasi, otomatisasi</p></td>
+</tr>
+<tr class="row-odd"><td><p>Tantangan</p></td>
+<td><p>Monitoring &amp; perubahan data</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="kesimpulan">
+<h2>Kesimpulan<a class="headerlink" href="#kesimpulan" title="Link to this heading">#</a></h2>
+<p>Deployment adalah tahap akhir dalam proses Data Mining yang bertujuan untuk menerapkan model ke dalam sistem nyata agar dapat memberikan manfaat langsung bagi organisasi. Tanpa deployment, model hanya menjadi hasil analisis tanpa dampak nyata.</p>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -432,14 +569,14 @@ Dosen Pengampu : MULA'AB, S.Si., M.kom</p>
                 <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
-    <a class="right-next"
-       href="Business Understanding.html"
-       title="next page">
+    <a class="left-prev"
+       href="Modelling.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
-        <p class="prev-next-subtitle">Selanjutnya</p>
-        <p class="prev-next-title">business understanding</p>
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Modelling</p>
       </div>
-      <i class="fa-solid fa-angle-right"></i>
     </a>
 </div>
                 </footer>
@@ -447,6 +584,29 @@ Dosen Pengampu : MULA'AB, S.Si., M.kom</p>
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pengertian-deployment">Pengertian Deployment</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tujuan-deployment">Tujuan Deployment</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#contoh-penerapan-deployment">Contoh Penerapan Deployment</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bentuk-bentuk-deployment">Bentuk-Bentuk Deployment</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#monitoring-dan-maintenance">Monitoring dan Maintenance</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hubungan-dengan-tahap-lain">Hubungan dengan Tahap Lain</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tantangan-dalam-deployment">Tantangan dalam Deployment</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ringkasan">Ringkasan</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kesimpulan">Kesimpulan</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>
