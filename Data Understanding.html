@@ -177,14 +177,15 @@
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
                 <a class="reference internal" href="intro.html">
-                    Halaman Depan
+                    Welcome to your Jupyter Book
                 </a>
             </li>
         </ul>
         <ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="Business%20Understanding.html">Business Understanding</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Business%20Understanding.html">Data Mining</a></li>
 
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Data Understanding</a></li>
+
 <li class="toctree-l1"><a class="reference internal" href="Data%20Preparation.html">Data Preparation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Modelling.html">Modelling</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Evaluation.html">Evaluation</a></li>
@@ -290,7 +291,7 @@
       
       
       
-      <li><a href="_sources/Data Understanding.md" target="_blank"
+      <li><a href="_sources/Data Understanding.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -300,7 +301,7 @@
 <span class="btn__icon-container">
   <i class="fas fa-file"></i>
   </span>
-<span class="btn__text-container">.md</span>
+<span class="btn__text-container">.ipynb</span>
 </a>
 </li>
       
@@ -384,6 +385,7 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Data Understanding</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pengertian-data-understanding">Pengertian Data Understanding</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tujuan-data-understanding">Tujuan Data Understanding</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mengapa-data-understanding-penting">Mengapa Data Understanding Penting?</a></li>
@@ -394,6 +396,31 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ringkasan">Ringkasan</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kesimpulan">Kesimpulan</a></li>
 </ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#eksplorasi-data-iris">Eksplorasi data iris</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#visualisasi-data">Visualisasi Data</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-tujuan-visualisasi">A. Tujuan Visualisasi</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#b-visualisasi-menggunakan-orange">B. Visualisasi menggunakan Orange</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#c-visualisasi-menggunakan-google-colab-python">C. Visualisasi menggunakan Google Colab (Python)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#analisa-korelasi">Analisa korelasi</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-tujuan-analisa-korelasi">A. Tujuan Analisa Korelasi</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#b-korelasi-menggunakan-orange">B. Korelasi menggunakan Orange</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#c-korelasi-menggunakan-colab-python">C. Korelasi menggunakan Colab (Python)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#statistik-dikriptif">Statistik dikriptif</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-tujuan-statistik-deskriptif">A. Tujuan Statistik Deskriptif</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#b-statistik-deskriptif-menggunakan-orange">B. Statistik Deskriptif menggunakan Orange</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#c-statistik-deskriptif-menggunakan-colab-python">C. Statistik Deskriptif menggunakan Colab (Python)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kesimpulan-eksplorasi">Kesimpulan Eksplorasi</a></li>
+</ul>
+</li>
+</ul>
+
             </nav>
         </div>
     </div>
@@ -562,6 +589,850 @@ Data dunia nyata sering memiliki masalah, seperti:</p>
 <p>Data Understanding adalah tahap penting dalam proses Data Mining yang bertujuan untuk memahami struktur, kualitas, dan pola dalam data. Tahap ini memastikan bahwa data yang digunakan benar-benar sesuai untuk menjawab masalah bisnis dan siap untuk diproses lebih lanjut pada tahap Data Preparation.</p>
 </section>
 </section>
+<section id="eksplorasi-data-iris">
+<h1>Eksplorasi data iris<a class="headerlink" href="#eksplorasi-data-iris" title="Link to this heading">#</a></h1>
+<p>Eksplorasi data merupakan tahap awal dalam analisis data yang bertujuan untuk memahami karakteristik dataset sebelum dilakukan pemodelan. Pada dataset Iris, proses eksplorasi dilakukan untuk mengetahui pola, distribusi data, hubungan antar variabel, serta ringkasan statistik dari data bunga iris.</p>
+<p>Dataset Iris terdiri dari 150 data bunga dengan 4 atribut numerik:</p>
+<ul class="simple">
+<li><p>Sepal Length (panjang kelopak)</p></li>
+<li><p>Sepal Width (lebar kelopak)</p></li>
+<li><p>Petal Length (panjang mahkota)</p></li>
+<li><p>Petal Width (lebar mahkota)</p></li>
+</ul>
+<p>Serta 1 atribut kategorikal:</p>
+<ul class="simple">
+<li><p>Species (jenis bunga: Setosa, Versicolor, Virginica)</p></li>
+</ul>
+<p>Eksplorasi data pada penelitian/praktikum ini dilakukan menggunakan dua tools:</p>
+<ul class="simple">
+<li><p>Orange <span class="math notranslate nohighlight">\(\rightarrow\)</span> visual &amp; workflow tanpa coding</p></li>
+<li><p>Google Colab (Python) <span class="math notranslate nohighlight">\(\rightarrow\)</span> analisis berbasis coding</p></li>
+</ul>
+<section id="visualisasi-data">
+<h2>Visualisasi Data<a class="headerlink" href="#visualisasi-data" title="Link to this heading">#</a></h2>
+<section id="a-tujuan-visualisasi">
+<h3>A. Tujuan Visualisasi<a class="headerlink" href="#a-tujuan-visualisasi" title="Link to this heading">#</a></h3>
+<p>Visualisasi digunakan untuk:</p>
+<ul class="simple">
+<li><p>Melihat distribusi data</p></li>
+<li><p>Mengidentifikasi pola</p></li>
+<li><p>Mengetahui pemisahan antar kelas</p></li>
+<li><p>Mendeteksi outlier</p></li>
+<li><p>Mempermudah interpretasi data</p></li>
+</ul>
+</section>
+<section id="b-visualisasi-menggunakan-orange">
+<h3>B. Visualisasi menggunakan Orange<a class="headerlink" href="#b-visualisasi-menggunakan-orange" title="Link to this heading">#</a></h3>
+<p><img alt="image" src="https://hackmd.io/_uploads/SyQnrR9u-x.png" /></p>
+<p>Pada Orange, visualisasi dilakukan dengan workflow berikut:</p>
+<p><strong>File <span class="math notranslate nohighlight">\(\rightarrow\)</span> Data Table <span class="math notranslate nohighlight">\(\rightarrow\)</span> Scatter Plot/Select Columns<span class="math notranslate nohighlight">\(\rightarrow\)</span>Rank/Pivot Table/Correlations/Box Plot/Column Statistics/Distributions</strong></p>
+<p>Beberapa visualisasi penting yang di coba:</p>
+<ol class="arabic">
+<li><p>File</p>
+<p>Widget File digunakan untuk memuat atau mengimpor dataset ke dalam Orange dari berbagai format file seperti CSV, Excel, atau TXT.</p>
+<p><img alt="image" src="https://hackmd.io/_uploads/Sy-Lm65O-e.png" /></p>
+</li>
+<li><p>Data Table</p>
+<p>Widget Data Table digunakan untuk menampilkan dataset dalam bentuk tabel, sehingga pengguna dapat melihat isi data secara lengkap.</p>
+<p><img alt="image" src="https://hackmd.io/_uploads/ryvsNTqOWg.png" /></p>
+</li>
+<li><p>Scatter Plot</p>
+<p>Widget Scatter Plot digunakan untuk menampilkan hubungan antara dua atribut dalam bentuk grafik titik, sehingga dapat melihat pola dan penyebaran data.</p>
+<p><img alt="image" src="https://hackmd.io/_uploads/rJRzwT9O-g.png" /></p>
+<p>Contoh: hubungan antara sepal length dan sepal width, sehingga kita dapat melihat pola penyebaran data dan perbedaan antar kelas bunga Iris.</p>
+</li>
+<li><p>Select Columns <span class="math notranslate nohighlight">\(\rightarrow\)</span> Rank</p>
+<p>Widget Select Columns digunakan untuk memilih atribut yang akan digunakan dan menentukan variabel target.
+Widget Rank digunakan untuk menilai dan memberi peringkat atribut berdasarkan tingkat kepentingannya terhadap variabel target.</p>
+<ul class="simple">
+<li><p>Select Columns
+<img alt="image" src="https://hackmd.io/_uploads/rJIqRp9_Zg.png" /></p></li>
+<li><p>Rank
+<img alt="image" src="https://hackmd.io/_uploads/SJI9Cp9d-g.png" /></p></li>
+</ul>
+<p>Widget Select Columns digunakan untuk memilih atribut yang akan digunakan dan menentukan variabel target, sedangkan widget Rank digunakan untuk menilai dan memberi peringkat atribut berdasarkan tingkat kepentingannya terhadap variabel target.</p>
+</li>
+<li><p>Pivot Table</p>
+<p>Widget Pivot Table digunakan untuk merangkum dan menghitung data berdasarkan kategori tertentu dalam bentuk tabel ringkasan.
+<img alt="image" src="https://hackmd.io/_uploads/Skn8969u-x.png" />
+Pada tampilan ini, Pivot Table digunakan untuk menghitung jumlah data pada setiap kelas species. Hasilnya menunjukkan bahwa setiap kelas Iris (setosa, versicolor, virginica) memiliki masing-masing 50 data, dengan total 150 data.</p>
+</li>
+<li><p>Correlations</p>
+<p>Widget Correlations digunakan untuk menghitung dan menampilkan nilai korelasi antar atribut menggunakan metode Pearson correlation.
+<img alt="image" src="https://hackmd.io/_uploads/S1Gq9acdZx.png" /></p>
+<p>Dari hasil terlihat bahwa petal length dan petal width memiliki korelasi sangat kuat sebesar +0.963, artinya kedua atribut memiliki hubungan yang sangat erat. Sedangkan beberapa atribut lain memiliki korelasi sedang hingga lemah, bahkan negatif.</p>
+</li>
+<li><p>Box Plot
+Widget Box Plot digunakan untuk menampilkan distribusi data, nilai median, rentang, dan outlier dari suatu atribut dalam bentuk box plot.</p>
+<p><img alt="image" src="https://hackmd.io/_uploads/Syvro65dZg.png" /></p>
+<p>Pada tampilan ini, Box Plot digunakan untuk membandingkan distribusi sepal width pada setiap kelas species. Terlihat bahwa setiap kelas memiliki median dan rentang nilai yang berbeda, sehingga membantu memahami perbedaan karakteristik antar kelas Iris.</p>
+</li>
+<li><p>Column Statistics</p>
+<p>Widget Column Statistics digunakan untuk menampilkan statistik deskriptif dari setiap atribut, seperti mean, median, minimum, maksimum, dan distribusi data.</p>
+<p><img alt="image" src="https://hackmd.io/_uploads/HJR6oa5dWx.png" /></p>
+<p>Widget ini membantu untuk memahami karakteristik data secara statistik, misalnya rata-rata sepal length adalah 5.843, serta melihat penyebaran dan rentang nilai setiap atribut pada dataset Iris.</p>
+</li>
+<li><p>Distributions</p>
+<p>Widget Distributions digunakan untuk menampilkan distribusi atau penyebaran nilai suatu atribut dalam bentuk histogram.</p>
+<p><img alt="image" src="https://hackmd.io/_uploads/HywOkA5_bg.png" /></p>
+<p>Pada tampilan ini, histogram menunjukkan distribusi nilai petal width, sehingga kita dapat melihat frekuensi kemunculan nilai tertentu dan memahami pola penyebaran data.</p>
+</li>
+</ol>
+</section>
+<section id="c-visualisasi-menggunakan-google-colab-python">
+<h3>C. Visualisasi menggunakan Google Colab (Python)<a class="headerlink" href="#c-visualisasi-menggunakan-google-colab-python" title="Link to this heading">#</a></h3>
+<ol class="arabic">
+<li><p>Pemanggilan Library</p>
+<p>Kode di bawah ini berfungsi untuk mengimpor file iris yang akan digunakan dalam proses analisis dan visualisasi data pada Google Colab.</p>
+</li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">seaborn</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sns</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="kn">import</span><span class="w"> </span><span class="nn">seaborn</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sns</span>
+
+<span class="ne">ModuleNotFoundError</span>: No module named &#39;pandas&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>Penjelasan Kode:</p>
+<ul class="simple">
+<li><p>Pandas (pd) digunakan untuk membaca dan mengolah data.</p></li>
+<li><p>Matplotlib (plt) digunakan untuk membuat grafik.</p></li>
+<li><p>Seaborn (sns) digunakan untuk membuat visualisasi data yang lebih menarik dan informatif.</p></li>
+</ul>
+<ol class="arabic" start="2">
+<li><p>Membaca Dataset Iris</p>
+<p>Kode di bawah berfungsi untuk memuat file dataset dan menampilkan sebagian data sebagai langkah awal untuk melihat struktur dan isi dataset.</p>
+</li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;IRIS.csv&#39;</span><span class="p">)</span>
+<span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">150</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">
+  <div id="df-66596aa5-0ec1-41fe-bcb3-1ad8d9563c05" class="colab-df-container">
+    <div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>sepal_length</th>
+      <th>sepal_width</th>
+      <th>petal_length</th>
+      <th>petal_width</th>
+      <th>species</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>5.1</td>
+      <td>3.5</td>
+      <td>1.4</td>
+      <td>0.2</td>
+      <td>Iris-setosa</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>4.9</td>
+      <td>3.0</td>
+      <td>1.4</td>
+      <td>0.2</td>
+      <td>Iris-setosa</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>4.7</td>
+      <td>3.2</td>
+      <td>1.3</td>
+      <td>0.2</td>
+      <td>Iris-setosa</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>4.6</td>
+      <td>3.1</td>
+      <td>1.5</td>
+      <td>0.2</td>
+      <td>Iris-setosa</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>5.0</td>
+      <td>3.6</td>
+      <td>1.4</td>
+      <td>0.2</td>
+      <td>Iris-setosa</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>145</th>
+      <td>6.7</td>
+      <td>3.0</td>
+      <td>5.2</td>
+      <td>2.3</td>
+      <td>Iris-virginica</td>
+    </tr>
+    <tr>
+      <th>146</th>
+      <td>6.3</td>
+      <td>2.5</td>
+      <td>5.0</td>
+      <td>1.9</td>
+      <td>Iris-virginica</td>
+    </tr>
+    <tr>
+      <th>147</th>
+      <td>6.5</td>
+      <td>3.0</td>
+      <td>5.2</td>
+      <td>2.0</td>
+      <td>Iris-virginica</td>
+    </tr>
+    <tr>
+      <th>148</th>
+      <td>6.2</td>
+      <td>3.4</td>
+      <td>5.4</td>
+      <td>2.3</td>
+      <td>Iris-virginica</td>
+    </tr>
+    <tr>
+      <th>149</th>
+      <td>5.9</td>
+      <td>3.0</td>
+      <td>5.1</td>
+      <td>1.8</td>
+      <td>Iris-virginica</td>
+    </tr>
+  </tbody>
+</table>
+<p>150 rows × 5 columns</p>
+</div>
+    <div class="colab-df-buttons">
+
+  <div class="colab-df-container">
+    <button class="colab-df-convert" onclick="convertToInteractive('df-66596aa5-0ec1-41fe-bcb3-1ad8d9563c05')"
+            title="Convert this dataframe to an interactive table."
+            style="display:none;">
+
+  <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960">
+    <path d="M120-120v-720h720v720H120Zm60-500h600v-160H180v160Zm220 220h160v-160H400v160Zm0 220h160v-160H400v160ZM180-400h160v-160H180v160Zm440 0h160v-160H620v160ZM180-180h160v-160H180v160Zm440 0h160v-160H620v160Z"/>
+  </svg>
+    </button>
+
+  <style>
+    .colab-df-container {
+      display:flex;
+      gap: 12px;
+    }
+
+    .colab-df-convert {
+      background-color: #E8F0FE;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      display: none;
+      fill: #1967D2;
+      height: 32px;
+      padding: 0 0 0 0;
+      width: 32px;
+    }
+
+    .colab-df-convert:hover {
+      background-color: #E2EBFA;
+      box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);
+      fill: #174EA6;
+    }
+
+    .colab-df-buttons div {
+      margin-bottom: 4px;
+    }
+
+    [theme=dark] .colab-df-convert {
+      background-color: #3B4455;
+      fill: #D2E3FC;
+    }
+
+    [theme=dark] .colab-df-convert:hover {
+      background-color: #434B5C;
+      box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+      filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));
+      fill: #FFFFFF;
+    }
+  </style>
+
+    <script>
+      const buttonEl =
+        document.querySelector('#df-66596aa5-0ec1-41fe-bcb3-1ad8d9563c05 button.colab-df-convert');
+      buttonEl.style.display =
+        google.colab.kernel.accessAllowed ? 'block' : 'none';
+
+      async function convertToInteractive(key) {
+        const element = document.querySelector('#df-66596aa5-0ec1-41fe-bcb3-1ad8d9563c05');
+        const dataTable =
+          await google.colab.kernel.invokeFunction('convertToInteractive',
+                                                    [key], {});
+        if (!dataTable) return;
+
+        const docLinkHtml = 'Like what you see? Visit the ' +
+          '<a target="_blank" href=https://colab.research.google.com/notebooks/data_table.ipynb>data table notebook</a>'
+          + ' to learn more about interactive tables.';
+        element.innerHTML = '';
+        dataTable['output_type'] = 'display_data';
+        await google.colab.output.renderOutput(dataTable, element);
+        const docLink = document.createElement('div');
+        docLink.innerHTML = docLinkHtml;
+        element.appendChild(docLink);
+      }
+    </script>
+  </div>
+
+
+    </div>
+  </div>
+</div></div>
+</div>
+<p>Penjelasan Kode:</p>
+<ul class="simple">
+<li><p>pd.read_csv(‘IRIS.csv’) digunakan untuk membaca file CSV bernama IRIS.csv dan menyimpannya ke dalam variabel df.</p></li>
+<li><p>df.head(10) digunakan untuk menampilkan 10 baris pertama dari dataset sebagai preview data.</p></li>
+</ul>
+<ol class="arabic" start="3">
+<li><p>Visualisasi Data (Scatter Plot)</p>
+<p>Kode di bawah ini Kode untuk menampilkan visualisasi hubungan antara dua variabel dalam bentuk grafik Scatter Plot, sehingga dapat membantu dalam melihat pola dan hubungan antar variabel.</p>
+</li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">scatterplot</span><span class="p">(</span>
+    <span class="n">x</span><span class="o">=</span><span class="s1">&#39;sepal_length&#39;</span><span class="p">,</span>
+    <span class="n">y</span><span class="o">=</span><span class="s1">&#39;sepal_width&#39;</span><span class="p">,</span>
+    <span class="n">hue</span><span class="o">=</span><span class="s1">&#39;species&#39;</span><span class="p">,</span>
+    <span class="n">data</span><span class="o">=</span><span class="n">df</span>
+<span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Scatter Plot Petal Length vs Petal Width&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/f3bcd6000c3fbc330a6e9ccb60b05d21e783950420a83c42c2619df409d58229.png" src="_images/f3bcd6000c3fbc330a6e9ccb60b05d21e783950420a83c42c2619df409d58229.png" />
+</div>
+</div>
+<p>Penjelasan Kode:</p>
+<ul class="simple">
+<li><p>plt.figure() digunakan untuk membuat area atau kanvas grafik baru.</p></li>
+<li><p>sns.scatterplot() digunakan untuk menampilkan grafik sebar antara variabel sepal_length dan sepal_width.</p></li>
+<li><p>hue=’species’ digunakan untuk membedakan warna titik berdasarkan jenis bunga.</p></li>
+<li><p>plt.title() digunakan untuk memberikan judul pada grafik.</p></li>
+<li><p>plt.show() digunakan untuk menampilkan grafik ke output.</p></li>
+</ul>
+<ol class="arabic" start="4">
+<li><p>Visualisasi Data (Distributions)</p>
+<p>Kode di bawah ini untuk menampilkan visualisasi distribusi suatu variabel dalam bentuk histogram, sehingga dapat membantu dalam memahami pola penyebaran dan frekuensi data.</p>
+</li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;petal_width&#39;</span><span class="p">],</span> <span class="n">bins</span><span class="o">=</span><span class="mi">25</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;petal_width&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Frequency&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Histogram Petal Width&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/b3c864afa9abdaf4cc92494ef06bc465db718d5849d52a9a42cfaf2f12968a91.png" src="_images/b3c864afa9abdaf4cc92494ef06bc465db718d5849d52a9a42cfaf2f12968a91.png" />
+</div>
+</div>
+<p>Penjelasan Kode:</p>
+<ul class="simple">
+<li><p>plt.figure() digunakan untuk membuat area atau kanvas grafik baru.</p></li>
+<li><p>plt.hist(df[‘petal_width’], bins=25) digunakan untuk menampilkan histogram distribusi nilai petal_width dengan 25 interval (bins).</p></li>
+<li><p>plt.xlabel(“petal_width”) digunakan untuk memberikan label pada sumbu X yaitu petal_width.</p></li>
+<li><p>plt.ylabel(“Frequency”) digunakan untuk memberikan label pada sumbu Y yaitu jumlah atau frekuensi data.</p></li>
+<li><p>plt.title(“Histogram Petal Width”) digunakan untuk memberikan judul pada grafik histogram.</p></li>
+<li><p>plt.show() digunakan untuk menampilkan grafik ke output.</p></li>
+</ul>
+</section>
+</section>
+<section id="analisa-korelasi">
+<h2>Analisa korelasi<a class="headerlink" href="#analisa-korelasi" title="Link to this heading">#</a></h2>
+<section id="a-tujuan-analisa-korelasi">
+<h3>A. Tujuan Analisa Korelasi<a class="headerlink" href="#a-tujuan-analisa-korelasi" title="Link to this heading">#</a></h3>
+<p>Analisis korelasi digunakan untuk mengetahui:</p>
+<ul class="simple">
+<li><p>Seberapa kuat hubungan antar variabel</p></li>
+<li><p>Atribut mana yang paling berpengaruh</p></li>
+<li><p>Redundansi fitur</p></li>
+<li><p>Dasar feature selection</p></li>
+</ul>
+<p>Nilai korelasi berada pada rentang -1 sampai 1:</p>
+<ul class="simple">
+<li><p>Mendekati 1 <span class="math notranslate nohighlight">\(\rightarrow\)</span> hubungan positif kuat</p></li>
+<li><p>Mendekati -1 <span class="math notranslate nohighlight">\(\rightarrow\)</span> hubungan negatif kuat</p></li>
+<li><p>Mendekati 0 <span class="math notranslate nohighlight">\(\rightarrow\)</span> tidak ada hubungan</p></li>
+</ul>
+</section>
+<section id="b-korelasi-menggunakan-orange">
+<h3>B. Korelasi menggunakan Orange<a class="headerlink" href="#b-korelasi-menggunakan-orange" title="Link to this heading">#</a></h3>
+<p>Workflow:
+File <span class="math notranslate nohighlight">\(\rightarrow\)</span> Correlations</p>
+<p>Hasil dataset Iris Untuk Analisa Korelasi:
+<img alt="image" src="https://hackmd.io/_uploads/S1Gq9acdZx.png" /></p>
+<ul class="simple">
+<li><p>Petal Length <span class="math notranslate nohighlight">\(\leftrightarrow\)</span> Petal Width <span class="math notranslate nohighlight">\(\rightarrow\)</span> korelasi sangat tinggi</p></li>
+<li><p>Sepal Length <span class="math notranslate nohighlight">\(\leftrightarrow\)</span> Petal Length <span class="math notranslate nohighlight">\(\rightarrow\)</span> korelasi tinggi</p></li>
+<li><p>Sepal Width <span class="math notranslate nohighlight">\(\rightarrow\)</span> korelasi relatif rendah dengan atribut lain</p></li>
+</ul>
+<p>Interpretasi:
+Petal attributes merupakan fitur paling penting dalam membedakan spesies.</p>
+</section>
+<section id="c-korelasi-menggunakan-colab-python">
+<h3>C. Korelasi menggunakan Colab (Python)<a class="headerlink" href="#c-korelasi-menggunakan-colab-python" title="Link to this heading">#</a></h3>
+<p>Kode berikut digunakan untuk mengukur tingkat hubungan (korelasi) antara variabel numerik dalam dataset, sehingga dapat diketahui seberapa kuat keterkaitan antar variabel tersebut.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">corr_matrix</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">corr</span><span class="p">(</span><span class="n">numeric_only</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">corr_matrix</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">
+  <div id="df-2bc36cf2-fe9d-4be1-9c3c-8bfbf440afd3" class="colab-df-container">
+    <div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>sepal_length</th>
+      <th>sepal_width</th>
+      <th>petal_length</th>
+      <th>petal_width</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>sepal_length</th>
+      <td>1.000000</td>
+      <td>-0.109369</td>
+      <td>0.871754</td>
+      <td>0.817954</td>
+    </tr>
+    <tr>
+      <th>sepal_width</th>
+      <td>-0.109369</td>
+      <td>1.000000</td>
+      <td>-0.420516</td>
+      <td>-0.356544</td>
+    </tr>
+    <tr>
+      <th>petal_length</th>
+      <td>0.871754</td>
+      <td>-0.420516</td>
+      <td>1.000000</td>
+      <td>0.962757</td>
+    </tr>
+    <tr>
+      <th>petal_width</th>
+      <td>0.817954</td>
+      <td>-0.356544</td>
+      <td>0.962757</td>
+      <td>1.000000</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+    <div class="colab-df-buttons">
+
+  <div class="colab-df-container">
+    <button class="colab-df-convert" onclick="convertToInteractive('df-2bc36cf2-fe9d-4be1-9c3c-8bfbf440afd3')"
+            title="Convert this dataframe to an interactive table."
+            style="display:none;">
+
+  <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960">
+    <path d="M120-120v-720h720v720H120Zm60-500h600v-160H180v160Zm220 220h160v-160H400v160Zm0 220h160v-160H400v160ZM180-400h160v-160H180v160Zm440 0h160v-160H620v160ZM180-180h160v-160H180v160Zm440 0h160v-160H620v160Z"/>
+  </svg>
+    </button>
+
+  <style>
+    .colab-df-container {
+      display:flex;
+      gap: 12px;
+    }
+
+    .colab-df-convert {
+      background-color: #E8F0FE;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      display: none;
+      fill: #1967D2;
+      height: 32px;
+      padding: 0 0 0 0;
+      width: 32px;
+    }
+
+    .colab-df-convert:hover {
+      background-color: #E2EBFA;
+      box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);
+      fill: #174EA6;
+    }
+
+    .colab-df-buttons div {
+      margin-bottom: 4px;
+    }
+
+    [theme=dark] .colab-df-convert {
+      background-color: #3B4455;
+      fill: #D2E3FC;
+    }
+
+    [theme=dark] .colab-df-convert:hover {
+      background-color: #434B5C;
+      box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+      filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));
+      fill: #FFFFFF;
+    }
+  </style>
+
+    <script>
+      const buttonEl =
+        document.querySelector('#df-2bc36cf2-fe9d-4be1-9c3c-8bfbf440afd3 button.colab-df-convert');
+      buttonEl.style.display =
+        google.colab.kernel.accessAllowed ? 'block' : 'none';
+
+      async function convertToInteractive(key) {
+        const element = document.querySelector('#df-2bc36cf2-fe9d-4be1-9c3c-8bfbf440afd3');
+        const dataTable =
+          await google.colab.kernel.invokeFunction('convertToInteractive',
+                                                    [key], {});
+        if (!dataTable) return;
+
+        const docLinkHtml = 'Like what you see? Visit the ' +
+          '<a target="_blank" href=https://colab.research.google.com/notebooks/data_table.ipynb>data table notebook</a>'
+          + ' to learn more about interactive tables.';
+        element.innerHTML = '';
+        dataTable['output_type'] = 'display_data';
+        await google.colab.output.renderOutput(dataTable, element);
+        const docLink = document.createElement('div');
+        docLink.innerHTML = docLinkHtml;
+        element.appendChild(docLink);
+      }
+    </script>
+  </div>
+
+
+  <div id="id_a90d1b5f-f1ef-49a4-85b7-1946ff8c5a08">
+    <style>
+      .colab-df-generate {
+        background-color: #E8F0FE;
+        border: none;
+        border-radius: 50%;
+        cursor: pointer;
+        display: none;
+        fill: #1967D2;
+        height: 32px;
+        padding: 0 0 0 0;
+        width: 32px;
+      }
+
+      .colab-df-generate:hover {
+        background-color: #E2EBFA;
+        box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);
+        fill: #174EA6;
+      }
+
+      [theme=dark] .colab-df-generate {
+        background-color: #3B4455;
+        fill: #D2E3FC;
+      }
+
+      [theme=dark] .colab-df-generate:hover {
+        background-color: #434B5C;
+        box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+        filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));
+        fill: #FFFFFF;
+      }
+    </style>
+    <button class="colab-df-generate" onclick="generateWithVariable('corr_matrix')"
+            title="Generate code using this dataframe."
+            style="display:none;">
+
+  <svg xmlns="http://www.w3.org/2000/svg" height="24px"viewBox="0 0 24 24"
+       width="24px">
+    <path d="M7,19H8.4L18.45,9,17,7.55,7,17.6ZM5,21V16.75L18.45,3.32a2,2,0,0,1,2.83,0l1.4,1.43a1.91,1.91,0,0,1,.58,1.4,1.91,1.91,0,0,1-.58,1.4L9.25,21ZM18.45,9,17,7.55Zm-12,3A5.31,5.31,0,0,0,4.9,8.1,5.31,5.31,0,0,0,1,6.5,5.31,5.31,0,0,0,4.9,4.9,5.31,5.31,0,0,0,6.5,1,5.31,5.31,0,0,0,8.1,4.9,5.31,5.31,0,0,0,12,6.5,5.46,5.46,0,0,0,6.5,12Z"/>
+  </svg>
+    </button>
+    <script>
+      (() => {
+      const buttonEl =
+        document.querySelector('#id_a90d1b5f-f1ef-49a4-85b7-1946ff8c5a08 button.colab-df-generate');
+      buttonEl.style.display =
+        google.colab.kernel.accessAllowed ? 'block' : 'none';
+
+      buttonEl.onclick = () => {
+        google.colab.notebook.generateWithVariable('corr_matrix');
+      }
+      })();
+    </script>
+  </div>
+
+    </div>
+  </div>
+</div></div>
+</div>
+<p>Penjelasan Kode:</p>
+<ul class="simple">
+<li><p>df.corr(numeric_only=True) digunakan untuk menghitung nilai korelasi antar kolom numerik.</p></li>
+<li><p>numeric_only=True digunakan untuk memilih hanya data bertipe angka.</p></li>
+<li><p>corr_matrix digunakan untuk menyimpan hasil korelasi.</p></li>
+<li><p>corr_matrix digunakan untuk menampilkan matriks korelasi.</p></li>
+</ul>
+<p>Catatan:
+Kenapa Nilainya terilhat tidak sama? sebenarnya, nilainya sama, hanya cara tampilnya berbeda.</p>
+<p>Penjelasan hal tersebut:</p>
+<ol class="arabic simple">
+<li><p>Tabel matriks korelasi
+Menampilkan semua pasangan variabel dalam bentuk matriks.
+Contoh:</p>
+<ul class="simple">
+<li><p>petal_length vs petal_width = 0.962757</p></li>
+<li><p>petal_length vs sepal_length = 0.871754</p></li>
+<li><p>Nilai tampil sampai 6 desimal.</p></li>
+</ul>
+</li>
+<li><p>Widget Correlations di Orange
+Menampilkan pasangan variabel saja (pairwise) dalam bentuk daftar.
+Biasanya diurutkan dari korelasi terbesar <span class="math notranslate nohighlight">\(\rightarrow\)</span> terkecil.
+Nilai ditampilkan dalam bentuk pembulatan (3 desimal):</p>
+<ul class="simple">
+<li><p>0.962757 <span class="math notranslate nohighlight">\(\rightarrow\)</span> 0.963</p></li>
+<li><p>0.871754 <span class="math notranslate nohighlight">\(\rightarrow\)</span> 0.872</p></li>
+</ul>
+</li>
+</ol>
+<p>Jadi bukan beda hasil, tetapi:
+Metode sama <span class="math notranslate nohighlight">\(\rightarrow\)</span> Pearson correlation</p>
+<ul class="simple">
+<li><p>Data sama</p></li>
+<li><p>Nilai sama</p></li>
+<li><p>Hanya beda format tampilan &amp; pembulatan</p></li>
+</ul>
+</section>
+</section>
+<section id="statistik-dikriptif">
+<h2>Statistik dikriptif<a class="headerlink" href="#statistik-dikriptif" title="Link to this heading">#</a></h2>
+<section id="a-tujuan-statistik-deskriptif">
+<h3>A. Tujuan Statistik Deskriptif<a class="headerlink" href="#a-tujuan-statistik-deskriptif" title="Link to this heading">#</a></h3>
+<p>Statistik deskriptif digunakan untuk merangkum data tanpa melakukan inferensi.</p>
+<p>Informasi yang diperoleh:</p>
+<ul class="simple">
+<li><p>Mean (rata-rata)</p></li>
+<li><p>Median</p></li>
+<li><p>Minimum</p></li>
+<li><p>Maximum</p></li>
+<li><p>Standar deviasi</p></li>
+<li><p>Dll.</p></li>
+</ul>
+</section>
+<section id="b-statistik-deskriptif-menggunakan-orange">
+<h3>B. Statistik Deskriptif menggunakan Orange<a class="headerlink" href="#b-statistik-deskriptif-menggunakan-orange" title="Link to this heading">#</a></h3>
+<p>Workflow:</p>
+<p>File <span class="math notranslate nohighlight">\(\rightarrow\)</span> Column Statistics</p>
+<p>Hasil dataset Iris Untuk Statistik Deskriptif:
+<img alt="image" src="https://hackmd.io/_uploads/HJR6oa5dWx.png" /></p>
+<p>Informasi yang didapat:</p>
+<ul class="simple">
+<li><p>Rata-rata setiap atribut</p></li>
+<li><p>Nilai Minimal</p></li>
+<li><p>Nilai Maksimal</p></li>
+<li><p>Distribusi nilai</p></li>
+<li><p>Dll.</p></li>
+</ul>
+<p>Contoh interpretasi:</p>
+<ul class="simple">
+<li><p>Petal Length Setosa memiliki nilai rata-rata paling kecil</p></li>
+<li><p>Virginica memiliki rata-rata terbesar</p></li>
+</ul>
+</section>
+<section id="c-statistik-deskriptif-menggunakan-colab-python">
+<h3>C. Statistik Deskriptif menggunakan Colab (Python)<a class="headerlink" href="#c-statistik-deskriptif-menggunakan-colab-python" title="Link to this heading">#</a></h3>
+<p>Kode berikut digunakan untuk menghitung statistik deskriptif pada dataset IRIS, yang bertujuan untuk memberikan gambaran umum mengenai karakteristik data, seperti jumlah data, rata-rata, nilai minimum, maksimum, kuartil, standar deviasi, variansi, skewness, dan modus.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">scipy</span><span class="w"> </span><span class="kn">import</span> <span class="n">stats</span>
+
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;IRIS.csv&quot;</span><span class="p">)</span>
+
+<span class="c1"># Ambil hanya kolom numerik (tanpa species)</span>
+<span class="n">df_numeric</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">select_dtypes</span><span class="p">(</span><span class="n">include</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;int64&#39;</span><span class="p">,</span><span class="s1">&#39;float64&#39;</span><span class="p">])</span>
+
+<span class="k">for</span> <span class="n">col</span> <span class="ow">in</span> <span class="n">df_numeric</span><span class="o">.</span><span class="n">columns</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Statistik untuk&quot;</span><span class="p">,</span> <span class="n">col</span><span class="p">,)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Jumlah Data      :&quot;</span><span class="p">,</span> <span class="n">df</span><span class="p">[</span><span class="n">col</span><span class="p">]</span><span class="o">.</span><span class="n">count</span><span class="p">())</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Rata-rata        :&quot;</span><span class="p">,</span> <span class="n">df</span><span class="p">[</span><span class="n">col</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">())</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Nilai Minimum    :&quot;</span><span class="p">,</span> <span class="n">df</span><span class="p">[</span><span class="n">col</span><span class="p">]</span><span class="o">.</span><span class="n">min</span><span class="p">())</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Q1               :&quot;</span><span class="p">,</span> <span class="n">df</span><span class="p">[</span><span class="n">col</span><span class="p">]</span><span class="o">.</span><span class="n">quantile</span><span class="p">(</span><span class="mf">0.25</span><span class="p">))</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Median (Q2)      :&quot;</span><span class="p">,</span> <span class="n">df</span><span class="p">[</span><span class="n">col</span><span class="p">]</span><span class="o">.</span><span class="n">quantile</span><span class="p">(</span><span class="mf">0.5</span><span class="p">))</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Q3               :&quot;</span><span class="p">,</span> <span class="n">df</span><span class="p">[</span><span class="n">col</span><span class="p">]</span><span class="o">.</span><span class="n">quantile</span><span class="p">(</span><span class="mf">0.75</span><span class="p">))</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Nilai Maximum    :&quot;</span><span class="p">,</span> <span class="n">df</span><span class="p">[</span><span class="n">col</span><span class="p">]</span><span class="o">.</span><span class="n">max</span><span class="p">())</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Kemencengan      :&quot;</span><span class="p">,</span> <span class="nb">round</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="n">col</span><span class="p">]</span><span class="o">.</span><span class="n">skew</span><span class="p">(),</span> <span class="mi">6</span><span class="p">))</span>
+
+    <span class="n">mode</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">mode</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="n">col</span><span class="p">],</span> <span class="n">keepdims</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Modus            :&quot;</span><span class="p">,</span> <span class="n">mode</span><span class="o">.</span><span class="n">mode</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="s2">&quot;dengan jumlah&quot;</span><span class="p">,</span> <span class="n">mode</span><span class="o">.</span><span class="n">count</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Standar Deviasi  :&quot;</span><span class="p">,</span> <span class="nb">round</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="n">col</span><span class="p">]</span><span class="o">.</span><span class="n">std</span><span class="p">(),</span> <span class="mi">6</span><span class="p">))</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Variansi         :&quot;</span><span class="p">,</span> <span class="nb">round</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="n">col</span><span class="p">]</span><span class="o">.</span><span class="n">var</span><span class="p">(),</span> <span class="mi">6</span><span class="p">))</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Statistik untuk sepal_length
+Jumlah Data      : 150
+Rata-rata        : 5.843333333333334
+Nilai Minimum    : 4.3
+Q1               : 5.1
+Median (Q2)      : 5.8
+Q3               : 6.4
+Nilai Maximum    : 7.9
+Kemencengan      : 0.314911
+Modus            : 5.0 dengan jumlah 10
+Standar Deviasi  : 0.828066
+Variansi         : 0.685694
+
+
+Statistik untuk sepal_width
+Jumlah Data      : 150
+Rata-rata        : 3.0573333333333337
+Nilai Minimum    : 2.0
+Q1               : 2.8
+Median (Q2)      : 3.0
+Q3               : 3.3
+Nilai Maximum    : 4.4
+Kemencengan      : 0.318966
+Modus            : 3.0 dengan jumlah 26
+Standar Deviasi  : 0.435866
+Variansi         : 0.189979
+
+
+Statistik untuk petal_length
+Jumlah Data      : 150
+Rata-rata        : 3.7580000000000005
+Nilai Minimum    : 1.0
+Q1               : 1.6
+Median (Q2)      : 4.35
+Q3               : 5.1
+Nilai Maximum    : 6.9
+Kemencengan      : -0.274884
+Modus            : 1.4 dengan jumlah 13
+Standar Deviasi  : 1.765298
+Variansi         : 3.116278
+
+
+Statistik untuk petal_width
+Jumlah Data      : 150
+Rata-rata        : 1.1993333333333336
+Nilai Minimum    : 0.1
+Q1               : 0.3
+Median (Q2)      : 1.3
+Q3               : 1.8
+Nilai Maximum    : 2.5
+Kemencengan      : -0.102967
+Modus            : 0.2 dengan jumlah 29
+Standar Deviasi  : 0.762238
+Variansi         : 0.581006
+</pre></div>
+</div>
+</div>
+</div>
+<p>Penjelasan Kode:</p>
+<ul class="simple">
+<li><p>import pandas as pd digunakan untuk mengimpor library pandas yang berfungsi mengolah dan membaca data.</p></li>
+<li><p>from scipy import stats digunakan untuk mengimpor fungsi statistik tambahan seperti perhitungan modus.</p></li>
+<li><p>df = pd.read_csv(“IRIS.csv”) digunakan untuk membaca file dataset IRIS ke dalam variabel df.</p></li>
+<li><p>df.select_dtypes(include=[‘int64’,’float64’]) digunakan untuk mengambil hanya kolom bertipe numerik agar kolom kategorikal (species) tidak ikut dihitung.</p></li>
+<li><p>for col in df_numeric.columns: digunakan untuk melakukan perulangan pada setiap kolom numerik.</p></li>
+<li><p>df[col].count() digunakan untuk menghitung jumlah data pada kolom tersebut.</p></li>
+<li><p>df[col].mean() digunakan untuk menghitung nilai rata-rata.</p></li>
+<li><p>df[col].min() dan df[col].max() digunakan untuk mencari nilai minimum dan maksimum.</p></li>
+<li><p>df[col].quantile() digunakan untuk menghitung kuartil (Q1, Q2/median, Q3).</p></li>
+<li><p>df[col].skew() digunakan untuk menghitung kemencengan (skewness) distribusi data.</p></li>
+<li><p>stats.mode() digunakan untuk menghitung nilai yang paling sering muncul (modus).</p></li>
+<li><p>df[col].std() digunakan untuk menghitung standar deviasi.</p></li>
+<li><p>df[col].var() digunakan untuk menghitung variansi data.</p></li>
+</ul>
+</section>
+</section>
+<section id="kesimpulan-eksplorasi">
+<h2>Kesimpulan Eksplorasi<a class="headerlink" href="#kesimpulan-eksplorasi" title="Link to this heading">#</a></h2>
+<p>Berdasarkan eksplorasi dataset Iris menggunakan Orange dan Colab:</p>
+<p>Eksplorasi data Iris menggunakan Orange dan Google Colab (Python) menunjukkan bahwa dataset memiliki tiga kelas bunga (setosa, versicolor, virginica) dengan empat fitur utama, yaitu sepal length, sepal width, petal length, dan petal width.</p>
+<p>Dari sisi visualisasi, seperti scatter plot membantu memperlihatkan pola pemisahan antar kelas, terutama pada petal length dan petal width yang tampak paling membedakan setosa dari dua spesies lainnya.</p>
+<p>Sementara itu, analisis korelasi menunjukkan hubungan positif kuat antara petal length dan petal width, sedangkan sepal width memiliki korelasi yang lebih lemah terhadap fitur lain.</p>
+<p>Berdasarkan statistik deskriptif, terlihat perbedaan nilai rata-rata dan sebaran setiap fitur pada masing-masing spesies, di mana setosa memiliki ukuran petal paling kecil dan virginica paling besar.</p>
+<p>Secara keseluruhan, eksplorasi ini menunjukkan bahwa fitur petal merupakan indikator paling penting dalam membedakan spesies pada dataset Iris.</p>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -599,7 +1470,7 @@ Data dunia nyata sering memiliki masalah, seperti:</p>
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Business Understanding</p>
+        <p class="prev-next-title">Data Mining</p>
       </div>
     </a>
     <a class="right-next"
@@ -627,6 +1498,7 @@ Data dunia nyata sering memiliki masalah, seperti:</p>
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Data Understanding</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pengertian-data-understanding">Pengertian Data Understanding</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tujuan-data-understanding">Tujuan Data Understanding</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mengapa-data-understanding-penting">Mengapa Data Understanding Penting?</a></li>
@@ -637,6 +1509,31 @@ Data dunia nyata sering memiliki masalah, seperti:</p>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ringkasan">Ringkasan</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kesimpulan">Kesimpulan</a></li>
 </ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#eksplorasi-data-iris">Eksplorasi data iris</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#visualisasi-data">Visualisasi Data</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-tujuan-visualisasi">A. Tujuan Visualisasi</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#b-visualisasi-menggunakan-orange">B. Visualisasi menggunakan Orange</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#c-visualisasi-menggunakan-google-colab-python">C. Visualisasi menggunakan Google Colab (Python)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#analisa-korelasi">Analisa korelasi</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-tujuan-analisa-korelasi">A. Tujuan Analisa Korelasi</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#b-korelasi-menggunakan-orange">B. Korelasi menggunakan Orange</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#c-korelasi-menggunakan-colab-python">C. Korelasi menggunakan Colab (Python)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#statistik-dikriptif">Statistik dikriptif</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-tujuan-statistik-deskriptif">A. Tujuan Statistik Deskriptif</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#b-statistik-deskriptif-menggunakan-orange">B. Statistik Deskriptif menggunakan Orange</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#c-statistik-deskriptif-menggunakan-colab-python">C. Statistik Deskriptif menggunakan Colab (Python)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kesimpulan-eksplorasi">Kesimpulan Eksplorasi</a></li>
+</ul>
+</li>
+</ul>
+
   </nav></div>
 
 </div></div>
@@ -650,7 +1547,7 @@ Data dunia nyata sering memiliki masalah, seperti:</p>
   <div class="footer-item">
     
 <p class="component-author">
-By Rian Renaldy (240411100053)
+By The Jupyter Book Community
 </p>
 
   </div>
@@ -660,7 +1557,7 @@ By Rian Renaldy (240411100053)
 
   <p class="copyright">
     
-      © Copyright 2026.
+      © Copyright 2023.
       <br/>
     
   </p>
