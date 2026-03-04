@@ -62,7 +62,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'Data Understanding';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Data Preparation" href="Data%20Preparation.html" />
+    <link rel="next" title="Menghitung Jarak Dataset Campuran" href="Mengukur%20Jarak%20Data%20Campuran.html" />
     <link rel="prev" title="Data Mining" href="Business%20Understanding.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -177,14 +177,18 @@
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
                 <a class="reference internal" href="intro.html">
-                    Halaman Depan
+                    Welcome to your Jupyter Book
                 </a>
             </li>
         </ul>
         <ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="Business%20Understanding.html">Business Understanding</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Business%20Understanding.html">Data Mining</a></li>
 
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Data Understanding</a></li>
+
+
+<li class="toctree-l1"><a class="reference internal" href="Mengukur%20Jarak%20Data%20Campuran.html">Menghitung Jarak Dataset Campuran</a></li>
+
 
 <li class="toctree-l1"><a class="reference internal" href="Data%20Preparation.html">Data Preparation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Modelling.html">Modelling</a></li>
@@ -398,25 +402,36 @@ document.write(`
 </ul>
 </li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#eksplorasi-data-iris">Eksplorasi data iris</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sumber-dataset-database">Sumber Dataset (Database)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#class-label-target">Class (Label Target)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#penjelasan-fitur-secara-mendalam">Penjelasan Fitur Secara Mendalam</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#visualisasi-data">Visualisasi Data</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-tujuan-visualisasi">A. Tujuan Visualisasi</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#b-visualisasi-menggunakan-orange">B. Visualisasi menggunakan Orange</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#c-visualisasi-menggunakan-google-colab-python">C. Visualisasi menggunakan Google Colab (Python)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#c-visualisasi-menggunakan-python">C. Visualisasi menggunakan Python</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#analisa-korelasi">Analisa korelasi</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-tujuan-analisa-korelasi">A. Tujuan Analisa Korelasi</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#b-korelasi-menggunakan-orange">B. Korelasi menggunakan Orange</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#c-korelasi-menggunakan-colab-python">C. Korelasi menggunakan Colab (Python)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#c-korelasi-menggunakan-python">C. Korelasi menggunakan Python</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#statistik-dikriptif">Statistik dikriptif</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-tujuan-statistik-deskriptif">A. Tujuan Statistik Deskriptif</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#b-statistik-deskriptif-menggunakan-orange">B. Statistik Deskriptif menggunakan Orange</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#c-statistik-deskriptif-menggunakan-colab-python">C. Statistik Deskriptif menggunakan Colab (Python)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#c-statistik-deskriptif-menggunakan-python">C. Statistik Deskriptif menggunakan Python</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rangkuman-data-iris">Rangkuman Data Iris</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kesimpulan-eksplorasi">Kesimpulan Eksplorasi</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#menghitung-jarak-dataset-iris">Menghitung Jarak Dataset Iris</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-tujuan-menghitung-jarak-dataset-iris">A. Tujuan Menghitung Jarak Dataset Iris</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#b-visualisasi-menghitung-jarak-menggunakan-orange">B. Visualisasi Menghitung Jarak menggunakan Orange</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#b-visualisasi-menghitung-jarak-menggunakan-python">B. Visualisasi Menghitung Jarak menggunakan Python</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kesimpulan-menghitung-jarak-dataset-iris">Kesimpulan Menghitung Jarak Dataset Iris</a></li>
 </ul>
 </li>
 </ul>
@@ -603,11 +618,95 @@ Data dunia nyata sering memiliki masalah, seperti:</p>
 <ul class="simple">
 <li><p>Species (jenis bunga: Setosa, Versicolor, Virginica)</p></li>
 </ul>
+<section id="sumber-dataset-database">
+<h2>Sumber Dataset (Database)<a class="headerlink" href="#sumber-dataset-database" title="Link to this heading">#</a></h2>
+<p>Dataset Iris tersedia di:</p>
+<p><a class="reference external" href="https://www.kaggle.com/datasets/arshid/iris-flower-dataset">https://www.kaggle.com/datasets/arshid/iris-flower-dataset</a></p>
+</section>
+<section id="class-label-target">
+<h2>Class (Label Target)<a class="headerlink" href="#class-label-target" title="Link to this heading">#</a></h2>
+<p>Terdapat 3 class:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Class</p></th>
+<th class="head"><p>Nama</p></th>
+<th class="head"><p>Jumlah Data</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>0</p></td>
+<td><p>Setosa</p></td>
+<td><p>50</p></td>
+</tr>
+<tr class="row-odd"><td><p>1</p></td>
+<td><p>Versicolor</p></td>
+<td><p>50</p></td>
+</tr>
+<tr class="row-even"><td><p>2</p></td>
+<td><p>Virginica</p></td>
+<td><p>50</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Total: 150 data
+Data per class: Seimbang (balanced dataset)</p>
+<p>Artinya:
+Tidak ada class imbalance
+Cocok untuk model klasifikasi tanpa perlu teknik balancing</p>
+</section>
+<section id="penjelasan-fitur-secara-mendalam">
+<h2>Penjelasan Fitur Secara Mendalam<a class="headerlink" href="#penjelasan-fitur-secara-mendalam" title="Link to this heading">#</a></h2>
+<p>Semua fitur bertipe:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Numerical (Continuous Float)
+Skala pengukuran: Rasio (Ratio scale)
+Satuan: Centimeter (cm)
+</pre></div>
+</div>
+<ol class="arabic">
+<li><p>Sepal Length (cm)</p>
+<ul class="simple">
+<li><p>Panjang kelopak bunga bagian luar</p></li>
+<li><p>Range: ± 4.3 – 7.9 cm</p></li>
+<li><p>Makna biologis: menunjukkan ukuran bunga secara umum</p></li>
+</ul>
+<p>Rata-rata keseluruhan:
+≈ 5.84 cm</p>
+</li>
+<li><p>Sepal Width (cm)</p>
+<ul class="simple">
+<li><p>Lebar kelopak luar</p></li>
+<li><p>Range: ± 2.0 – 4.4 cm</p></li>
+<li><p>Fitur ini sering overlap antar class</p></li>
+</ul>
+<p>Rata-rata:
+≈ 3.05 cm</p>
+</li>
+<li><p>Petal Length (cm)</p>
+<ul class="simple">
+<li><p>Panjang mahkota bunga</p></li>
+<li><p>Range: ± 1.0 – 6.9 cm</p></li>
+<li><p>Fitur PALING membedakan class</p></li>
+</ul>
+<p>Rata-rata:
+≈ 3.76 cm</p>
+</li>
+<li><p>Petal Width (cm)</p>
+<ul class="simple">
+<li><p>Lebar mahkota bunga</p></li>
+<li><p>Range: ± 0.1 – 2.5 cm</p></li>
+<li><p>Sangat kuat untuk klasifikasi</p></li>
+</ul>
+<p>Rata-rata:
+≈ 1.20 cm</p>
+</li>
+</ol>
 <p>Eksplorasi data pada penelitian/praktikum ini dilakukan menggunakan dua tools:</p>
 <ul class="simple">
 <li><p>Orange <span class="math notranslate nohighlight">\(\rightarrow\)</span> visual &amp; workflow tanpa coding</p></li>
-<li><p>Google Colab (Python) <span class="math notranslate nohighlight">\(\rightarrow\)</span> analisis berbasis coding</p></li>
+<li><p>Kode Python <span class="math notranslate nohighlight">\(\rightarrow\)</span> analisis berbasis coding</p></li>
 </ul>
+</section>
 <section id="visualisasi-data">
 <h2>Visualisasi Data<a class="headerlink" href="#visualisasi-data" title="Link to this heading">#</a></h2>
 <section id="a-tujuan-visualisasi">
@@ -623,14 +722,29 @@ Data dunia nyata sering memiliki masalah, seperti:</p>
 </section>
 <section id="b-visualisasi-menggunakan-orange">
 <h3>B. Visualisasi menggunakan Orange<a class="headerlink" href="#b-visualisasi-menggunakan-orange" title="Link to this heading">#</a></h3>
-<p><img alt="image" src="https://hackmd.io/_uploads/SyQnrR9u-x.png" /></p>
+<p><img alt="image" src="https://hackmd.io/_uploads/Hknxu0fYWl.png" /></p>
 <p>Pada Orange, visualisasi dilakukan dengan workflow berikut:</p>
-<p><strong>File <span class="math notranslate nohighlight">\(\rightarrow\)</span> Data Table <span class="math notranslate nohighlight">\(\rightarrow\)</span> Scatter Plot/Select Columns<span class="math notranslate nohighlight">\(\rightarrow\)</span>Rank/Pivot Table/Correlations/Box Plot/Column Statistics/Distributions</strong></p>
+<p><strong>SQL Table <span class="math notranslate nohighlight">\(\rightarrow\)</span> Data Table <span class="math notranslate nohighlight">\(\rightarrow\)</span> Scatter Plot/Select Columns<span class="math notranslate nohighlight">\(\rightarrow\)</span>Rank/Pivot Table/Correlations/Box Plot/Column Statistics/Distributions</strong></p>
 <p>Beberapa visualisasi penting yang di coba:</p>
 <ol class="arabic">
-<li><p>File</p>
-<p>Widget File digunakan untuk memuat atau mengimpor dataset ke dalam Orange dari berbagai format file seperti CSV, Excel, atau TXT.</p>
-<p><img alt="image" src="https://hackmd.io/_uploads/Sy-Lm65O-e.png" /></p>
+<li><p>Sql Table</p>
+<p>Widget Sql Table merupakan pengaturan koneksi database pada widget SQL Table di aplikasi Orange untuk mengambil data dari PostgreSQL..</p>
+<p>Bagian Server</p>
+<ul class="simple">
+<li><p>PostgreSQL : Jenis database yang digunakan.</p></li>
+<li><p>localhost : Server database berada di komputer sendiri (lokal).</p></li>
+<li><p>Pendata : Nama database yang akan diakses.</p></li>
+<li><p>postgres : Username untuk login ke database.</p></li>
+<li><p>Password (••••••) : Kata sandi akun database.</p></li>
+<li><p>Connect : Tombol untuk menghubungkan Orange ke database PostgreSQL.</p></li>
+</ul>
+<p>Bagian Data Selection</p>
+<ul class="simple">
+<li><p>Table: (iris) Memilih tabel bernama iris dari database untuk digunakan sebagai dataset.</p></li>
+<li><p>Custom SQL : Opsi untuk menulis query SQL sendiri jika ingin mengambil data dengan perintah tertentu.</p></li>
+<li><p>Auto-discover categorical variables : Jika dicentang, Orange otomatis mendeteksi kolom kategorikal (misalnya kolom species).</p></li>
+</ul>
+<p><img alt="image" src="https://hackmd.io/_uploads/Hk64dAGtZx.png" /></p>
 </li>
 <li><p>Data Table</p>
 <p>Widget Data Table digunakan untuk menampilkan dataset dalam bentuk tabel, sehingga pengguna dapat melihat isi data secara lengkap.</p>
@@ -679,18 +793,26 @@ Widget Box Plot digunakan untuk menampilkan distribusi data, nilai median, renta
 </li>
 </ol>
 </section>
-<section id="c-visualisasi-menggunakan-google-colab-python">
-<h3>C. Visualisasi menggunakan Google Colab (Python)<a class="headerlink" href="#c-visualisasi-menggunakan-google-colab-python" title="Link to this heading">#</a></h3>
+<section id="c-visualisasi-menggunakan-python">
+<h3>C. Visualisasi menggunakan Python<a class="headerlink" href="#c-visualisasi-menggunakan-python" title="Link to this heading">#</a></h3>
 <ol class="arabic">
 <li><p>Pemanggilan Library</p>
-<p>Kode di bawah ini berfungsi untuk mengimpor file iris yang akan digunakan dalam proses analisis dan visualisasi data pada Google Colab.</p>
+<p>Kode di bawah ini berfungsi untuk mengimpor file iris yang akan digunakan dalam proses analisis dan visualisasi menggunakan kode.</p>
 </li>
 </ol>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+
 <span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">seaborn</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sns</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">sqlalchemy</span><span class="w"> </span><span class="kn">import</span> <span class="n">create_engine</span>
+
+<span class="n">engine</span> <span class="o">=</span> <span class="n">create_engine</span><span class="p">(</span>
+    <span class="s2">&quot;postgresql+psycopg2://postgres:samhaji@127.0.0.1:5432/Pendata&quot;</span>
+<span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -699,19 +821,22 @@ Widget Box Plot digunakan untuk menampilkan distribusi data, nilai median, renta
 <span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
 <span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="kn">import</span><span class="w"> </span><span class="nn">seaborn</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sns</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
 
 <span class="ne">ModuleNotFoundError</span>: No module named &#39;pandas&#39;
 </pre></div>
 </div>
 </div>
 </div>
-<p>Penjelasan Kode:</p>
+<p>Penjelasan kode:</p>
 <ul class="simple">
-<li><p>Pandas (pd) digunakan untuk membaca dan mengolah data.</p></li>
-<li><p>Matplotlib (plt) digunakan untuk membuat grafik.</p></li>
-<li><p>Seaborn (sns) digunakan untuk membuat visualisasi data yang lebih menarik dan informatif.</p></li>
+<li><p>Import pandas as pd Digunakan untuk membaca, mengolah, dan memanipulasi data dalam bentuk tabel atau dataset.</p></li>
+<li><p>Import numpy as np : Digunakan untuk melakukan operasi perhitungan numerik dan pengolahan array pada data.</p></li>
+<li><p>Import matplotlib.pyplot as plt : Digunakan untuk membuat visualisasi data seperti grafik atau diagram.</p></li>
+<li><p>Import seaborn as sns : Digunakan untuk membuat visualisasi data statistik yang lebih menarik dan informatif.</p></li>
+<li><p>from sqlalchemy import create_engine : Digunakan untuk membuat koneksi antara program Python dengan database.</p></li>
+<li><p>engine = create_engine(…) : Kode ini berfungsi untuk membuat koneksi ke database PostgreSQL yang bernama Pendata menggunakan username postgres, password samhaji, dan alamat server 127.0.0.1 sehingga data dari database dapat diambil dan diolah di Python.</p></li>
 </ul>
 <ol class="arabic" start="2">
 <li><p>Membaca Dataset Iris</p>
@@ -720,15 +845,13 @@ Widget Box Plot digunakan untuk menampilkan distribusi data, nilai median, renta
 </ol>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;IRIS.csv&#39;</span><span class="p">)</span>
-<span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_sql</span><span class="p">(</span><span class="s1">&#39;SELECT * FROM public.&quot;iris&quot;;&#39;</span><span class="p">,</span> <span class="n">engine</span><span class="p">)</span>
+<span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">15</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html">
-  <div id="df-5d268919-27b0-4754-97e8-f5aa700f78b4" class="colab-df-container">
-    <div>
+<div class="output text_html"><div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
@@ -834,97 +957,144 @@ Widget Box Plot digunakan untuk menampilkan distribusi data, nilai median, renta
       <td>0.1</td>
       <td>Iris-setosa</td>
     </tr>
+    <tr>
+      <th>10</th>
+      <td>5.4</td>
+      <td>3.7</td>
+      <td>1.5</td>
+      <td>0.2</td>
+      <td>Iris-setosa</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>4.8</td>
+      <td>3.4</td>
+      <td>1.6</td>
+      <td>0.2</td>
+      <td>Iris-setosa</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>4.8</td>
+      <td>3.0</td>
+      <td>1.4</td>
+      <td>0.1</td>
+      <td>Iris-setosa</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>4.3</td>
+      <td>3.0</td>
+      <td>1.1</td>
+      <td>0.1</td>
+      <td>Iris-setosa</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>5.8</td>
+      <td>4.0</td>
+      <td>1.2</td>
+      <td>0.2</td>
+      <td>Iris-setosa</td>
+    </tr>
   </tbody>
 </table>
-</div>
-    <div class="colab-df-buttons">
-
-  <div class="colab-df-container">
-    <button class="colab-df-convert" onclick="convertToInteractive('df-5d268919-27b0-4754-97e8-f5aa700f78b4')"
-            title="Convert this dataframe to an interactive table."
-            style="display:none;">
-
-  <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960">
-    <path d="M120-120v-720h720v720H120Zm60-500h600v-160H180v160Zm220 220h160v-160H400v160Zm0 220h160v-160H400v160ZM180-400h160v-160H180v160Zm440 0h160v-160H620v160ZM180-180h160v-160H180v160Zm440 0h160v-160H620v160Z"/>
-  </svg>
-    </button>
-
-  <style>
-    .colab-df-container {
-      display:flex;
-      gap: 12px;
-    }
-
-    .colab-df-convert {
-      background-color: #E8F0FE;
-      border: none;
-      border-radius: 50%;
-      cursor: pointer;
-      display: none;
-      fill: #1967D2;
-      height: 32px;
-      padding: 0 0 0 0;
-      width: 32px;
-    }
-
-    .colab-df-convert:hover {
-      background-color: #E2EBFA;
-      box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);
-      fill: #174EA6;
-    }
-
-    .colab-df-buttons div {
-      margin-bottom: 4px;
-    }
-
-    [theme=dark] .colab-df-convert {
-      background-color: #3B4455;
-      fill: #D2E3FC;
-    }
-
-    [theme=dark] .colab-df-convert:hover {
-      background-color: #434B5C;
-      box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
-      filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));
-      fill: #FFFFFF;
-    }
-  </style>
-
-    <script>
-      const buttonEl =
-        document.querySelector('#df-5d268919-27b0-4754-97e8-f5aa700f78b4 button.colab-df-convert');
-      buttonEl.style.display =
-        google.colab.kernel.accessAllowed ? 'block' : 'none';
-
-      async function convertToInteractive(key) {
-        const element = document.querySelector('#df-5d268919-27b0-4754-97e8-f5aa700f78b4');
-        const dataTable =
-          await google.colab.kernel.invokeFunction('convertToInteractive',
-                                                    [key], {});
-        if (!dataTable) return;
-
-        const docLinkHtml = 'Like what you see? Visit the ' +
-          '<a target="_blank" href=https://colab.research.google.com/notebooks/data_table.ipynb>data table notebook</a>'
-          + ' to learn more about interactive tables.';
-        element.innerHTML = '';
-        dataTable['output_type'] = 'display_data';
-        await google.colab.output.renderOutput(dataTable, element);
-        const docLink = document.createElement('div');
-        docLink.innerHTML = docLinkHtml;
-        element.appendChild(docLink);
-      }
-    </script>
-  </div>
-
-
-    </div>
-  </div>
-</div></div>
+</div></div></div>
 </div>
 <p>Penjelasan Kode:</p>
 <ul class="simple">
-<li><p>pd.read_csv(‘IRIS.csv’) digunakan untuk membaca file CSV bernama IRIS.csv dan menyimpannya ke dalam variabel df.</p></li>
-<li><p>df.head(10) digunakan untuk menampilkan 10 baris pertama dari dataset sebagai preview data.</p></li>
+<li><p>pd.read_sql(‘SELECT * FROM public.”iris”;’, engine) Digunakan untuk mengambil seluruh data dari tabel iris pada database menggunakan koneksi engine, lalu menyimpannya ke dalam DataFrame df.</p></li>
+<li><p>df.head() Digunakan untuk menampilkan 5 baris pertama dari DataFrame sebagai preview data.</p></li>
+</ul>
+<ol class="arabic" start="3">
+<li><p>Informasi Database</p>
+<p>Memastikan bahwa dataset yang digunakan diperoleh dari database PostgreSQL.</p>
+</li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">query</span> <span class="o">=</span> <span class="s1">&#39;SELECT * FROM public.&quot;iris&quot;&#39;</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Host:&quot;</span><span class="p">,</span> <span class="s2">&quot;127.0.0.1&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Port:&quot;</span><span class="p">,</span> <span class="mi">5432</span><span class="p">,</span>
+      <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Database:&quot;</span><span class="p">,</span> <span class="s2">&quot;Pendata&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Table:&quot;</span><span class="p">,</span> <span class="s1">&#39;public.&quot;iris&quot;&#39;</span><span class="p">,</span>
+      <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Query:&quot;</span><span class="p">,</span> <span class="n">query</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Host: 127.0.0.1 
+Port: 5432 
+Database: Pendata 
+Table: public.&quot;iris&quot; 
+Query: SELECT * FROM public.&quot;iris&quot;
+</pre></div>
+</div>
+</div>
+</div>
+<p>Penjelasan Kode:</p>
+<ul class="simple">
+<li><p>query = ‘SELECT * FROM public.”iris”’ Digunakan untuk membuat perintah SQL query yang berfungsi mengambil seluruh data dari tabel data_student_mental_healt pada schema public di PostgreSQL.</p></li>
+<li><p>print(“Host:”, “127.0.0.1”, “\nPort:”, 5432, “\nDatabase:”, “Pendata”, “\nTable:”, ‘public.”iris”’, “\nQuery:”, query) Digunakan untuk menampilkan informasi koneksi database seperti host, port, nama database, tabel yang digunakan, serta query SQL agar sumber data yang digunakan dalam analisis dapat diketahui dengan jelas.</p></li>
+</ul>
+<ol class="arabic" start="4">
+<li><p>Atribut dataset</p>
+<p>Mengetahui jumlah dan ukuran dataset untuk memahami skala analisis yang akan dilakukan.</p>
+</li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Jumlah baris:&quot;</span><span class="p">,</span> <span class="n">df</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Jumlah kolom:&quot;</span><span class="p">,</span> <span class="n">df</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Jumlah baris: 150
+Jumlah kolom: 5
+</pre></div>
+</div>
+</div>
+</div>
+<p>Penjelasan Kode:</p>
+<ul class="simple">
+<li><p>df.shape[0] Digunakan untuk menampilkan jumlah baris (record) yang terdapat pada DataFrame.</p></li>
+<li><p>df.shape[1] Digunakan untuk menampilkan jumlah kolom (atribut) yang terdapat pada DataFrame.</p></li>
+</ul>
+<ol class="arabic" start="5">
+<li><p>Struktur dan Tipe Data</p>
+<p>Mengidentifikasi jenis data pada setiap atribut sekaligus memastikan tidak terdapat nilai kosong yang tidak terdeteksi.</p>
+</li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Tipe Data setiap kolom:&quot;</span><span class="p">)</span>
+<span class="n">df</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Tipe Data setiap kolom:
+&lt;class &#39;pandas.DataFrame&#39;&gt;
+RangeIndex: 150 entries, 0 to 149
+Data columns (total 5 columns):
+ #   Column        Non-Null Count  Dtype  
+---  ------        --------------  -----  
+ 0   sepal_length  150 non-null    float64
+ 1   sepal_width   150 non-null    float64
+ 2   petal_length  150 non-null    float64
+ 3   petal_width   150 non-null    float64
+ 4   species       150 non-null    str    
+dtypes: float64(4), str(1)
+memory usage: 6.0 KB
+</pre></div>
+</div>
+</div>
+</div>
+<p>Penjelasan Kode:</p>
+<ul class="simple">
+<li><p>print(“Tipe Data setiap kolom:”) Digunakan untuk menampilkan judul informasi mengenai tipe data pada setiap kolom.</p></li>
+<li><p><a class="reference external" href="http://df.info">df.info</a>() Digunakan untuk menampilkan struktur DataFrame seperti nama kolom, tipe data tiap kolom, jumlah data yang tidak kosong, serta penggunaan memori.</p></li>
 </ul>
 <ol class="arabic" start="3">
 <li><p>Visualisasi Data (Scatter Plot)</p>
@@ -947,7 +1117,7 @@ Widget Box Plot digunakan untuk menampilkan distribusi data, nilai median, renta
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/f3bcd6000c3fbc330a6e9ccb60b05d21e783950420a83c42c2619df409d58229.png" src="_images/f3bcd6000c3fbc330a6e9ccb60b05d21e783950420a83c42c2619df409d58229.png" />
+<img alt="_images/55db6d1b4f86a43350204ed644c73baee76b892d7388816bd052418d317e9aa0.png" src="_images/55db6d1b4f86a43350204ed644c73baee76b892d7388816bd052418d317e9aa0.png" />
 </div>
 </div>
 <p>Penjelasan Kode:</p>
@@ -976,7 +1146,7 @@ Widget Box Plot digunakan untuk menampilkan distribusi data, nilai median, renta
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/b3c864afa9abdaf4cc92494ef06bc465db718d5849d52a9a42cfaf2f12968a91.png" src="_images/b3c864afa9abdaf4cc92494ef06bc465db718d5849d52a9a42cfaf2f12968a91.png" />
+<img alt="_images/25c1fc27e548ff57c69880b0ea34ece0ac8e3d007479ad2efdc31d85d1b0a138.png" src="_images/25c1fc27e548ff57c69880b0ea34ece0ac8e3d007479ad2efdc31d85d1b0a138.png" />
 </div>
 </div>
 <p>Penjelasan Kode:</p>
@@ -1022,8 +1192,8 @@ File <span class="math notranslate nohighlight">\(\rightarrow\)</span> Correlati
 <p>Interpretasi:
 Petal attributes merupakan fitur paling penting dalam membedakan spesies.</p>
 </section>
-<section id="c-korelasi-menggunakan-colab-python">
-<h3>C. Korelasi menggunakan Colab (Python)<a class="headerlink" href="#c-korelasi-menggunakan-colab-python" title="Link to this heading">#</a></h3>
+<section id="c-korelasi-menggunakan-python">
+<h3>C. Korelasi menggunakan Python<a class="headerlink" href="#c-korelasi-menggunakan-python" title="Link to this heading">#</a></h3>
 <p>Kode berikut digunakan untuk mengukur tingkat hubungan (korelasi) antara variabel numerik dalam dataset, sehingga dapat diketahui seberapa kuat keterkaitan antar variabel tersebut.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1033,9 +1203,7 @@ Petal attributes merupakan fitur paling penting dalam membedakan spesies.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html">
-  <div id="df-2bc36cf2-fe9d-4be1-9c3c-8bfbf440afd3" class="colab-df-container">
-    <div>
+<div class="output text_html"><div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
@@ -1090,145 +1258,7 @@ Petal attributes merupakan fitur paling penting dalam membedakan spesies.</p>
     </tr>
   </tbody>
 </table>
-</div>
-    <div class="colab-df-buttons">
-
-  <div class="colab-df-container">
-    <button class="colab-df-convert" onclick="convertToInteractive('df-2bc36cf2-fe9d-4be1-9c3c-8bfbf440afd3')"
-            title="Convert this dataframe to an interactive table."
-            style="display:none;">
-
-  <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960">
-    <path d="M120-120v-720h720v720H120Zm60-500h600v-160H180v160Zm220 220h160v-160H400v160Zm0 220h160v-160H400v160ZM180-400h160v-160H180v160Zm440 0h160v-160H620v160ZM180-180h160v-160H180v160Zm440 0h160v-160H620v160Z"/>
-  </svg>
-    </button>
-
-  <style>
-    .colab-df-container {
-      display:flex;
-      gap: 12px;
-    }
-
-    .colab-df-convert {
-      background-color: #E8F0FE;
-      border: none;
-      border-radius: 50%;
-      cursor: pointer;
-      display: none;
-      fill: #1967D2;
-      height: 32px;
-      padding: 0 0 0 0;
-      width: 32px;
-    }
-
-    .colab-df-convert:hover {
-      background-color: #E2EBFA;
-      box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);
-      fill: #174EA6;
-    }
-
-    .colab-df-buttons div {
-      margin-bottom: 4px;
-    }
-
-    [theme=dark] .colab-df-convert {
-      background-color: #3B4455;
-      fill: #D2E3FC;
-    }
-
-    [theme=dark] .colab-df-convert:hover {
-      background-color: #434B5C;
-      box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
-      filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));
-      fill: #FFFFFF;
-    }
-  </style>
-
-    <script>
-      const buttonEl =
-        document.querySelector('#df-2bc36cf2-fe9d-4be1-9c3c-8bfbf440afd3 button.colab-df-convert');
-      buttonEl.style.display =
-        google.colab.kernel.accessAllowed ? 'block' : 'none';
-
-      async function convertToInteractive(key) {
-        const element = document.querySelector('#df-2bc36cf2-fe9d-4be1-9c3c-8bfbf440afd3');
-        const dataTable =
-          await google.colab.kernel.invokeFunction('convertToInteractive',
-                                                    [key], {});
-        if (!dataTable) return;
-
-        const docLinkHtml = 'Like what you see? Visit the ' +
-          '<a target="_blank" href=https://colab.research.google.com/notebooks/data_table.ipynb>data table notebook</a>'
-          + ' to learn more about interactive tables.';
-        element.innerHTML = '';
-        dataTable['output_type'] = 'display_data';
-        await google.colab.output.renderOutput(dataTable, element);
-        const docLink = document.createElement('div');
-        docLink.innerHTML = docLinkHtml;
-        element.appendChild(docLink);
-      }
-    </script>
-  </div>
-
-
-  <div id="id_a90d1b5f-f1ef-49a4-85b7-1946ff8c5a08">
-    <style>
-      .colab-df-generate {
-        background-color: #E8F0FE;
-        border: none;
-        border-radius: 50%;
-        cursor: pointer;
-        display: none;
-        fill: #1967D2;
-        height: 32px;
-        padding: 0 0 0 0;
-        width: 32px;
-      }
-
-      .colab-df-generate:hover {
-        background-color: #E2EBFA;
-        box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);
-        fill: #174EA6;
-      }
-
-      [theme=dark] .colab-df-generate {
-        background-color: #3B4455;
-        fill: #D2E3FC;
-      }
-
-      [theme=dark] .colab-df-generate:hover {
-        background-color: #434B5C;
-        box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
-        filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));
-        fill: #FFFFFF;
-      }
-    </style>
-    <button class="colab-df-generate" onclick="generateWithVariable('corr_matrix')"
-            title="Generate code using this dataframe."
-            style="display:none;">
-
-  <svg xmlns="http://www.w3.org/2000/svg" height="24px"viewBox="0 0 24 24"
-       width="24px">
-    <path d="M7,19H8.4L18.45,9,17,7.55,7,17.6ZM5,21V16.75L18.45,3.32a2,2,0,0,1,2.83,0l1.4,1.43a1.91,1.91,0,0,1,.58,1.4,1.91,1.91,0,0,1-.58,1.4L9.25,21ZM18.45,9,17,7.55Zm-12,3A5.31,5.31,0,0,0,4.9,8.1,5.31,5.31,0,0,0,1,6.5,5.31,5.31,0,0,0,4.9,4.9,5.31,5.31,0,0,0,6.5,1,5.31,5.31,0,0,0,8.1,4.9,5.31,5.31,0,0,0,12,6.5,5.46,5.46,0,0,0,6.5,12Z"/>
-  </svg>
-    </button>
-    <script>
-      (() => {
-      const buttonEl =
-        document.querySelector('#id_a90d1b5f-f1ef-49a4-85b7-1946ff8c5a08 button.colab-df-generate');
-      buttonEl.style.display =
-        google.colab.kernel.accessAllowed ? 'block' : 'none';
-
-      buttonEl.onclick = () => {
-        google.colab.notebook.generateWithVariable('corr_matrix');
-      }
-      })();
-    </script>
-  </div>
-
-    </div>
-  </div>
-</div></div>
+</div></div></div>
 </div>
 <p>Penjelasan Kode:</p>
 <ul class="simple">
@@ -1304,18 +1334,12 @@ Metode sama <span class="math notranslate nohighlight">\(\rightarrow\)</span> Pe
 <li><p>Virginica memiliki rata-rata terbesar</p></li>
 </ul>
 </section>
-<section id="c-statistik-deskriptif-menggunakan-colab-python">
-<h3>C. Statistik Deskriptif menggunakan Colab (Python)<a class="headerlink" href="#c-statistik-deskriptif-menggunakan-colab-python" title="Link to this heading">#</a></h3>
+<section id="c-statistik-deskriptif-menggunakan-python">
+<h3>C. Statistik Deskriptif menggunakan Python<a class="headerlink" href="#c-statistik-deskriptif-menggunakan-python" title="Link to this heading">#</a></h3>
 <p>Kode berikut digunakan untuk menghitung statistik deskriptif pada dataset IRIS, yang bertujuan untuk memberikan gambaran umum mengenai karakteristik data, seperti jumlah data, rata-rata, nilai minimum, maksimum, kuartil, standar deviasi, variansi, skewness, dan modus.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">scipy</span><span class="w"> </span><span class="kn">import</span> <span class="n">stats</span>
-
-<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;IRIS.csv&quot;</span><span class="p">)</span>
-
-<span class="c1"># Ambil hanya kolom numerik (tanpa species)</span>
-<span class="n">df_numeric</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">select_dtypes</span><span class="p">(</span><span class="n">include</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;int64&#39;</span><span class="p">,</span><span class="s1">&#39;float64&#39;</span><span class="p">])</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_numeric</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">select_dtypes</span><span class="p">(</span><span class="n">include</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;int64&#39;</span><span class="p">,</span><span class="s1">&#39;float64&#39;</span><span class="p">])</span>
 
 <span class="k">for</span> <span class="n">col</span> <span class="ow">in</span> <span class="n">df_numeric</span><span class="o">.</span><span class="n">columns</span><span class="p">:</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Statistik untuk&quot;</span><span class="p">,</span> <span class="n">col</span><span class="p">,)</span>
@@ -1327,10 +1351,8 @@ Metode sama <span class="math notranslate nohighlight">\(\rightarrow\)</span> Pe
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Q3               :&quot;</span><span class="p">,</span> <span class="n">df</span><span class="p">[</span><span class="n">col</span><span class="p">]</span><span class="o">.</span><span class="n">quantile</span><span class="p">(</span><span class="mf">0.75</span><span class="p">))</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Nilai Maximum    :&quot;</span><span class="p">,</span> <span class="n">df</span><span class="p">[</span><span class="n">col</span><span class="p">]</span><span class="o">.</span><span class="n">max</span><span class="p">())</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Kemencengan      :&quot;</span><span class="p">,</span> <span class="nb">round</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="n">col</span><span class="p">]</span><span class="o">.</span><span class="n">skew</span><span class="p">(),</span> <span class="mi">6</span><span class="p">))</span>
-
-    <span class="n">mode</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">mode</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="n">col</span><span class="p">],</span> <span class="n">keepdims</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Modus            :&quot;</span><span class="p">,</span> <span class="n">mode</span><span class="o">.</span><span class="n">mode</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="s2">&quot;dengan jumlah&quot;</span><span class="p">,</span> <span class="n">mode</span><span class="o">.</span><span class="n">count</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
-
+    <span class="n">mode</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">col</span><span class="p">]</span><span class="o">.</span><span class="n">mode</span><span class="p">()</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Modus            :&quot;</span><span class="p">,</span> <span class="n">mode</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">mode</span><span class="o">.</span><span class="n">empty</span> <span class="k">else</span> <span class="s2">&quot;Tidak ada modus&quot;</span><span class="p">)</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Standar Deviasi  :&quot;</span><span class="p">,</span> <span class="nb">round</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="n">col</span><span class="p">]</span><span class="o">.</span><span class="n">std</span><span class="p">(),</span> <span class="mi">6</span><span class="p">))</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Variansi         :&quot;</span><span class="p">,</span> <span class="nb">round</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="n">col</span><span class="p">]</span><span class="o">.</span><span class="n">var</span><span class="p">(),</span> <span class="mi">6</span><span class="p">))</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
@@ -1347,81 +1369,540 @@ Median (Q2)      : 5.8
 Q3               : 6.4
 Nilai Maximum    : 7.9
 Kemencengan      : 0.314911
-Modus            : 5.0 dengan jumlah 10
+Modus            : 5.0
 Standar Deviasi  : 0.828066
 Variansi         : 0.685694
 
 
 Statistik untuk sepal_width
 Jumlah Data      : 150
-Rata-rata        : 3.0573333333333337
+Rata-rata        : 3.0540000000000003
 Nilai Minimum    : 2.0
 Q1               : 2.8
 Median (Q2)      : 3.0
 Q3               : 3.3
 Nilai Maximum    : 4.4
-Kemencengan      : 0.318966
-Modus            : 3.0 dengan jumlah 26
-Standar Deviasi  : 0.435866
-Variansi         : 0.189979
+Kemencengan      : 0.334053
+Modus            : 3.0
+Standar Deviasi  : 0.433594
+Variansi         : 0.188004
 
 
 Statistik untuk petal_length
 Jumlah Data      : 150
-Rata-rata        : 3.7580000000000005
+Rata-rata        : 3.758666666666666
 Nilai Minimum    : 1.0
 Q1               : 1.6
 Median (Q2)      : 4.35
 Q3               : 5.1
 Nilai Maximum    : 6.9
-Kemencengan      : -0.274884
-Modus            : 1.4 dengan jumlah 13
-Standar Deviasi  : 1.765298
-Variansi         : 3.116278
+Kemencengan      : -0.274464
+Modus            : 1.5
+Standar Deviasi  : 1.76442
+Variansi         : 3.113179
 
 
 Statistik untuk petal_width
 Jumlah Data      : 150
-Rata-rata        : 1.1993333333333336
+Rata-rata        : 1.1986666666666668
 Nilai Minimum    : 0.1
 Q1               : 0.3
 Median (Q2)      : 1.3
 Q3               : 1.8
 Nilai Maximum    : 2.5
-Kemencengan      : -0.102967
-Modus            : 0.2 dengan jumlah 29
-Standar Deviasi  : 0.762238
-Variansi         : 0.581006
+Kemencengan      : -0.104997
+Modus            : 0.2
+Standar Deviasi  : 0.763161
+Variansi         : 0.582414
 </pre></div>
 </div>
 </div>
 </div>
 <p>Penjelasan Kode:</p>
 <ul class="simple">
-<li><p>import pandas as pd digunakan untuk mengimpor library pandas yang berfungsi mengolah dan membaca data.</p></li>
-<li><p>from scipy import stats digunakan untuk mengimpor fungsi statistik tambahan seperti perhitungan modus.</p></li>
-<li><p>df = pd.read_csv(“IRIS.csv”) digunakan untuk membaca file dataset IRIS ke dalam variabel df.</p></li>
-<li><p>df.select_dtypes(include=[‘int64’,’float64’]) digunakan untuk mengambil hanya kolom bertipe numerik agar kolom kategorikal (species) tidak ikut dihitung.</p></li>
-<li><p>for col in df_numeric.columns: digunakan untuk melakukan perulangan pada setiap kolom numerik.</p></li>
-<li><p>df[col].count() digunakan untuk menghitung jumlah data pada kolom tersebut.</p></li>
-<li><p>df[col].mean() digunakan untuk menghitung nilai rata-rata.</p></li>
-<li><p>df[col].min() dan df[col].max() digunakan untuk mencari nilai minimum dan maksimum.</p></li>
-<li><p>df[col].quantile() digunakan untuk menghitung kuartil (Q1, Q2/median, Q3).</p></li>
-<li><p>df[col].skew() digunakan untuk menghitung kemencengan (skewness) distribusi data.</p></li>
-<li><p>stats.mode() digunakan untuk menghitung nilai yang paling sering muncul (modus).</p></li>
-<li><p>df[col].std() digunakan untuk menghitung standar deviasi.</p></li>
-<li><p>df[col].var() digunakan untuk menghitung variansi data.</p></li>
+<li><p>df_numeric = df.select_dtypes(include=[‘int64’,’float64’]) Digunakan untuk mengambil hanya kolom bertipe numerik agar kolom kategorikal tidak ikut dihitung statistiknya.</p></li>
+<li><p>for col in df_numeric.columns: Digunakan untuk melakukan perulangan pada setiap kolom numerik.</p></li>
+<li><p>df[col].count() Menghitung jumlah data (tidak termasuk nilai kosong).</p></li>
+<li><p>df[col].mean() Menghitung nilai rata-rata.</p></li>
+<li><p>df[col].min() dan df[col].max() Menentukan nilai minimum dan maksimum.</p></li>
+<li><p>df[col].quantile(0.25 / 0.5 / 0.75) Menghitung kuartil:</p>
+<ul>
+<li><p>Q1 (25%)</p></li>
+<li><p>Median / Q2 (50%)</p></li>
+<li><p>Q3 (75%)</p></li>
+</ul>
+</li>
+<li><p>df[col].skew() Menghitung kemencengan (skewness) distribusi data.</p></li>
+<li><p>df[col].mode() Menghitung nilai yang paling sering muncul (modus).</p></li>
+<li><p>mode.iloc[0] if not mode.empty digunakan untuk mengambil nilai modus pertama jika ada.</p></li>
+<li><p>df[col].std() Menghitung standar deviasi.</p></li>
+<li><p>df[col].var() Menghitung variansi.</p></li>
+<li><p>round(…, 6) Digunakan untuk membulatkan hasil perhitungan menjadi 6 angka di belakang koma.</p></li>
+</ul>
+<p><strong>Cek Class</strong></p>
+<p>Class adalah kategori atau label yang menunjukkan kelompok suatu data, class biasanya digunakan sebagai target (variabel output) pada proses klasifikasi.</p>
+<p>Dataset Iris diperkenalkan oleh Ronald Fisher dan sering digunakan untuk pembelajaran klasifikasi.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">class_count</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;species&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
+<span class="n">class_count</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Class&#39;</span><span class="p">,</span> <span class="s1">&#39;Jumlah&#39;</span><span class="p">]</span>
+<span class="n">class_count</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Class</th>
+      <th>Jumlah</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Iris-setosa</td>
+      <td>50</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Iris-versicolor</td>
+      <td>50</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Iris-virginica</td>
+      <td>50</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>Penjelasan Kode:</p>
+<ul class="simple">
+<li><p>class_count = df[‘species’].value_counts().reset_index() digunakan untuk menghitung jumlah data pada setiap kategori di kolom species.</p>
+<ul>
+<li><p>value_counts() berfungsi untuk menghitung frekuensi masing-masing kelas.</p></li>
+<li><p>reset_index() digunakan untuk mengubah hasil perhitungan menjadi DataFrame dan mengatur ulang index agar berbentuk tabel.</p></li>
+</ul>
+</li>
+<li><p>class_count.columns = [‘Class’, ‘Jumlah’] digunakan untuk mengganti nama kolom hasil perhitungan menjadi Class (nama kategori) dan Jumlah (banyaknya data).</p></li>
+<li><p>class_count dipanggil untuk menampilkan tabel jumlah data pada setiap kelas.</p></li>
+</ul>
+<p><strong>Cek Outlier</strong></p>
+<p>Outlier adalah data yang memiliki nilai ekstrem dan berbeda jauh dari mayoritas data lainnya.</p>
+<p>Pada dataset Iris, outlier bisa muncul jika ada nilai ukuran bunga (misalnya panjang sepal atau petal) yang terlalu besar atau terlalu kecil dibandingkan data lainnya.</p>
+<p><strong>Cara Menentukan Outlier pada Iris</strong></p>
+<p>Biasanya digunakan metode IQR (Interquartile Range): $<span class="math notranslate nohighlight">\(IQR = Q_3 - Q_1\)</span>$</p>
+<p>Batas bawah: $<span class="math notranslate nohighlight">\(\text{Batas Bawah} = Q_1 - 1.5 \times IQR\)</span>$</p>
+<p>Batas atas: $<span class="math notranslate nohighlight">\(\text{Batas Atas} = Q_3 + 1.5 \times IQR\)</span>$</p>
+<p><strong>Apakah Dataset Iris Memiliki Outlier?</strong>
+Secara umum:</p>
+<ul class="simple">
+<li><p>Dataset Iris relatif bersih</p></li>
+<li><p>Tidak banyak outlier ekstrem</p></li>
+<li><p>Namun pada beberapa fitur seperti sepal width, kadang muncul beberapa nilai yang terdeteksi sebagai outlier berdasarkan metode IQR</p></li>
+</ul>
+<p>Tetapi outlier tersebut masih termasuk variasi alami ukuran bunga, bukan kesalahan data.</p>
+<p><strong>Kesimpulan Outlier:</strong></p>
+<p>Outlier pada dataset Iris adalah nilai ukuran bunga yang berada jauh di luar rentang mayoritas data. Berdasarkan metode IQR, dataset Iris umumnya tidak memiliki outlier ekstrem yang signifikan, sehingga dataset ini tergolong bersih dan cocok digunakan untuk analisis atau machine learning.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">outlier_summary</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">col</span> <span class="ow">in</span> <span class="n">numeric_cols</span><span class="p">:</span>
+    <span class="n">Q1</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">col</span><span class="p">]</span><span class="o">.</span><span class="n">quantile</span><span class="p">(</span><span class="mf">0.25</span><span class="p">)</span>
+    <span class="n">Q3</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">col</span><span class="p">]</span><span class="o">.</span><span class="n">quantile</span><span class="p">(</span><span class="mf">0.75</span><span class="p">)</span>
+    <span class="n">IQR</span> <span class="o">=</span> <span class="n">Q3</span> <span class="o">-</span> <span class="n">Q1</span>
+    <span class="n">lower</span> <span class="o">=</span> <span class="n">Q1</span> <span class="o">-</span> <span class="mf">1.5</span> <span class="o">*</span> <span class="n">IQR</span>
+    <span class="n">upper</span> <span class="o">=</span> <span class="n">Q3</span> <span class="o">+</span> <span class="mf">1.5</span> <span class="o">*</span> <span class="n">IQR</span>
+    <span class="n">jumlah_outlier</span> <span class="o">=</span> <span class="n">df</span><span class="p">[(</span><span class="n">df</span><span class="p">[</span><span class="n">col</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">lower</span><span class="p">)</span> <span class="o">|</span> <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="n">col</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">upper</span><span class="p">)]</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">outlier_summary</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="n">col</span><span class="p">,</span> <span class="n">jumlah_outlier</span><span class="p">])</span>
+<span class="n">outlier_table</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">outlier_summary</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;Kolom&quot;</span><span class="p">,</span> <span class="s2">&quot;Jumlah Outlier&quot;</span><span class="p">])</span>
+<span class="n">outlier_table</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Kolom</th>
+      <th>Jumlah Outlier</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>sepal_length</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>sepal_width</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>petal_length</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>petal_width</td>
+      <td>0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>Penjelasan Kode:</p>
+<ul class="simple">
+<li><p>outlier_summary = [] digunakan untuk membuat list kosong yang akan menyimpan ringkasan jumlah outlier setiap kolom numerik.</p></li>
+<li><p>for col in numeric_cols: digunakan untuk melakukan perulangan pada setiap kolom numerik yang terdapat dalam variabel numeric_cols.</p></li>
+<li><p>Q1 = df[col].quantile(0.25) digunakan untuk menghitung kuartil pertama (25%) dari kolom tersebut.</p></li>
+<li><p>Q3 = df[col].quantile(0.75) digunakan untuk menghitung kuartil ketiga (75%) dari kolom tersebut.</p></li>
+<li><p>IQR = Q3 - Q1 digunakan untuk menghitung Interquartile Range (IQR), yaitu selisih antara Q3 dan Q1.</p></li>
+<li><p>lower = Q1 - 1.5 * IQR digunakan untuk menentukan batas bawah outlier berdasarkan metode IQR.</p></li>
+<li><p>upper = Q3 + 1.5 * IQR digunakan untuk menentukan batas atas outlier berdasarkan metode IQR.</p></li>
+<li><p>jumlah_outlier = df[(df[col] &lt; lower) | (df[col] &gt; upper)].shape[0] digunakan untuk menghitung jumlah data yang berada di luar batas bawah atau batas atas (outlier).</p>
+<ul>
+<li><p>(df[col] &lt; lower) | (df[col] &gt; upper) adalah kondisi untuk memilih data yang termasuk outlier.</p></li>
+<li><p>.shape[0] digunakan untuk mengambil jumlah baris (banyaknya outlier).</p></li>
+</ul>
+</li>
+<li><p>outlier_summary.append([col, jumlah_outlier]) digunakan untuk menyimpan nama kolom dan jumlah outlier ke dalam list outlier_summary.</p></li>
+<li><p>outlier_table = pd.DataFrame(outlier_summary, columns=[“Kolom”, “Jumlah Outlier”]) digunakan untuk mengubah list ringkasan menjadi DataFrame dengan dua kolom, yaitu nama kolom dan jumlah outlier.</p></li>
+<li><p>outlier_table dipanggil untuk menampilkan tabel jumlah outlier pada setiap kolom numerik.</p></li>
+</ul>
+<p>Berdasarkan analisis outlier menggunakan metode IQR pada dataset Iris, mayoritas data berada dalam rentang normal untuk setiap kolom numerik. Dari empat kolom numerik (sepal_length, sepal_width, petal_length, petal_width), hanya kolom sepal_width yang memiliki sejumlah kecil nilai outlier, sementara kolom lainnya relatif bersih tanpa outlier. Outlier pada sepal_width muncul di beberapa baris dan ditandai dalam tabel, namun jumlahnya sangat kecil dibandingkan total 150 baris, sehingga tidak signifikan untuk memengaruhi analisis keseluruhan. Secara keseluruhan, dataset Iris tergolong bersih dan stabil, sehingga sebagian besar model statistik atau machine learning dapat diterapkan tanpa perlu penanganan outlier yang besar.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">outlier_rows</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">()</span>
+<span class="k">for</span> <span class="n">col</span> <span class="ow">in</span> <span class="n">numeric_cols</span><span class="p">:</span>
+    <span class="n">Q1</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">col</span><span class="p">]</span><span class="o">.</span><span class="n">quantile</span><span class="p">(</span><span class="mf">0.25</span><span class="p">)</span>
+    <span class="n">Q3</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">col</span><span class="p">]</span><span class="o">.</span><span class="n">quantile</span><span class="p">(</span><span class="mf">0.75</span><span class="p">)</span>
+    <span class="n">IQR</span> <span class="o">=</span> <span class="n">Q3</span> <span class="o">-</span> <span class="n">Q1</span>
+    <span class="n">lower</span> <span class="o">=</span> <span class="n">Q1</span> <span class="o">-</span> <span class="mf">1.5</span> <span class="o">*</span> <span class="n">IQR</span>
+    <span class="n">upper</span> <span class="o">=</span> <span class="n">Q3</span> <span class="o">+</span> <span class="mf">1.5</span> <span class="o">*</span> <span class="n">IQR</span>
+    <span class="n">temp</span> <span class="o">=</span> <span class="n">df</span><span class="p">[(</span><span class="n">df</span><span class="p">[</span><span class="n">col</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">lower</span><span class="p">)</span> <span class="o">|</span> <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="n">col</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">upper</span><span class="p">)]</span>
+    <span class="n">outlier_rows</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">outlier_rows</span><span class="p">,</span> <span class="n">temp</span><span class="p">])</span>
+<span class="n">outlier_rows</span> <span class="o">=</span> <span class="n">outlier_rows</span><span class="o">.</span><span class="n">drop_duplicates</span><span class="p">()</span>
+<span class="n">outlier_rows</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>sepal_length</th>
+      <th>sepal_width</th>
+      <th>petal_length</th>
+      <th>petal_width</th>
+      <th>species</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>15</th>
+      <td>5.7</td>
+      <td>4.4</td>
+      <td>1.5</td>
+      <td>0.4</td>
+      <td>Iris-setosa</td>
+    </tr>
+    <tr>
+      <th>32</th>
+      <td>5.2</td>
+      <td>4.1</td>
+      <td>1.5</td>
+      <td>0.1</td>
+      <td>Iris-setosa</td>
+    </tr>
+    <tr>
+      <th>33</th>
+      <td>5.5</td>
+      <td>4.2</td>
+      <td>1.4</td>
+      <td>0.2</td>
+      <td>Iris-setosa</td>
+    </tr>
+    <tr>
+      <th>60</th>
+      <td>5.0</td>
+      <td>2.0</td>
+      <td>3.5</td>
+      <td>1.0</td>
+      <td>Iris-versicolor</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>Penjelasan Kode:</p>
+<ul class="simple">
+<li><p>outlier_rows = pd.DataFrame() digunakan untuk membuat DataFrame kosong yang akan menyimpan seluruh baris data yang terdeteksi sebagai outlier.</p></li>
+<li><p>for col in numeric_cols: digunakan untuk melakukan perulangan pada setiap kolom numerik dalam dataset.</p></li>
+<li><p>Q1 = df[col].quantile(0.25) digunakan untuk menghitung kuartil pertama (25%) dari kolom tersebut.</p></li>
+<li><p>Q3 = df[col].quantile(0.75) digunakan untuk menghitung kuartil ketiga (75%) dari kolom tersebut.</p></li>
+<li><p>IQR = Q3 - Q1 digunakan untuk menghitung Interquartile Range (IQR), yaitu selisih antara Q3 dan Q1.</p></li>
+<li><p>lower = Q1 - 1.5 * IQR digunakan untuk menentukan batas bawah outlier berdasarkan metode IQR.</p></li>
+<li><p>upper = Q3 + 1.5 * IQR digunakan untuk menentukan batas atas outlier berdasarkan metode IQR.</p></li>
+<li><p>temp = df[(df[col] &lt; lower) | (df[col] &gt; upper)] digunakan untuk mengambil baris data yang memiliki nilai lebih kecil dari batas bawah atau lebih besar dari batas atas (termasuk outlier pada kolom tersebut).</p></li>
+<li><p>outlier_rows = pd.concat([outlier_rows, temp]) digunakan untuk menggabungkan (menambahkan) baris outlier yang ditemukan ke dalam DataFrame outlier_rows.</p></li>
+<li><p>outlier_rows = outlier_rows.drop_duplicates() digunakan untuk menghapus baris yang duplikat, karena satu baris bisa terdeteksi sebagai outlier di lebih dari satu kolom.</p></li>
+<li><p>outlier_rows dipanggil untuk menampilkan seluruh baris data yang termasuk outlier pada minimal satu kolom numerik.</p></li>
+</ul>
+<p>Dari dataset Iris yang berisi 150 baris, analisis outlier menunjukkan bahwa mayoritas data berada dalam rentang normal. Hanya beberapa baris yang memiliki nilai outlier, dan semuanya muncul di kolom sepal_width, sedangkan kolom lainnya (sepal_length, petal_length, petal_width) relatif bersih tanpa outlier.</p>
+<p>Jumlah baris yang terdeteksi sebagai outlier sangat kecil dibandingkan total dataset, sehingga pengaruhnya terhadap analisis keseluruhan sangat minimal. Secara keseluruhan, dataset ini tergolong bersih dan stabil, sehingga sebagian besar analisis statistik atau model machine learning dapat diterapkan tanpa penanganan outlier yang signifikan.</p>
+<p><strong>Cek Mising Value</strong></p>
+<p>Missing values adalah data yang kosong atau tidak memiliki nilai dalam suatu dataset. Pada dataset Iris, tidak ditemukan missing values sehingga dataset dapat langsung digunakan untuk analisis tanpa perlu proses pembersihan data.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">missing_per_col</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">isna</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
+<span class="n">missing_per_col</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Kolom&#39;</span><span class="p">,</span> <span class="s1">&#39;Jumlah Missing&#39;</span><span class="p">]</span>
+<span class="n">missing_per_col</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Kolom</th>
+      <th>Jumlah Missing</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>sepal_length</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>sepal_width</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>petal_length</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>petal_width</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>species</td>
+      <td>0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>Penjelasan Kode:</p>
+<ul class="simple">
+<li><p>missing_per_col = df.isna().sum().reset_index() digunakan untuk menghitung jumlah data yang bernilai kosong (missing values) pada setiap kolom dalam DataFrame.</p>
+<ul>
+<li><p>df.isna() berfungsi untuk mendeteksi nilai yang kosong (NaN) dan menghasilkan nilai True/False.</p></li>
+<li><p>.sum() digunakan untuk menjumlahkan nilai True pada setiap kolom (karena True dihitung sebagai 1), sehingga diperoleh jumlah missing values per kolom.</p></li>
+<li><p>reset_index() digunakan untuk mengubah hasilnya menjadi bentuk DataFrame dan mereset index agar tersusun dalam format tabel.</p></li>
+</ul>
+</li>
+<li><p>missing_per_col.columns = [‘Kolom’, ‘Jumlah Missing’] digunakan untuk mengganti nama kolom hasil perhitungan menjadi Kolom dan Jumlah Missing agar lebih jelas dan mudah dipahami.</p></li>
+<li><p>missing_per_col dipanggil untuk menampilkan tabel jumlah missing values pada setiap kolom.</p></li>
 </ul>
 </section>
 </section>
+<section id="rangkuman-data-iris">
+<h2>Rangkuman Data Iris<a class="headerlink" href="#rangkuman-data-iris" title="Link to this heading">#</a></h2>
+<p>Dataset Iris memiliki:</p>
+<ul class="simple">
+<li><p>150 data</p></li>
+<li><p>3 class seimbang (50:50:50)</p></li>
+<li><p>4 fitur numerik continuous</p></li>
+<li><p>Tidak ada missing value</p></li>
+<li><p>Tidak ada duplikasi</p></li>
+<li><p>Outlier minimal</p></li>
+<li><p>Distribusi baik</p></li>
+<li><p>Petal features paling diskriminatif</p></li>
+</ul>
+</section>
 <section id="kesimpulan-eksplorasi">
 <h2>Kesimpulan Eksplorasi<a class="headerlink" href="#kesimpulan-eksplorasi" title="Link to this heading">#</a></h2>
-<p>Berdasarkan eksplorasi dataset Iris menggunakan Orange dan Colab:</p>
-<p>Eksplorasi data Iris menggunakan Orange dan Google Colab (Python) menunjukkan bahwa dataset memiliki tiga kelas bunga (setosa, versicolor, virginica) dengan empat fitur utama, yaitu sepal length, sepal width, petal length, dan petal width.</p>
+<p>Berdasarkan eksplorasi dataset Iris menggunakan Orange dan Code Pytho:</p>
+<p>Eksplorasi data Iris menggunakan Orange dan Google Code Python menunjukkan bahwa dataset memiliki tiga kelas bunga (setosa, versicolor, virginica) dengan empat fitur utama, yaitu sepal length, sepal width, petal length, dan petal width.</p>
 <p>Dari sisi visualisasi, seperti scatter plot membantu memperlihatkan pola pemisahan antar kelas, terutama pada petal length dan petal width yang tampak paling membedakan setosa dari dua spesies lainnya.</p>
 <p>Sementara itu, analisis korelasi menunjukkan hubungan positif kuat antara petal length dan petal width, sedangkan sepal width memiliki korelasi yang lebih lemah terhadap fitur lain.</p>
 <p>Berdasarkan statistik deskriptif, terlihat perbedaan nilai rata-rata dan sebaran setiap fitur pada masing-masing spesies, di mana setosa memiliki ukuran petal paling kecil dan virginica paling besar.</p>
 <p>Secara keseluruhan, eksplorasi ini menunjukkan bahwa fitur petal merupakan indikator paling penting dalam membedakan spesies pada dataset Iris.</p>
+</section>
+</section>
+<section id="menghitung-jarak-dataset-iris">
+<h1>Menghitung Jarak Dataset Iris<a class="headerlink" href="#menghitung-jarak-dataset-iris" title="Link to this heading">#</a></h1>
+<p>Pada tahap awal analisis, dataset yang digunakan adalah Iris Dataset yang diakses melalui database PostgreSQL. Dataset ini berisi 150 data bunga iris dengan empat atribut numerik, yaitu sepal length, sepal width, petal length, dan petal width, serta satu atribut kelas yang menunjukkan jenis bunga iris.</p>
+<p>Proses analisis dilakukan menggunakan Orange Data Mining dengan memanfaatkan beberapa widget utama yaitu Dataset, Distance, dan Distance Matrix.</p>
+<section id="a-tujuan-menghitung-jarak-dataset-iris">
+<h2>A. Tujuan Menghitung Jarak Dataset Iris<a class="headerlink" href="#a-tujuan-menghitung-jarak-dataset-iris" title="Link to this heading">#</a></h2>
+<p>Visualisasi digunakan untuk:</p>
+<ul class="simple">
+<li><p>Melihat tingkat kemiripan atau perbedaan antar data pada Iris Dataset</p></li>
+<li><p>Mengidentifikasi pola hubungan antar data berdasarkan nilai jarak yang dihasilkan dari Euclidean Distance</p></li>
+<li><p>Mengetahui kelompok data yang memiliki karakteristik yang mirip</p></li>
+<li><p>Membantu mendeteksi data yang memiliki jarak sangat jauh dari data lainnya</p></li>
+<li><p>Mempermudah interpretasi hasil perhitungan jarak dalam bentuk matriks</p></li>
+</ul>
+</section>
+<section id="b-visualisasi-menghitung-jarak-menggunakan-orange">
+<h2>B. Visualisasi Menghitung Jarak menggunakan Orange<a class="headerlink" href="#b-visualisasi-menghitung-jarak-menggunakan-orange" title="Link to this heading">#</a></h2>
+<p><img alt="image" src="https://hackmd.io/_uploads/ryTnak4K-g.png" /></p>
+<p>Pada Orange, visualisasi dilakukan dengan workflow berikut:</p>
+<p><strong>SQL Table <span class="math notranslate nohighlight">\(\rightarrow\)</span> Distances <span class="math notranslate nohighlight">\(\rightarrow\)</span> Distance Matrix</strong></p>
+<p>Beberapa visualisasi penting yang di coba:</p>
+<ol class="arabic">
+<li><p>Sql Table</p>
+<p>Widget SQL Table merupakan pengaturan koneksi database pada widget SQL Table di aplikasi Orange Data Mining untuk mengambil data dari database PostgreSQL. Melalui widget ini, pengguna dapat menghubungkan Orange dengan database sehingga dataset dapat diakses secara langsung tanpa perlu mengimpor file secara manual. Pada penelitian ini, widget SQL Table digunakan untuk mengambil data dari Iris Dataset yang tersimpan dalam database PostgreSQL.</p>
+</li>
+<li><p>Distances
+Widget Distances digunakan untuk menghitung jarak atau tingkat kemiripan antar data dalam dataset. Pada analisis ini digunakan metode Euclidean Distance untuk mengukur jarak antar objek data.</p>
+<p><img alt="image" src="https://hackmd.io/_uploads/ByxXblNKbl.png" /></p>
+<p>Pada widget Distances terdapat beberapa pengaturan penting, yaitu:</p>
+<ol class="arabic simple">
+<li><p>Distance Metric
+Pada analisis ini dipilih metode Euclidean Distance karena atribut pada dataset Iris berupa data numerik sehingga metode ini cocok digunakan untuk menghitung jarak antar objek data.</p></li>
+<li><p>Compare
+Pengaturan Compare digunakan untuk menentukan jenis objek yang akan dibandingkan. Pada analisis ini dipilih Rows, yang berarti perhitungan jarak dilakukan antar baris data. Dengan kata lain, setiap baris data bunga iris akan dibandingkan dengan baris data lainnya untuk mengetahui tingkat kemiripannya.</p></li>
+</ol>
+<p>Euclidean Distance menghitung jarak antara dua titik data berdasarkan perbedaan nilai atribut numerik yang dimiliki oleh setiap data. Pada dataset Iris, atribut yang digunakan dalam perhitungan jarak meliputi sepal length, sepal width, petal length, dan petal width.</p>
+<p>Dengan metode ini, setiap data akan dibandingkan dengan data lainnya sehingga menghasilkan nilai jarak antar objek. Nilai jarak yang kecil menunjukkan bahwa dua data memiliki karakteristik yang mirip, sedangkan nilai jarak yang lebih besar menunjukkan bahwa kedua data memiliki perbedaan yang lebih signifikan.</p>
+</li>
+<li><p>Distance Matrix</p>
+<p>Widget Distance Matrix digunakan untuk menampilkan hasil perhitungan jarak yang dihasilkan dari widget Distances dalam bentuk matriks. Setiap baris dan kolom pada matriks mewakili objek data, sedangkan nilai yang terdapat pada setiap sel menunjukkan jarak antara dua objek tersebut berdasarkan perhitungan Euclidean Distance.</p>
+<p><img alt="image" src="https://hackmd.io/_uploads/r1sHmlVKbl.png" /></p>
+<p>Melalui tampilan Distance Matrix, pengguna dapat dengan mudah melihat tingkat kemiripan antar data pada Iris Dataset. Data dengan nilai jarak yang kecil menunjukkan bahwa karakteristik antar bunga iris tersebut hampir sama, sedangkan nilai jarak yang lebih besar menunjukkan adanya perbedaan pada atribut bunga yang dianalisis. Visualisasi ini juga dapat membantu dalam memahami pola data serta menjadi dasar untuk analisis lanjutan seperti clustering atau pengelompokan data.</p>
+<p>Poin Utama Analisis:</p>
+<ul class="simple">
+<li><p>Objek Data: Setiap baris dan kolom dalam matriks mewakili satu sampel bunga iris dari dataset.</p></li>
+<li><p>Metode Perhitungan: Nilai jarak yang ditampilkan dihitung menggunakan metode Euclidean Distance.</p></li>
+<li><p>Interpretasi Nilai:</p>
+<ul>
+<li><p>Nilai Kecil (Warna Putih/Terang): Menunjukkan tingkat kemiripan yang tinggi. Karakteristik antar bunga iris tersebut hampir sama.</p></li>
+<li><p>Nilai Besar (Warna Hijau): Menunjukkan adanya perbedaan signifikan pada atribut bunga yang dianalisis.</p></li>
+</ul>
+</li>
+<li><p>Kegunaan: Visualisasi ini membantu pengguna memahami pola data dan menjadi fondasi utama untuk analisis lanjutan, seperti clustering atau pengelompokan data.</p></li>
+</ul>
+</li>
+</ol>
+</section>
+<section id="b-visualisasi-menghitung-jarak-menggunakan-python">
+<h2>B. Visualisasi Menghitung Jarak menggunakan Python<a class="headerlink" href="#b-visualisasi-menghitung-jarak-menggunakan-python" title="Link to this heading">#</a></h2>
+<p>Analisis juga dilakukan menggunakan Python dengan bantuan Google Colab. Dataset yang digunakan adalah Iris Dataset.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">X</span> <span class="o">=</span> <span class="n">df</span><span class="p">[[</span><span class="s2">&quot;sepal_length&quot;</span><span class="p">,</span> <span class="s2">&quot;sepal_width&quot;</span><span class="p">,</span> <span class="s2">&quot;petal_length&quot;</span><span class="p">,</span> <span class="s2">&quot;petal_width&quot;</span><span class="p">]]</span><span class="o">.</span><span class="n">values</span>
+
+<span class="n">data_1</span> <span class="o">=</span> <span class="n">X</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">data_2</span> <span class="o">=</span> <span class="n">X</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+
+<span class="n">euclidean_distance</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">((</span><span class="n">data_1</span> <span class="o">-</span> <span class="n">data_2</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span><span class="p">))</span>
+<span class="n">manhattan_distance</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">data_1</span> <span class="o">-</span> <span class="n">data_2</span><span class="p">))</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hasil Pehitungan jarak antar dua data :&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Euclidean Distance : </span><span class="si">{</span><span class="n">euclidean_distance</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Manhattan Distance : </span><span class="si">{</span><span class="n">manhattan_distance</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Hasil Pehitungan jarak antar dua data :
+Euclidean Distance : 0.5385
+Manhattan Distance : 0.7000
+</pre></div>
+</div>
+</div>
+</div>
+<p>Penjelasan Kode:</p>
+<ul class="simple">
+<li><p>import numpy as np digunakan untuk mengimpor library NumPy untuk perhitungan numerik.</p></li>
+<li><p>X = df[[“sepal_length”, “sepal_width”, “petal_length”, “petal_width”]].values digunakan untuk mengambil fitur numerik dari Iris Dataset dan mengubahnya menjadi array.</p></li>
+<li><p>data_1 = X[0] mengambil data baris pertama.</p></li>
+<li><p>data_2 = X[1] mengambil data baris kedua untuk dibandingkan.</p></li>
+<li><p>np.sqrt(np.sum((data_1 - data_2) ** 2)) menghitung Euclidean Distance.</p></li>
+<li><p>np.sum(np.abs(data_1 - data_2)) menghitung Manhattan Distance.</p></li>
+<li><p>print() digunakan untuk menampilkan hasil perhitungan jarak kedua data.</p></li>
+</ul>
+<p>Pada kode program tersebut diambil dua data pertama dari dataset kemudian dihitung jaraknya menggunakan metode Euclidean Distance dan Manhattan Distance. Perhitungan ini bertujuan untuk mengetahui tingkat kemiripan antara dua data berdasarkan empat fitur numerik yaitu sepal length, sepal width, petal length, dan petal width.</p>
+<p>Hasil perhitungan ditampilkan dalam bentuk nilai jarak yang menunjukkan seberapa mirip atau berbeda kedua data tersebut.</p>
+</section>
+<section id="kesimpulan-menghitung-jarak-dataset-iris">
+<h2>Kesimpulan Menghitung Jarak Dataset Iris<a class="headerlink" href="#kesimpulan-menghitung-jarak-dataset-iris" title="Link to this heading">#</a></h2>
+<p>Berdasarkan analisis yang dilakukan menggunakan Orange Data Mining dan Python, dapat disimpulkan bahwa perhitungan jarak pada Iris Dataset dapat digunakan untuk mengetahui tingkat kemiripan antar data berdasarkan atribut numerik seperti sepal length, sepal width, petal length, dan petal width.</p>
+<p>Melalui widget Distances pada Orange dengan metode Euclidean Distance, jarak antar setiap data dapat dihitung dan divisualisasikan dalam bentuk Distance Matrix. Visualisasi ini memudahkan pengguna untuk melihat pola kemiripan antar data serta mengidentifikasi perbedaan karakteristik pada setiap sampel bunga iris.</p>
+<p>Selain itu, perhitungan jarak juga dilakukan menggunakan kode Python dengan metode Euclidean Distance dan Manhattan Distance. Hasil perhitungan menunjukkan bahwa kedua metode dapat digunakan untuk mengukur jarak antar data, meskipun menggunakan pendekatan perhitungan yang berbeda.</p>
 </section>
 </section>
 
@@ -1465,11 +1946,11 @@ Variansi         : 0.581006
       </div>
     </a>
     <a class="right-next"
-       href="Data%20Preparation.html"
+       href="Mengukur%20Jarak%20Data%20Campuran.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Data Preparation</p>
+        <p class="prev-next-title">Menghitung Jarak Dataset Campuran</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -1502,25 +1983,36 @@ Variansi         : 0.581006
 </ul>
 </li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#eksplorasi-data-iris">Eksplorasi data iris</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sumber-dataset-database">Sumber Dataset (Database)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#class-label-target">Class (Label Target)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#penjelasan-fitur-secara-mendalam">Penjelasan Fitur Secara Mendalam</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#visualisasi-data">Visualisasi Data</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-tujuan-visualisasi">A. Tujuan Visualisasi</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#b-visualisasi-menggunakan-orange">B. Visualisasi menggunakan Orange</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#c-visualisasi-menggunakan-google-colab-python">C. Visualisasi menggunakan Google Colab (Python)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#c-visualisasi-menggunakan-python">C. Visualisasi menggunakan Python</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#analisa-korelasi">Analisa korelasi</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-tujuan-analisa-korelasi">A. Tujuan Analisa Korelasi</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#b-korelasi-menggunakan-orange">B. Korelasi menggunakan Orange</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#c-korelasi-menggunakan-colab-python">C. Korelasi menggunakan Colab (Python)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#c-korelasi-menggunakan-python">C. Korelasi menggunakan Python</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#statistik-dikriptif">Statistik dikriptif</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-tujuan-statistik-deskriptif">A. Tujuan Statistik Deskriptif</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#b-statistik-deskriptif-menggunakan-orange">B. Statistik Deskriptif menggunakan Orange</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#c-statistik-deskriptif-menggunakan-colab-python">C. Statistik Deskriptif menggunakan Colab (Python)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#c-statistik-deskriptif-menggunakan-python">C. Statistik Deskriptif menggunakan Python</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rangkuman-data-iris">Rangkuman Data Iris</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kesimpulan-eksplorasi">Kesimpulan Eksplorasi</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#menghitung-jarak-dataset-iris">Menghitung Jarak Dataset Iris</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-tujuan-menghitung-jarak-dataset-iris">A. Tujuan Menghitung Jarak Dataset Iris</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#b-visualisasi-menghitung-jarak-menggunakan-orange">B. Visualisasi Menghitung Jarak menggunakan Orange</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#b-visualisasi-menghitung-jarak-menggunakan-python">B. Visualisasi Menghitung Jarak menggunakan Python</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kesimpulan-menghitung-jarak-dataset-iris">Kesimpulan Menghitung Jarak Dataset Iris</a></li>
 </ul>
 </li>
 </ul>
@@ -1538,7 +2030,7 @@ Variansi         : 0.581006
   <div class="footer-item">
     
 <p class="component-author">
-By Rian Renaldy (240411100053)
+By The Jupyter Book Community
 </p>
 
   </div>
@@ -1548,7 +2040,7 @@ By Rian Renaldy (240411100053)
 
   <p class="copyright">
     
-      © Copyright 2026.
+      © Copyright 2023.
       <br/>
     
   </p>
