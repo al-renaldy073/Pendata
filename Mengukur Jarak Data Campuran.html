@@ -175,17 +175,18 @@
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
                 <a class="reference internal" href="intro.html">
-                    Halaman Depan
+                    Welcome to your Jupyter Book
                 </a>
             </li>
         </ul>
         <ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="Business%20Understanding.html">Business Understanding</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Business%20Understanding.html">Data Mining</a></li>
 
 <li class="toctree-l1"><a class="reference internal" href="Data%20Understanding.html">Data Understanding</a></li>
 
 
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Menghitung Jarak Dataset Campuran</a></li>
+
 
 
 <li class="toctree-l1"><a class="reference internal" href="Data%20Preparation.html">Data Preparation</a></li>
@@ -388,6 +389,7 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Menghitung Jarak Dataset Campuran</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#sumber-dataset-database">Sumber Dataset (Database)</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#mengukur-antar-jarak-data-campuran-menggunakan-python">Mengukur Antar Jarak Data Campuran Menggunakan Python</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#import-library-dan-mengakses-dataset-iris-dari-database-postgresql">Import Library dan Mengakses dataset Iris dari database PostgreSQL</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#menampilkan-dataset">Menampilkan Dataset</a></li>
@@ -417,6 +419,11 @@ document.write(`
 <p>Metode pengukuran jarak yang digunakan biasanya disesuaikan dengan tipe data yang dianalisis. Untuk data nominal dan binary simetris, metode yang umum digunakan adalah Simple Matching. Pada data binary asimetris, digunakan koefisien Jaccard. Untuk data numerik, metode yang sering digunakan adalah Euclidean Distance atau Manhattan Distance yang termasuk dalam keluarga Minkowski Distance.</p>
 <p>Pada data ordinal, nilai data terlebih dahulu diubah menjadi peringkat (ranking), kemudian dihitung menggunakan metode yang sama seperti data numerik. Sedangkan untuk data campuran, metode yang umum digunakan adalah Gower Distance.</p>
 <p>Pengukuran jarak memiliki peran penting dalam berbagai teknik analisis data, seperti clustering, K-Nearest Neighbor (KNN), serta metode analisis data lainnya.</p>
+</section>
+<section id="sumber-dataset-database">
+<h1>Sumber Dataset (Database)<a class="headerlink" href="#sumber-dataset-database" title="Link to this heading">#</a></h1>
+<p>Dataset yang saya gunakan adalah “student_mental_health” dapat kalian akses di link berikut:</p>
+<p><a class="reference external" href="https://www.kaggle.com/datasets/shariful07/student-mental-health">https://www.kaggle.com/datasets/shariful07/student-mental-health</a></p>
 </section>
 <section id="mengukur-antar-jarak-data-campuran-menggunakan-python">
 <h1>Mengukur Antar Jarak Data Campuran Menggunakan Python<a class="headerlink" href="#mengukur-antar-jarak-data-campuran-menggunakan-python" title="Link to this heading">#</a></h1>
@@ -1049,6 +1056,7 @@ Jarak Campuran Akhir          : 0.6481
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Menghitung Jarak Dataset Campuran</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#sumber-dataset-database">Sumber Dataset (Database)</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#mengukur-antar-jarak-data-campuran-menggunakan-python">Mengukur Antar Jarak Data Campuran Menggunakan Python</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#import-library-dan-mengakses-dataset-iris-dari-database-postgresql">Import Library dan Mengakses dataset Iris dari database PostgreSQL</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#menampilkan-dataset">Menampilkan Dataset</a></li>
@@ -1074,7 +1082,7 @@ Jarak Campuran Akhir          : 0.6481
   <div class="footer-item">
     
 <p class="component-author">
-By Rian Renaldy (240411100053)
+By The Jupyter Book Community
 </p>
 
   </div>
@@ -1084,7 +1092,7 @@ By Rian Renaldy (240411100053)
 
   <p class="copyright">
     
-      © Copyright 2026.
+      © Copyright 2023.
       <br/>
     
   </p>
