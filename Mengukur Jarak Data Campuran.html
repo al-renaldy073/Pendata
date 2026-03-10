@@ -467,7 +467,7 @@ document.write(`
 <p>Dataset diambil langsung dari database PostgreSQL agar sumber data yang digunakan jelas dan otomatis terbaca oleh sistem.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_sql</span><span class="p">(</span><span class="s1">&#39;SELECT * FROM public.&quot;data_student_mental_healt&quot;;&#39;</span><span class="p">,</span> <span class="n">engine</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_sql</span><span class="p">(</span><span class="s1">&#39;SELECT * FROM public.&quot;data_student_mental_health&quot;;&#39;</span><span class="p">,</span> <span class="n">engine</span><span class="p">)</span>
 <span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">15</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -495,13 +495,13 @@ document.write(`
       <th>gender</th>
       <th>age</th>
       <th>course</th>
-      <th>year_study</th>
-      <th>gpa</th>
-      <th>married</th>
+      <th>year_of_study</th>
+      <th>cgpa</th>
+      <th>marital_status</th>
       <th>depression</th>
       <th>anxiety</th>
       <th>panic_attack</th>
-      <th>treatment</th>
+      <th>specialist_treatment</th>
     </tr>
   </thead>
   <tbody>
@@ -514,10 +514,10 @@ document.write(`
       <td>year 1</td>
       <td>3.00 - 3.49</td>
       <td>No</td>
-      <td>Yes</td>
-      <td>No</td>
-      <td>Yes</td>
-      <td>No</td>
+      <td>True</td>
+      <td>False</td>
+      <td>True</td>
+      <td>False</td>
     </tr>
     <tr>
       <th>1</th>
@@ -528,10 +528,10 @@ document.write(`
       <td>year 2</td>
       <td>3.00 - 3.49</td>
       <td>No</td>
-      <td>No</td>
-      <td>Yes</td>
-      <td>No</td>
-      <td>No</td>
+      <td>False</td>
+      <td>True</td>
+      <td>False</td>
+      <td>False</td>
     </tr>
     <tr>
       <th>2</th>
@@ -542,10 +542,10 @@ document.write(`
       <td>Year 1</td>
       <td>3.00 - 3.49</td>
       <td>No</td>
-      <td>Yes</td>
-      <td>Yes</td>
-      <td>Yes</td>
-      <td>No</td>
+      <td>True</td>
+      <td>True</td>
+      <td>True</td>
+      <td>False</td>
     </tr>
     <tr>
       <th>3</th>
@@ -556,10 +556,10 @@ document.write(`
       <td>year 3</td>
       <td>3.00 - 3.49</td>
       <td>Yes</td>
-      <td>Yes</td>
-      <td>No</td>
-      <td>No</td>
-      <td>No</td>
+      <td>True</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
     </tr>
     <tr>
       <th>4</th>
@@ -570,10 +570,10 @@ document.write(`
       <td>year 4</td>
       <td>3.00 - 3.49</td>
       <td>No</td>
-      <td>No</td>
-      <td>No</td>
-      <td>No</td>
-      <td>No</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
     </tr>
     <tr>
       <th>5</th>
@@ -584,10 +584,10 @@ document.write(`
       <td>Year 2</td>
       <td>3.50 - 4.00</td>
       <td>No</td>
-      <td>No</td>
-      <td>No</td>
-      <td>Yes</td>
-      <td>No</td>
+      <td>False</td>
+      <td>False</td>
+      <td>True</td>
+      <td>False</td>
     </tr>
     <tr>
       <th>6</th>
@@ -598,10 +598,10 @@ document.write(`
       <td>year 2</td>
       <td>3.50 - 4.00</td>
       <td>Yes</td>
-      <td>Yes</td>
-      <td>No</td>
-      <td>Yes</td>
-      <td>No</td>
+      <td>True</td>
+      <td>False</td>
+      <td>True</td>
+      <td>False</td>
     </tr>
     <tr>
       <th>7</th>
@@ -612,10 +612,10 @@ document.write(`
       <td>year 1</td>
       <td>3.50 - 4.00</td>
       <td>No</td>
-      <td>No</td>
-      <td>Yes</td>
-      <td>No</td>
-      <td>No</td>
+      <td>False</td>
+      <td>True</td>
+      <td>False</td>
+      <td>False</td>
     </tr>
     <tr>
       <th>8</th>
@@ -626,10 +626,10 @@ document.write(`
       <td>Year 2</td>
       <td>2.50 - 2.99</td>
       <td>No</td>
-      <td>No</td>
-      <td>No</td>
-      <td>No</td>
-      <td>No</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
     </tr>
     <tr>
       <th>9</th>
@@ -640,10 +640,10 @@ document.write(`
       <td>year 1</td>
       <td>3.50 - 4.00</td>
       <td>No</td>
-      <td>No</td>
-      <td>Yes</td>
-      <td>Yes</td>
-      <td>No</td>
+      <td>False</td>
+      <td>True</td>
+      <td>True</td>
+      <td>False</td>
     </tr>
     <tr>
       <th>10</th>
@@ -654,10 +654,10 @@ document.write(`
       <td>year 1</td>
       <td>3.50 - 4.00</td>
       <td>No</td>
-      <td>No</td>
-      <td>No</td>
-      <td>No</td>
-      <td>No</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
     </tr>
     <tr>
       <th>11</th>
@@ -668,10 +668,10 @@ document.write(`
       <td>Year 3</td>
       <td>3.50 - 4.00</td>
       <td>Yes</td>
-      <td>Yes</td>
-      <td>No</td>
-      <td>No</td>
-      <td>No</td>
+      <td>True</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
     </tr>
     <tr>
       <th>12</th>
@@ -682,10 +682,10 @@ document.write(`
       <td>year 1</td>
       <td>3.00 - 3.49</td>
       <td>No</td>
-      <td>Yes</td>
-      <td>No</td>
-      <td>No</td>
-      <td>No</td>
+      <td>True</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
     </tr>
     <tr>
       <th>13</th>
@@ -696,10 +696,10 @@ document.write(`
       <td>year 1</td>
       <td>3.00 - 3.49</td>
       <td>No</td>
-      <td>No</td>
-      <td>No</td>
-      <td>No</td>
-      <td>No</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
     </tr>
     <tr>
       <th>14</th>
@@ -710,10 +710,10 @@ document.write(`
       <td>Year 2</td>
       <td>3.50 - 4.00</td>
       <td>No</td>
-      <td>No</td>
-      <td>Yes</td>
-      <td>No</td>
-      <td>No</td>
+      <td>False</td>
+      <td>True</td>
+      <td>False</td>
+      <td>False</td>
     </tr>
   </tbody>
 </table>
@@ -730,12 +730,11 @@ document.write(`
 <p>Memastikan bahwa dataset yang digunakan diperoleh dari database PostgreSQL.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">query</span> <span class="o">=</span> <span class="s1">&#39;SELECT * FROM public.&quot;data_student_mental_healt&quot;&#39;</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Host:&quot;</span><span class="p">,</span> <span class="s2">&quot;127.0.0.1&quot;</span><span class="p">,</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Host:&quot;</span><span class="p">,</span> <span class="s2">&quot;127.0.0.1&quot;</span><span class="p">,</span>
       <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Port:&quot;</span><span class="p">,</span> <span class="mi">5432</span><span class="p">,</span>
       <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Database:&quot;</span><span class="p">,</span> <span class="s2">&quot;Pendata&quot;</span><span class="p">,</span>
       <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Table:&quot;</span><span class="p">,</span> <span class="s1">&#39;public.&quot;Student Mental Healt&quot;&#39;</span><span class="p">,</span>
-      <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Query:&quot;</span><span class="p">,</span> <span class="n">query</span><span class="p">)</span>
+      <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Query:&quot;</span><span class="p">,</span> <span class="s1">&#39;SELECT * FROM public.&quot;Student Mental Healt&quot;;&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -744,7 +743,7 @@ document.write(`
 Port: 5432 
 Database: Pendata 
 Table: public.&quot;Student Mental Healt&quot; 
-Query: SELECT * FROM public.&quot;data_student_mental_healt&quot;
+Query: SELECT * FROM public.&quot;Student Mental Healt&quot;;
 </pre></div>
 </div>
 </div>
@@ -793,21 +792,21 @@ Jumlah kolom: 11
 &lt;class &#39;pandas.DataFrame&#39;&gt;
 RangeIndex: 101 entries, 0 to 100
 Data columns (total 11 columns):
- #   Column          Non-Null Count  Dtype         
----  ------          --------------  -----         
- 0   timestamp_data  101 non-null    datetime64[us]
- 1   gender          101 non-null    str           
- 2   age             100 non-null    float64       
- 3   course          101 non-null    str           
- 4   year_study      101 non-null    str           
- 5   gpa             101 non-null    str           
- 6   married         101 non-null    str           
- 7   depression      101 non-null    str           
- 8   anxiety         101 non-null    str           
- 9   panic_attack    101 non-null    str           
- 10  treatment       101 non-null    str           
-dtypes: datetime64[us](1), float64(1), str(9)
-memory usage: 8.8 KB
+ #   Column                Non-Null Count  Dtype         
+---  ------                --------------  -----         
+ 0   timestamp_data        101 non-null    datetime64[us]
+ 1   gender                101 non-null    str           
+ 2   age                   100 non-null    float64       
+ 3   course                101 non-null    str           
+ 4   year_of_study         101 non-null    str           
+ 5   cgpa                  101 non-null    str           
+ 6   marital_status        101 non-null    str           
+ 7   depression            101 non-null    bool          
+ 8   anxiety               101 non-null    bool          
+ 9   panic_attack          101 non-null    bool          
+ 10  specialist_treatment  101 non-null    bool          
+dtypes: bool(4), datetime64[us](1), float64(1), str(5)
+memory usage: 6.0 KB
 </pre></div>
 </div>
 </div>
@@ -817,6 +816,68 @@ memory usage: 8.8 KB
 <li><p>print(“Tipe Data setiap kolom:”) Digunakan untuk menampilkan judul informasi mengenai tipe data pada setiap kolom.</p></li>
 <li><p><a class="reference external" href="http://df.info">df.info</a>() Digunakan untuk menampilkan struktur DataFrame seperti nama kolom, tipe data tiap kolom, jumlah data yang tidak kosong, serta penggunaan memori.</p></li>
 </ul>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Nama Kolom</p></th>
+<th class="head"><p>Contoh Data</p></th>
+<th class="head"><p>Tipe Data (Secara Umum)</p></th>
+<th class="head"><p>Penjelasan</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Timestamp</p></td>
+<td><p>08/07/2020 12.02</p></td>
+<td><p>DateTime</p></td>
+<td><p>Menunjukkan waktu dan tanggal pengisian data.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Choose your gender</p></td>
+<td><p>Female</p></td>
+<td><p>Categorical (Nominal)</p></td>
+<td><p>Kategori tanpa urutan (Laki-laki/Perempuan).</p></td>
+</tr>
+<tr class="row-even"><td><p>Age</p></td>
+<td><p>18</p></td>
+<td><p>Numeric (Discrete)</p></td>
+<td><p>Angka bulat yang menunjukkan umur.</p></td>
+</tr>
+<tr class="row-odd"><td><p>What is your course?</p></td>
+<td><p>Engineering</p></td>
+<td><p>Categorical (Nominal)</p></td>
+<td><p>Kategori berupa nama jurusan atau mata kuliah.</p></td>
+</tr>
+<tr class="row-even"><td><p>Your current year of Study</p></td>
+<td><p>year 1</p></td>
+<td><p>Categorical (Ordinal)</p></td>
+<td><p>Kategori yang memiliki tingkatan atau urutan.</p></td>
+</tr>
+<tr class="row-odd"><td><p>What is your CGPA?</p></td>
+<td><p>3.00 - 3.49</p></td>
+<td><p>Categorical (Ordinal) / Interval</p></td>
+<td><p>Berupa rentang nilai. Dianggap ordinal karena ada urutan prestasi.</p></td>
+</tr>
+<tr class="row-even"><td><p>Marital status</p></td>
+<td><p>No</p></td>
+<td><p>Categorical (Nominal)</p></td>
+<td><p>Pilihan biner (Yes/No) atau status pernikahan.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Do you have Depression?</p></td>
+<td><p>Yes</p></td>
+<td><p>Boolean / Dichotomous</p></td>
+<td><p>Jawaban Ya/Tidak (sering direpresentasikan sebagai 1 atau 0).</p></td>
+</tr>
+<tr class="row-even"><td><p>Do you have Anxiety?</p></td>
+<td><p>No</p></td>
+<td><p>Boolean / Dichotomous</p></td>
+<td><p>Jawaban Ya/Tidak.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Do you have Panic attack?</p></td>
+<td><p>Yes</p></td>
+<td><p>Boolean / Dichotomous</p></td>
+<td><p>Jawaban Ya/Tidak.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
 </section>
 <section id="menghitung-jarak-antar-data">
 <h2>Menghitung jarak antar data<a class="headerlink" href="#menghitung-jarak-antar-data" title="Link to this heading">#</a></h2>
@@ -828,84 +889,78 @@ memory usage: 8.8 KB
 
 <span class="c1"># Kelompok kolom berdasarkan tipe data</span>
 <span class="n">kolom_numerik</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;age&#39;</span><span class="p">]</span>
-<span class="n">kolom_nominal</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;gender&#39;</span><span class="p">,</span><span class="s1">&#39;course&#39;</span><span class="p">]</span>
-<span class="n">kolom_binary_asimetris</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;married&#39;</span><span class="p">,</span><span class="s1">&#39;depression&#39;</span><span class="p">,</span><span class="s1">&#39;anxiety&#39;</span><span class="p">,</span><span class="s1">&#39;panic_attack&#39;</span><span class="p">,</span><span class="s1">&#39;treatment&#39;</span><span class="p">]</span>
-<span class="n">kolom_ordinal</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;year_study&#39;</span><span class="p">,</span><span class="s1">&#39;gpa&#39;</span><span class="p">]</span>
+<span class="n">kolom_nominal</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;gender&#39;</span><span class="p">,</span> <span class="s1">&#39;course&#39;</span><span class="p">]</span>
+<span class="n">kolom_binary_asimetris</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;marital_status&#39;</span><span class="p">,</span> <span class="s1">&#39;depression&#39;</span><span class="p">,</span> <span class="s1">&#39;anxiety&#39;</span><span class="p">,</span> <span class="s1">&#39;panic_attack&#39;</span><span class="p">,</span> <span class="s1">&#39;specialist_treatment&#39;</span><span class="p">]</span>
+<span class="n">kolom_ordinal</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;year_of_study&#39;</span><span class="p">,</span> <span class="s1">&#39;cgpa&#39;</span><span class="p">]</span>
 
-<span class="c1"># Ranking ordinal</span>
+<span class="c1"># Definisi Ranking Data Ordinal</span>
 <span class="n">ranking_year</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="s1">&#39;year 1&#39;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span>
-    <span class="s1">&#39;year 2&#39;</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span>
-    <span class="s1">&#39;year 3&#39;</span><span class="p">:</span><span class="mi">3</span><span class="p">,</span>
-    <span class="s1">&#39;year 4&#39;</span><span class="p">:</span><span class="mi">4</span>
+    <span class="s1">&#39;year 1&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;year 2&#39;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;year 3&#39;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span> <span class="s1">&#39;year 4&#39;</span><span class="p">:</span> <span class="mi">4</span>
 <span class="p">}</span>
 
 <span class="n">ranking_gpa</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="s1">&#39;0 - 1.99&#39;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span>
-    <span class="s1">&#39;2.00 - 2.49&#39;</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span>
-    <span class="s1">&#39;2.50 - 2.99&#39;</span><span class="p">:</span><span class="mi">3</span><span class="p">,</span>
-    <span class="s1">&#39;3.00 - 3.49&#39;</span><span class="p">:</span><span class="mi">4</span><span class="p">,</span>
-    <span class="s1">&#39;3.50 - 4.00&#39;</span><span class="p">:</span><span class="mi">5</span>
+    <span class="s1">&#39;0 - 1.99&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;2.00 - 2.49&#39;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;2.50 - 2.99&#39;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span> 
+    <span class="s1">&#39;3.00 - 3.49&#39;</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span> <span class="s1">&#39;3.50 - 4.00&#39;</span><span class="p">:</span> <span class="mi">5</span>
 <span class="p">}</span>
 
-<span class="c1"># Variabel utama rumus</span>
+<span class="c1"># Variabel Akumulator</span>
 <span class="n">jumlah_jarak</span> <span class="o">=</span> <span class="mi">0</span>
 <span class="n">jumlah_delta</span> <span class="o">=</span> <span class="mi">0</span>
 
 <span class="c1"># NOMINAL</span>
 <span class="k">for</span> <span class="n">kolom</span> <span class="ow">in</span> <span class="n">kolom_nominal</span><span class="p">:</span>
     <span class="k">if</span> <span class="n">pd</span><span class="o">.</span><span class="n">notna</span><span class="p">(</span><span class="n">data_1</span><span class="p">[</span><span class="n">kolom</span><span class="p">])</span> <span class="ow">and</span> <span class="n">pd</span><span class="o">.</span><span class="n">notna</span><span class="p">(</span><span class="n">data_2</span><span class="p">[</span><span class="n">kolom</span><span class="p">]):</span>
-        <span class="n">jarak</span> <span class="o">=</span> <span class="mi">0</span> <span class="k">if</span> <span class="n">data_1</span><span class="p">[</span><span class="n">kolom</span><span class="p">]</span> <span class="o">==</span> <span class="n">data_2</span><span class="p">[</span><span class="n">kolom</span><span class="p">]</span> <span class="k">else</span> <span class="mi">1</span>
+        <span class="n">jarak</span> <span class="o">=</span> <span class="mi">0</span> <span class="k">if</span> <span class="nb">str</span><span class="p">(</span><span class="n">data_1</span><span class="p">[</span><span class="n">kolom</span><span class="p">])</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="o">==</span> <span class="nb">str</span><span class="p">(</span><span class="n">data_2</span><span class="p">[</span><span class="n">kolom</span><span class="p">])</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="k">else</span> <span class="mi">1</span>
         <span class="n">jumlah_jarak</span> <span class="o">+=</span> <span class="n">jarak</span>
         <span class="n">jumlah_delta</span> <span class="o">+=</span> <span class="mi">1</span>
 
 <span class="c1"># BINARY ASIMETRIS</span>
 <span class="k">for</span> <span class="n">kolom</span> <span class="ow">in</span> <span class="n">kolom_binary_asimetris</span><span class="p">:</span>
-    <span class="n">nilai_1</span> <span class="o">=</span> <span class="mi">1</span> <span class="k">if</span> <span class="nb">str</span><span class="p">(</span><span class="n">data_1</span><span class="p">[</span><span class="n">kolom</span><span class="p">])</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="o">==</span> <span class="s1">&#39;yes&#39;</span> <span class="k">else</span> <span class="mi">0</span>
-    <span class="n">nilai_2</span> <span class="o">=</span> <span class="mi">1</span> <span class="k">if</span> <span class="nb">str</span><span class="p">(</span><span class="n">data_2</span><span class="p">[</span><span class="n">kolom</span><span class="p">])</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="o">==</span> <span class="s1">&#39;yes&#39;</span> <span class="k">else</span> <span class="mi">0</span>
-    <span class="k">if</span> <span class="ow">not</span> <span class="p">(</span><span class="n">nilai_1</span> <span class="o">==</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">nilai_2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">):</span>
-        <span class="n">jarak</span> <span class="o">=</span> <span class="mi">0</span> <span class="k">if</span> <span class="n">nilai_1</span> <span class="o">==</span> <span class="n">nilai_2</span> <span class="k">else</span> <span class="mi">1</span>
+    <span class="n">v1</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">data_1</span><span class="p">[</span><span class="n">kolom</span><span class="p">])</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+    <span class="n">v2</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">data_2</span><span class="p">[</span><span class="n">kolom</span><span class="p">])</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+
+    <span class="k">if</span> <span class="ow">not</span> <span class="p">(</span><span class="n">v1</span> <span class="o">==</span> <span class="s1">&#39;no&#39;</span> <span class="ow">and</span> <span class="n">v2</span> <span class="o">==</span> <span class="s1">&#39;no&#39;</span><span class="p">):</span>
+        <span class="n">jarak</span> <span class="o">=</span> <span class="mi">0</span> <span class="k">if</span> <span class="n">v1</span> <span class="o">==</span> <span class="n">v2</span> <span class="k">else</span> <span class="mi">1</span>
         <span class="n">jumlah_jarak</span> <span class="o">+=</span> <span class="n">jarak</span>
         <span class="n">jumlah_delta</span> <span class="o">+=</span> <span class="mi">1</span>
 
 <span class="c1"># ORDINAL</span>
 <span class="k">for</span> <span class="n">kolom</span> <span class="ow">in</span> <span class="n">kolom_ordinal</span><span class="p">:</span>
-    <span class="k">if</span> <span class="n">kolom</span> <span class="o">==</span> <span class="s1">&#39;year_study&#39;</span><span class="p">:</span>
-        <span class="n">r1</span> <span class="o">=</span> <span class="n">ranking_year</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">data_1</span><span class="p">[</span><span class="n">kolom</span><span class="p">])</span><span class="o">.</span><span class="n">lower</span><span class="p">())</span>
-        <span class="n">r2</span> <span class="o">=</span> <span class="n">ranking_year</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">data_2</span><span class="p">[</span><span class="n">kolom</span><span class="p">])</span><span class="o">.</span><span class="n">lower</span><span class="p">())</span>
-        <span class="n">m</span> <span class="o">=</span> <span class="mi">4</span>
+    <span class="n">val1</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">data_1</span><span class="p">[</span><span class="n">kolom</span><span class="p">])</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+    <span class="n">val2</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">data_2</span><span class="p">[</span><span class="n">kolom</span><span class="p">])</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+    <span class="k">if</span> <span class="n">kolom</span> <span class="o">==</span> <span class="s1">&#39;year_of_study&#39;</span><span class="p">:</span>
+        <span class="n">r1</span><span class="p">,</span> <span class="n">r2</span><span class="p">,</span> <span class="n">m</span> <span class="o">=</span> <span class="n">ranking_year</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">val1</span><span class="p">),</span> <span class="n">ranking_year</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">val2</span><span class="p">),</span> <span class="mi">4</span>
     <span class="k">else</span><span class="p">:</span>
-        <span class="n">r1</span> <span class="o">=</span> <span class="n">ranking_gpa</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">data_1</span><span class="p">[</span><span class="n">kolom</span><span class="p">]))</span>
-        <span class="n">r2</span> <span class="o">=</span> <span class="n">ranking_gpa</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">data_2</span><span class="p">[</span><span class="n">kolom</span><span class="p">]))</span>
-        <span class="n">m</span> <span class="o">=</span> <span class="mi">5</span>
-    <span class="k">if</span> <span class="n">r1</span> <span class="ow">and</span> <span class="n">r2</span><span class="p">:</span>
+        <span class="n">r1</span><span class="p">,</span> <span class="n">r2</span><span class="p">,</span> <span class="n">m</span> <span class="o">=</span> <span class="n">ranking_gpa</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">val1</span><span class="p">),</span> <span class="n">ranking_gpa</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">val2</span><span class="p">),</span> <span class="mi">5</span>    
+    <span class="k">if</span> <span class="n">r1</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">r2</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
         <span class="n">z1</span> <span class="o">=</span> <span class="p">(</span><span class="n">r1</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">m</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
         <span class="n">z2</span> <span class="o">=</span> <span class="p">(</span><span class="n">r2</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">m</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
-        <span class="n">jarak</span> <span class="o">=</span> <span class="nb">abs</span><span class="p">(</span><span class="n">z1</span> <span class="o">-</span> <span class="n">z2</span><span class="p">)</span>
-        <span class="n">jumlah_jarak</span> <span class="o">+=</span> <span class="n">jarak</span>
+        <span class="n">jumlah_jarak</span> <span class="o">+=</span> <span class="nb">abs</span><span class="p">(</span><span class="n">z1</span> <span class="o">-</span> <span class="n">z2</span><span class="p">)</span>
         <span class="n">jumlah_delta</span> <span class="o">+=</span> <span class="mi">1</span>
 
 <span class="c1"># NUMERIK</span>
 <span class="k">for</span> <span class="n">kolom</span> <span class="ow">in</span> <span class="n">kolom_numerik</span><span class="p">:</span>
     <span class="n">rentang</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">kolom</span><span class="p">]</span><span class="o">.</span><span class="n">max</span><span class="p">()</span> <span class="o">-</span> <span class="n">df</span><span class="p">[</span><span class="n">kolom</span><span class="p">]</span><span class="o">.</span><span class="n">min</span><span class="p">()</span>
-    <span class="k">if</span> <span class="n">rentang</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">rentang</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
         <span class="n">jarak</span> <span class="o">=</span> <span class="nb">abs</span><span class="p">(</span><span class="n">data_1</span><span class="p">[</span><span class="n">kolom</span><span class="p">]</span> <span class="o">-</span> <span class="n">data_2</span><span class="p">[</span><span class="n">kolom</span><span class="p">])</span> <span class="o">/</span> <span class="n">rentang</span>
         <span class="n">jumlah_jarak</span> <span class="o">+=</span> <span class="n">jarak</span>
         <span class="n">jumlah_delta</span> <span class="o">+=</span> <span class="mi">1</span>
 
 <span class="c1"># HASIL</span>
-<span class="n">jarak_campuran</span> <span class="o">=</span> <span class="n">jumlah_jarak</span> <span class="o">/</span> <span class="n">jumlah_delta</span>
+<span class="n">jarak_campuran</span> <span class="o">=</span> <span class="n">jumlah_jarak</span> <span class="o">/</span> <span class="n">jumlah_delta</span> <span class="k">if</span> <span class="n">jumlah_delta</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="k">else</span> <span class="mi">0</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Total nilai jarak =&quot;</span><span class="p">,</span> <span class="n">jumlah_jarak</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Jumlah atribut dihitung =&quot;</span><span class="p">,</span> <span class="n">jumlah_delta</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Nilai jarak campuran akhir =&quot;</span><span class="p">,</span> <span class="n">jarak_campuran</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;--- Hasil Perhitungan Jarak Gower ---&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Total Nilai Jarak (Pembilang) : </span><span class="si">{</span><span class="n">jumlah_jarak</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Total Bobot/Delta (Penyebut)  : </span><span class="si">{</span><span class="n">jumlah_delta</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Jarak Campuran Akhir          : </span><span class="si">{</span><span class="n">jarak_campuran</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Total nilai jarak = 5.833333333333333
-Jumlah atribut dihitung = 8
-Nilai jarak campuran akhir = 0.7291666666666666
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>--- Hasil Perhitungan Jarak Gower ---
+Total Nilai Jarak (Pembilang) : 5.8333
+Total Bobot/Delta (Penyebut)  : 9
+Jarak Campuran Akhir          : 0.6481
 </pre></div>
 </div>
 </div>
