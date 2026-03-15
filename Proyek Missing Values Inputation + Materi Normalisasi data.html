@@ -1,0 +1,1672 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Proyek Missing Values Inputation + Materi Normalisasi data &#8212; My sample book</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=9c3e77be" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=1ae7504c"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Proyek Missing Values Inputation + Materi Normalisasi data';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Data Preparation" href="Data%20Preparation.html" />
+    <link rel="prev" title="Menghitung Jarak Dataset Campuran" href="Mengukur%20Jarak%20Data%20Campuran.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo.png" class="logo__image only-light" alt="My sample book - Home"/>
+    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="My sample book - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Halaman Depan
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="Business%20Understanding.html">Business Understanding</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Data%20Understanding.html">Data Understanding</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Mengukur%20Jarak%20Data%20Campuran.html">Menghitung Jarak Dataset Campuran</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Proyek Missing Values Inputation + Materi Normalisasi data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Data%20Preparation.html">Data Preparation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Modelling.html">Modelling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Evaluation.html">Evaluation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Deployment.html">Deployment</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2FProyek Missing Values Inputation + Materi Normalisasi data.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/Proyek Missing Values Inputation + Materi Normalisasi data.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Proyek Missing Values Inputation + Materi Normalisasi data</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Proyek Missing Values Inputation + Materi Normalisasi data</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#missing-values">Missing values</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pengertian-missing-values">Pengertian Missing Values</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#imputasi-missing-values">Imputasi Missing Values</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#metode-mengatasi-missing-values-wknn">Metode Mengatasi Missing Values: WKNN</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#perhitungan-manual-wknn">Perhitungan Manual WKNN</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#menentukan-data-target">Menentukan Data Target</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#menghitung-jarak-euclidean-distance">Menghitung Jarak (Euclidean Distance)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#menghitung-bobot">Menghitung Bobot</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#menghitung-nilai-imputasi">Menghitung Nilai Imputasi</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#melakukan-perangkingan-jarak">Melakukan Perangkingan Jarak</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#menjumlahkan-bobot-dan-nilai-imputasi">Menjumlahkan Bobot dan Nilai Imputasi</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#menghitung-nilai-imputasi-step-count">Menghitung Nilai Imputasi Step Count</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hasil-imputasi">Hasil Imputasi</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mengimputasi-activity-type-data-kategorikal">Mengimputasi Activity Type (Data Kategorikal)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#menampilkan-dataset-akhir">Menampilkan Dataset Akhir.</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#perhitungan-wknn-code-python">Perhitungan WKNN Code (Python)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#import-library-dan-membuat-dataset">Import Library dan Membuat Dataset</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#menentukan-data-target-yang-akan-diimputasi">Menentukan Data Target yang Akan Diimputasi</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#menghitung-jarak-menggunakan-euclidean-distance">Menghitung Jarak Menggunakan Euclidean Distance</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#menghitung-jarak-antar-data">Menghitung Jarak Antar Data</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#menghitung-bobot-wknn">Menghitung Bobot WKNN</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#melakukan-perankingan-dan-mengambil-3-tetangga-terdekat">Melakukan Perankingan dan Mengambil 3 Tetangga Terdekat</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Menghitung Nilai Imputasi Step Count</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mengisi-nilai-step-count-ke-dataset">Mengisi Nilai Step Count ke Dataset</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Mengimputasi Activity Type (Data Kategorikal)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Menampilkan Dataset Akhir</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kesimpulan-missing-values-dengan-metode-wknn">Kesimpulan Missing Values dengan Metode WKNN</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#normalisasi-data">Normalisasi data</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pengertian-normalisasi">Pengertian Normalisasi</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#macam-macam-normalisasi">Macam-Macam Normalisasi</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-min-max-normalization">A. Min-Max Normalization</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#b-z-score-normalization-standardization">B. Z-Score Normalization (Standardization)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#c-decimal-scaling-normalization">C. Decimal Scaling Normalization</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#implementasi-normalisasi-menggunakan-library-sklearn-python">Implementasi Normalisasi Menggunakan (Library Sklearn) Python</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-min-max-normalization-menggunakan-library-sklearn">A. Min-Max Normalization menggunakan library sklearn</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#b-z-score-normalization-menggunakan-library-sklearn">B. Z-Score Normalization menggunakan library sklearn</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#c-decimal-scaling-normalization-menggunakan-function">C. Decimal Scaling Normalization menggunakan Function</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kesimpulan-normalisasi-data">Kesimpulan Normalisasi data</a></li>
+</ul>
+</li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="proyek-missing-values-inputation-materi-normalisasi-data">
+<h1>Proyek Missing Values Inputation + Materi Normalisasi data<a class="headerlink" href="#proyek-missing-values-inputation-materi-normalisasi-data" title="Link to this heading">#</a></h1>
+<p>Catatan ini membahas dua topik utama dalam pengolahan data, yaitu penanganan missing values dan normalisasi data. Missing values adalah nilai yang hilang dalam dataset sehingga perlu dilakukan imputasi untuk melengkapi data. Selain itu, dibahas juga normalisasi data, yaitu proses menyamakan skala nilai antar atribut agar data lebih mudah dan akurat untuk dianalisis.</p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="missing-values">
+<h1>Missing values<a class="headerlink" href="#missing-values" title="Link to this heading">#</a></h1>
+<section id="pengertian-missing-values">
+<h2>Pengertian Missing Values<a class="headerlink" href="#pengertian-missing-values" title="Link to this heading">#</a></h2>
+<p>Missing values adalah kondisi ketika sebagian data dalam dataset tidak memiliki nilai atau kosong. Biasanya ditandai dengan:</p>
+<ul class="simple">
+<li><p>kosong (blank)</p></li>
+<li><p>NA</p></li>
+<li><p>NULL</p></li>
+<li><p>NaN</p></li>
+</ul>
+<p>Missing values sering terjadi dalam proses pengumpulan data, misalnya:</p>
+<ul class="simple">
+<li><p>responden tidak mengisi suatu pertanyaan</p></li>
+<li><p>kesalahan sistem saat menyimpan data</p></li>
+<li><p>data tidak tersedia</p></li>
+</ul>
+<p>Contoh dataset:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>ID</p></th>
+<th class="head"><p>Umur</p></th>
+<th class="head"><p>Penghasilan</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>1</p></td>
+<td><p>25</p></td>
+<td><p>4</p></td>
+</tr>
+<tr class="row-odd"><td><p>2</p></td>
+<td><p>27</p></td>
+<td><p>5</p></td>
+</tr>
+<tr class="row-even"><td><p>3</p></td>
+<td><p>24</p></td>
+<td><p>?</p></td>
+</tr>
+<tr class="row-odd"><td><p>4</p></td>
+<td><p>26</p></td>
+<td><p>6</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Pada tabel di atas, nilai penghasilan pada ID 3 hilang (missing value).</p>
+<p>Jika missing values tidak ditangani, maka dapat menyebabkan:</p>
+<ul class="simple">
+<li><p>analisis data menjadi tidak akurat</p></li>
+<li><p>algoritma machine learning tidak dapat berjalan</p></li>
+<li><p>hasil penelitian menjadi bias</p></li>
+</ul>
+<p>Karena itu diperlukan proses imputasi data.</p>
+<section id="imputasi-missing-values">
+<h3>Imputasi Missing Values<a class="headerlink" href="#imputasi-missing-values" title="Link to this heading">#</a></h3>
+<p>Imputasi adalah proses mengisi nilai yang hilang dengan nilai perkiraan berdasarkan informasi dari data lain dalam dataset.
+Beberapa metode imputasi yang sering digunakan:</p>
+<ol class="arabic simple">
+<li><p>Mean (rata-rata)</p></li>
+<li><p>Median</p></li>
+<li><p>Modus</p></li>
+<li><p>KNN Imputation</p></li>
+<li><p>WKNN (Weighted K-Nearest Neighbor)</p></li>
+</ol>
+<p>Pada tugas ini digunakan metode WKNN.</p>
+</section>
+</section>
+<section id="metode-mengatasi-missing-values-wknn">
+<h2>Metode Mengatasi Missing Values: WKNN<a class="headerlink" href="#metode-mengatasi-missing-values-wknn" title="Link to this heading">#</a></h2>
+<p>Weighted K-Nearest Neighbor (WKNN) adalah metode yang digunakan untuk mengisi missing value dengan memanfaatkan data yang paling mirip atau paling dekat dengan data yang memiliki nilai kosong. Metode ini bekerja dengan cara mencari beberapa tetangga terdekat (K-Nearest Neighbor) berdasarkan jarak antar data, kemudian nilai yang hilang diperkirakan menggunakan rata-rata berbobot dari tetangga tersebut.</p>
+<p>Dalam metode WKNN, setiap tetangga diberikan bobot berdasarkan jaraknya, di mana data yang jaraknya lebih dekat akan memiliki bobot lebih besar dibandingkan data yang lebih jauh. Bobot biasanya dihitung menggunakan rumus kebalikan jarak (1/d). Dengan demikian, nilai yang lebih dekat akan memberikan pengaruh lebih besar dalam proses estimasi missing value.</p>
+<p>Metode WKNN sering digunakan karena mampu menghasilkan estimasi yang lebih akurat dibandingkan metode sederhana seperti mengganti nilai dengan rata-rata, karena WKNN mempertimbangkan kemiripan antar data dalam proses pengisian nilai yang hilang.</p>
+</section>
+<section id="perhitungan-manual-wknn">
+<h2>Perhitungan Manual WKNN<a class="headerlink" href="#perhitungan-manual-wknn" title="Link to this heading">#</a></h2>
+<p>Dataset yang digunakan merupakan dataset Smartwatch Fitness Monitoring yang terdiri dari beberapa variabel numerik yaitu:</p>
+<ul class="simple">
+<li><p>Heart Rate</p></li>
+<li><p>Step Count</p></li>
+<li><p>Sleep Hours</p></li>
+<li><p>Calories Burned</p></li>
+</ul>
+<p>serta satu variabel kategorikal yaitu:</p>
+<ul class="simple">
+<li><p>Activity Type</p></li>
+</ul>
+<p>Pada dataset ini terdapat dua nilai yang hilang, yaitu:</p>
+<ul class="simple">
+<li><p>Step Count pada data ke-8</p></li>
+<li><p>Activity Type pada data ke-15</p></li>
+</ul>
+<p><img alt="image" src="https://hackmd.io/_uploads/B1OTFgQ9Zg.png" /></p>
+<section id="menentukan-data-target">
+<h3>Menentukan Data Target<a class="headerlink" href="#menentukan-data-target" title="Link to this heading">#</a></h3>
+<p>Data yang memiliki missing value adalah Step Count pada data ke-8.</p>
+<p>Data ke-8 memiliki atribut:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Atribut</p></th>
+<th class="head"><p>Nilai</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Heart Rate</p></td>
+<td><p>0.445</p></td>
+</tr>
+<tr class="row-odd"><td><p>Sleep Hours</p></td>
+<td><p>0.478</p></td>
+</tr>
+<tr class="row-even"><td><p>Calories Burned</p></td>
+<td><p>0.494</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="menghitung-jarak-euclidean-distance">
+<h3>Menghitung Jarak (Euclidean Distance)<a class="headerlink" href="#menghitung-jarak-euclidean-distance" title="Link to this heading">#</a></h3>
+<p>Rumus Jarak:
+$<span class="math notranslate nohighlight">\(d(i,8) = \sqrt{(HR_i - HR_8)^2 + (Sleep_i - Sleep_8)^2 + (Cal_i - Cal_8)^2}\)</span>$</p>
+<p>Contoh perhitungan <strong>data S1</strong>:
+$<span class="math notranslate nohighlight">\(\begin{aligned}
+d &amp;= \sqrt{(0.314 - 0.445)^2 + (0.510 - 0.478)^2 + (0.362 - 0.494)^2} \\
+d &amp;= \sqrt{0.01716 + 0.00102 + 0.01742} \\
+d &amp;= 0.189
+\end{aligned}\)</span>$</p>
+<p><img alt="image" src="https://hackmd.io/_uploads/BJISkWm9-l.png" /></p>
+<p>Hasil ini sesuai dengan nilai jarak <strong>S1 pada tabel yaitu 0.189</strong>.</p>
+<p><img alt="image" src="https://hackmd.io/_uploads/HkZ42g7q-x.png" /></p>
+<p>Lakukan Proses perhitungan seterusnya sampai S15, kecuali S8 karena tidak diukur jaraknya terhadap dirinya sendiri.</p>
+</section>
+<section id="menghitung-bobot">
+<h3>Menghitung Bobot<a class="headerlink" href="#menghitung-bobot" title="Link to this heading">#</a></h3>
+<p>Setelah jarak diperoleh, bobot dihitung dengan rumus:
+$<span class="math notranslate nohighlight">\(w_{i} = \frac{1}{d_{i}}\)</span>$</p>
+<p>Contoh S1:
+$<span class="math notranslate nohighlight">\(\begin{aligned}
+w &amp;= \frac{1}{0.189} \\
+w &amp;= 5.299
+\end{aligned}\)</span>$
+<img alt="image" src="https://hackmd.io/_uploads/ryw_1Wm9Zl.png" /></p>
+<p>Semakin kecil jarak, maka bobot semakin besar.</p>
+<p><img alt="image" src="https://hackmd.io/_uploads/SJAWJbQ9be.png" /></p>
+</section>
+<section id="menghitung-nilai-imputasi">
+<h3>Menghitung Nilai Imputasi<a class="headerlink" href="#menghitung-nilai-imputasi" title="Link to this heading">#</a></h3>
+<p>Rumus:
+$<span class="math notranslate nohighlight">\(w_{i} \times x_{i}\)</span>$</p>
+<p>Contoh S1:
+$<span class="math notranslate nohighlight">\(5.299 \times 0.424 = 2.247\)</span>$</p>
+<p><img alt="image" src="https://hackmd.io/_uploads/ryDhJbX9bl.png" /></p>
+<p>Hasil tersebut sesuai dengan nilai pada tabel.</p>
+<p><img alt="image" src="https://hackmd.io/_uploads/SJRA1-Q5bg.png" /></p>
+</section>
+<section id="melakukan-perangkingan-jarak">
+<h3>Melakukan Perangkingan Jarak<a class="headerlink" href="#melakukan-perangkingan-jarak" title="Link to this heading">#</a></h3>
+<p>Setelah nilai jarak dan bobot diperoleh, langkah berikutnya adalah melakukan perangkingan berdasarkan nilai jarak terkecil. Semakin kecil jarak suatu data terhadap data target (data ke-8), maka data tersebut dianggap semakin mirip.</p>
+<p>Berdasarkan hasil perhitungan jarak pada tabel, diperoleh urutan jarak terkecil sebagai berikut:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Data</p></th>
+<th class="head"><p>Jarak</p></th>
+<th class="head"><p>Ranking</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>S2</p></td>
+<td><p>0.026</p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-odd"><td><p>S15</p></td>
+<td><p>0.065</p></td>
+<td><p>2</p></td>
+</tr>
+<tr class="row-even"><td><p>S10</p></td>
+<td><p>0.074</p></td>
+<td><p>3</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Karena nilai K ditentukan sebesar 3, maka hanya 3 tetangga terdekat yang digunakan dalam proses imputasi.</p>
+<p><img alt="image" src="https://hackmd.io/_uploads/HyltBZQqbl.png" /></p>
+</section>
+<section id="menjumlahkan-bobot-dan-nilai-imputasi">
+<h3>Menjumlahkan Bobot dan Nilai Imputasi<a class="headerlink" href="#menjumlahkan-bobot-dan-nilai-imputasi" title="Link to this heading">#</a></h3>
+<p>Setelah diperoleh tiga tetangga terdekat, kemudian dihitung jumlah bobot dan jumlah nilai imputasi dari ketiga data tersebut.</p>
+<p>Jumlah Bobot:
+$<span class="math notranslate nohighlight">\(\begin{aligned}
+\sum w_{i} &amp;= 38.292 + 15.275 + 13.574 \\
+\sum w_{i} &amp;= 67.141
+\end{aligned}\)</span>$</p>
+<p>Jumlah Nilai Imputasi:
+$<span class="math notranslate nohighlight">\(\begin{aligned}
+\sum (w_{i}x_{i}) &amp;= 22.477 + 7.194 + 7.656 \\
+\sum (w_{i}x_{i}) &amp;= 37.328
+\end{aligned}\)</span>$</p>
+<p>Menggunakan peringkat 1, 2, dan 3</p>
+<p><img alt="image" src="https://hackmd.io/_uploads/HJmoGfX9-l.png" /></p>
+<p>Hasilnya:</p>
+<p><img alt="image" src="https://hackmd.io/_uploads/Skuuf-75-l.png" /></p>
+</section>
+<section id="menghitung-nilai-imputasi-step-count">
+<h3>Menghitung Nilai Imputasi Step Count<a class="headerlink" href="#menghitung-nilai-imputasi-step-count" title="Link to this heading">#</a></h3>
+<p>Nilai Step Count data ke-8 dihitung menggunakan rumus:
+$<span class="math notranslate nohighlight">\(\hat{x} = \frac{\sum (w_{i}x_{i})}{\sum w_{i}}\)</span>$</p>
+<div class="math notranslate nohighlight">
+\[\hat{x} = \frac{37.328}{67.141}\]</div>
+<div class="math notranslate nohighlight">
+\[\hat{x} = 0.556\]</div>
+<p><img alt="image" src="https://hackmd.io/_uploads/SkVLEbmq-l.png" /></p>
+</section>
+<section id="hasil-imputasi">
+<h3>Hasil Imputasi<a class="headerlink" href="#hasil-imputasi" title="Link to this heading">#</a></h3>
+<p>Nilai Step Count data ke-8 setelah dilakukan imputasi menggunakan metode Weighted K-Nearest Neighbor (WKNN) adalah:
+$<span class="math notranslate nohighlight">\(0.556\)</span>$</p>
+<p><img alt="image" src="https://hackmd.io/_uploads/H1si4-X9-x.png" /></p>
+</section>
+<section id="mengimputasi-activity-type-data-kategorikal">
+<h3>Mengimputasi Activity Type (Data Kategorikal)<a class="headerlink" href="#mengimputasi-activity-type-data-kategorikal" title="Link to this heading">#</a></h3>
+<p>Untuk menentukan kategori aktivitas digunakan metode majority voting.</p>
+<p>Jumlah setiap kategori:</p>
+<p><img alt="image" src="https://hackmd.io/_uploads/rkK0BWX5Wg.png" /></p>
+<p>Kategori yang paling banyak adalah Running, sehingga Activity Type data ke-15 ditentukan sebagai Running.</p>
+</section>
+<section id="menampilkan-dataset-akhir">
+<h3>Menampilkan Dataset Akhir.<a class="headerlink" href="#menampilkan-dataset-akhir" title="Link to this heading">#</a></h3>
+<p><img alt="image" src="https://hackmd.io/_uploads/HJ4HYlX5bg.png" /></p>
+</section>
+</section>
+<section id="perhitungan-wknn-code-python">
+<h2>Perhitungan WKNN Code (Python)<a class="headerlink" href="#perhitungan-wknn-code-python" title="Link to this heading">#</a></h2>
+<section id="import-library-dan-membuat-dataset">
+<h3>Import Library dan Membuat Dataset<a class="headerlink" href="#import-library-dan-membuat-dataset" title="Link to this heading">#</a></h3>
+<p>Kode ini digunakan untuk membuat dataset Smartwatch Fitness Monitoring dalam bentuk DataFrame pandas, termasuk beberapa atribut numerik <strong>(heart_rate, step_count, sleep_hours, calories_burned)</strong> dan <strong>atribut kategorikal (activity_type)</strong>. Nilai yang hilang (missing value) ditandai dengan np.nan.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+
+<span class="n">data</span> <span class="o">=</span> <span class="p">{</span>
+<span class="s2">&quot;id&quot;</span><span class="p">:[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">11</span><span class="p">,</span><span class="mi">12</span><span class="p">,</span><span class="mi">13</span><span class="p">,</span><span class="mi">14</span><span class="p">,</span><span class="mi">15</span><span class="p">],</span>
+<span class="s2">&quot;heart_rate&quot;</span><span class="p">:[</span><span class="mf">0.314</span><span class="p">,</span><span class="mf">0.433</span><span class="p">,</span><span class="mf">0.265</span><span class="p">,</span><span class="mf">0.538</span><span class="p">,</span><span class="mf">0.393</span><span class="p">,</span><span class="mf">0.207</span><span class="p">,</span><span class="mf">0.633</span><span class="p">,</span><span class="mf">0.445</span><span class="p">,</span><span class="mf">0.370</span><span class="p">,</span><span class="mf">0.488</span><span class="p">,</span><span class="mf">0.338</span><span class="p">,</span><span class="mf">0.429</span><span class="p">,</span><span class="mf">0.594</span><span class="p">,</span><span class="mf">0.239</span><span class="p">,</span><span class="mf">0.416</span><span class="p">],</span>
+<span class="s2">&quot;step_count&quot;</span><span class="p">:[</span><span class="mf">0.424</span><span class="p">,</span><span class="mf">0.587</span><span class="p">,</span><span class="mf">0.349</span><span class="p">,</span><span class="mf">0.640</span><span class="p">,</span><span class="mf">0.508</span><span class="p">,</span><span class="mf">0.300</span><span class="p">,</span><span class="mf">0.614</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">,</span><span class="mf">0.454</span><span class="p">,</span><span class="mf">0.564</span><span class="p">,</span><span class="mf">0.363</span><span class="p">,</span><span class="mf">0.515</span><span class="p">,</span><span class="mf">0.626</span><span class="p">,</span><span class="mf">0.323</span><span class="p">,</span><span class="mf">0.471</span><span class="p">],</span>
+<span class="s2">&quot;sleep_hours&quot;</span><span class="p">:[</span><span class="mf">0.510</span><span class="p">,</span><span class="mf">0.481</span><span class="p">,</span><span class="mf">0.563</span><span class="p">,</span><span class="mf">0.448</span><span class="p">,</span><span class="mf">0.488</span><span class="p">,</span><span class="mf">0.626</span><span class="p">,</span><span class="mf">0.377</span><span class="p">,</span><span class="mf">0.478</span><span class="p">,</span><span class="mf">0.555</span><span class="p">,</span><span class="mf">0.431</span><span class="p">,</span><span class="mf">0.510</span><span class="p">,</span><span class="mf">0.578</span><span class="p">,</span><span class="mf">0.400</span><span class="p">,</span><span class="mf">0.617</span><span class="p">,</span><span class="mf">0.501</span><span class="p">],</span>
+<span class="s2">&quot;calories_burned&quot;</span><span class="p">:[</span><span class="mf">0.362</span><span class="p">,</span><span class="mf">0.517</span><span class="p">,</span><span class="mf">0.322</span><span class="p">,</span><span class="mf">0.578</span><span class="p">,</span><span class="mf">0.415</span><span class="p">,</span><span class="mf">0.247</span><span class="p">,</span><span class="mf">0.633</span><span class="p">,</span><span class="mf">0.494</span><span class="p">,</span><span class="mf">0.417</span><span class="p">,</span><span class="mf">0.531</span><span class="p">,</span><span class="mf">0.376</span><span class="p">,</span><span class="mf">0.488</span><span class="p">,</span><span class="mf">0.587</span><span class="p">,</span><span class="mf">0.279</span><span class="p">,</span><span class="mf">0.440</span><span class="p">],</span>
+<span class="s2">&quot;activity_type&quot;</span><span class="p">:[</span><span class="s2">&quot;Walking&quot;</span><span class="p">,</span><span class="s2">&quot;Running&quot;</span><span class="p">,</span><span class="s2">&quot;Cycling&quot;</span><span class="p">,</span><span class="s2">&quot;Running&quot;</span><span class="p">,</span><span class="s2">&quot;Walking&quot;</span><span class="p">,</span><span class="s2">&quot;Resting&quot;</span><span class="p">,</span><span class="s2">&quot;Running&quot;</span><span class="p">,</span><span class="s2">&quot;Walking&quot;</span><span class="p">,</span><span class="s2">&quot;Cycling&quot;</span><span class="p">,</span><span class="s2">&quot;Running&quot;</span><span class="p">,</span><span class="s2">&quot;Walking&quot;</span><span class="p">,</span><span class="s2">&quot;Cycling&quot;</span><span class="p">,</span><span class="s2">&quot;Running&quot;</span><span class="p">,</span><span class="s2">&quot;Resting&quot;</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">]}</span>
+
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">data</span> <span class="o">=</span> <span class="p">{</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="s2">&quot;id&quot;</span><span class="p">:[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">11</span><span class="p">,</span><span class="mi">12</span><span class="p">,</span><span class="mi">13</span><span class="p">,</span><span class="mi">14</span><span class="p">,</span><span class="mi">15</span><span class="p">],</span>
+<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="s2">&quot;heart_rate&quot;</span><span class="p">:[</span><span class="mf">0.314</span><span class="p">,</span><span class="mf">0.433</span><span class="p">,</span><span class="mf">0.265</span><span class="p">,</span><span class="mf">0.538</span><span class="p">,</span><span class="mf">0.393</span><span class="p">,</span><span class="mf">0.207</span><span class="p">,</span><span class="mf">0.633</span><span class="p">,</span><span class="mf">0.445</span><span class="p">,</span><span class="mf">0.370</span><span class="p">,</span><span class="mf">0.488</span><span class="p">,</span><span class="mf">0.338</span><span class="p">,</span><span class="mf">0.429</span><span class="p">,</span><span class="mf">0.594</span><span class="p">,</span><span class="mf">0.239</span><span class="p">,</span><span class="mf">0.416</span><span class="p">],</span>
+   <span class="p">(</span><span class="o">...</span><span class="p">)</span>      <span class="mi">9</span> <span class="s2">&quot;calories_burned&quot;</span><span class="p">:[</span><span class="mf">0.362</span><span class="p">,</span><span class="mf">0.517</span><span class="p">,</span><span class="mf">0.322</span><span class="p">,</span><span class="mf">0.578</span><span class="p">,</span><span class="mf">0.415</span><span class="p">,</span><span class="mf">0.247</span><span class="p">,</span><span class="mf">0.633</span><span class="p">,</span><span class="mf">0.494</span><span class="p">,</span><span class="mf">0.417</span><span class="p">,</span><span class="mf">0.531</span><span class="p">,</span><span class="mf">0.376</span><span class="p">,</span><span class="mf">0.488</span><span class="p">,</span><span class="mf">0.587</span><span class="p">,</span><span class="mf">0.279</span><span class="p">,</span><span class="mf">0.440</span><span class="p">],</span>
+<span class="g g-Whitespace">     </span><span class="mi">10</span> <span class="s2">&quot;activity_type&quot;</span><span class="p">:[</span><span class="s2">&quot;Walking&quot;</span><span class="p">,</span><span class="s2">&quot;Running&quot;</span><span class="p">,</span><span class="s2">&quot;Cycling&quot;</span><span class="p">,</span><span class="s2">&quot;Running&quot;</span><span class="p">,</span><span class="s2">&quot;Walking&quot;</span><span class="p">,</span><span class="s2">&quot;Resting&quot;</span><span class="p">,</span><span class="s2">&quot;Running&quot;</span><span class="p">,</span><span class="s2">&quot;Walking&quot;</span><span class="p">,</span><span class="s2">&quot;Cycling&quot;</span><span class="p">,</span><span class="s2">&quot;Running&quot;</span><span class="p">,</span><span class="s2">&quot;Walking&quot;</span><span class="p">,</span><span class="s2">&quot;Cycling&quot;</span><span class="p">,</span><span class="s2">&quot;Running&quot;</span><span class="p">,</span><span class="s2">&quot;Resting&quot;</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">]}</span>
+
+<span class="ne">ModuleNotFoundError</span>: No module named &#39;pandas&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>Penjelasan Kode:</p>
+<ul class="simple">
+<li><p>import pandas as pd : Mengimpor library pandas untuk manipulasi data berbasis tabel.</p></li>
+<li><p>import numpy as np : Mengimpor library numpy untuk operasi numerik dan menangani nilai NaN.</p></li>
+<li><p>data = { … } : Membuat dataset contoh dengan atribut numerik dan kategorikal; np.nan menandai data yang hilang.</p></li>
+<li><p>df = pd.DataFrame(data) : Mengubah dictionary menjadi DataFrame agar lebih mudah dianalisis.</p></li>
+<li><p>print(df) : Menampilkan dataset awal untuk memastikan data sudah benar.</p></li>
+</ul>
+</section>
+<section id="menentukan-data-target-yang-akan-diimputasi">
+<h3>Menentukan Data Target yang Akan Diimputasi<a class="headerlink" href="#menentukan-data-target-yang-akan-diimputasi" title="Link to this heading">#</a></h3>
+<p>Kode ini digunakan untuk menentukan data target yang memiliki nilai hilang (missing value) pada atribut Step Count. Data target ini akan menjadi acuan untuk menghitung jarak dengan seluruh data lain menggunakan atribut numerik terpilih (heart_rate, sleep_hours, calories_burned).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">target_index</span> <span class="o">=</span> <span class="mi">7</span>
+<span class="n">features</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;heart_rate&quot;</span><span class="p">,</span><span class="s2">&quot;sleep_hours&quot;</span><span class="p">,</span><span class="s2">&quot;calories_burned&quot;</span><span class="p">]</span>
+
+<span class="n">target</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">target_index</span><span class="p">,</span><span class="n">features</span><span class="p">]</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">target</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>heart_rate         0.445
+sleep_hours        0.478
+calories_burned    0.494
+Name: 7, dtype: object
+</pre></div>
+</div>
+</div>
+</div>
+<p>Penjelasan Kode:</p>
+<ul class="simple">
+<li><p>target_index = 7 : Menentukan indeks baris dari data yang akan diimputasi (data ke-8).</p></li>
+<li><p>features = [“heart_rate”,”sleep_hours”,”calories_burned”] : Menentukan atribut numerik yang digunakan untuk perhitungan jarak WKNN.</p></li>
+<li><p>target = df.loc[target_index,features] : Mengambil nilai fitur data target berdasarkan indeks yang sudah ditentukan.</p></li>
+<li><p>print(target) : Menampilkan data target untuk memastikan nilai fitur sudah benar.</p></li>
+</ul>
+</section>
+<section id="menghitung-jarak-menggunakan-euclidean-distance">
+<h3>Menghitung Jarak Menggunakan Euclidean Distance<a class="headerlink" href="#menghitung-jarak-menggunakan-euclidean-distance" title="Link to this heading">#</a></h3>
+<p>Kode ini mendefinisikan sebuah fungsi untuk menghitung jarak Euclidean antara dua vektor numerik. Fungsi ini akan digunakan untuk mengukur kemiripan antara data target dan setiap data lain dalam proses WKNN.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">euclidean</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">((</span><span class="n">a</span> <span class="o">-</span> <span class="n">b</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Penjelasan Kode:</p>
+<ul class="simple">
+<li><p>def euclidean(a, b): : Mendefinisikan fungsi bernama euclidean yang menerima dua input, yaitu vektor a dan b.</p></li>
+<li><p>return np.sqrt(np.sum((a - b) ** 2)) : Menghitung jarak Euclidean:</p>
+<ul>
+<li><p>(a - b) : selisih tiap elemen vektor a dan b.</p></li>
+<li><p>** 2 : mengkuadratkan setiap selisih.</p></li>
+<li><p>np.sum(…) : menjumlahkan seluruh kuadrat selisih.</p></li>
+<li><p>np.sqrt(…) : mengambil akar kuadrat dari jumlah tersebut untuk mendapatkan jarak Euclidean.</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="menghitung-jarak-antar-data">
+<h3>Menghitung Jarak Antar Data<a class="headerlink" href="#menghitung-jarak-antar-data" title="Link to this heading">#</a></h3>
+<p>Kode ini digunakan untuk menghitung jarak Euclidean antara data target (yang memiliki missing value) dengan semua data lain yang memiliki nilai Step Count lengkap. Hasilnya disimpan dalam DataFrame baru yang berisi ID, Step Count, dan jarak tiap tetangga terhadap data target.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">rows</span><span class="o">=</span><span class="p">[]</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">df</span><span class="o">.</span><span class="n">index</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="n">target_index</span><span class="p">:</span>
+        <span class="k">continue</span>
+    <span class="k">if</span> <span class="n">pd</span><span class="o">.</span><span class="n">isna</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="s2">&quot;step_count&quot;</span><span class="p">]):</span>
+        <span class="k">continue</span>
+    <span class="n">neighbor</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="n">features</span><span class="p">]</span>
+    <span class="n">d</span> <span class="o">=</span> <span class="n">euclidean</span><span class="p">(</span><span class="n">target</span><span class="o">.</span><span class="n">values</span><span class="p">,</span><span class="n">neighbor</span><span class="o">.</span><span class="n">values</span><span class="p">)</span>
+
+    <span class="n">rows</span><span class="o">.</span><span class="n">append</span><span class="p">([</span>
+        <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="s2">&quot;id&quot;</span><span class="p">],</span>
+        <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="s2">&quot;step_count&quot;</span><span class="p">],</span>
+        <span class="n">d</span>
+    <span class="p">])</span>
+<span class="n">jarak_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">rows</span><span class="p">,</span><span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;id&quot;</span><span class="p">,</span><span class="s2">&quot;step_count&quot;</span><span class="p">,</span><span class="s2">&quot;jarak&quot;</span><span class="p">])</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">jarak_df</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="mi">3</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    id  step_count  jarak
+0    1       0.424  0.189
+1    2       0.587  0.026
+2    3       0.349  0.263
+3    4       0.640  0.129
+4    5       0.508  0.095
+5    6       0.300  0.374
+6    7       0.614  0.255
+7    9       0.454  0.132
+8   10       0.564  0.074
+9   11       0.363  0.162
+10  12       0.515  0.101
+11  13       0.626  0.192
+12  14       0.323  0.329
+13  15       0.471  0.065
+</pre></div>
+</div>
+</div>
+</div>
+<p>Penjelasan Kode:</p>
+<ul class="simple">
+<li><p>rows=[] : Membuat list kosong untuk menyimpan informasi tetangga sementara.</p></li>
+<li><p>for i in df.index: : Melakukan iterasi untuk setiap baris dalam dataset.</p></li>
+<li><p>if i == target_index: continue : Melewati data target itu sendiri agar tidak dihitung jaraknya.</p></li>
+<li><p>if pd.isna(df.loc[i,”step_count”]): continue : Melewati data lain yang memiliki Step Count hilang.</p></li>
+<li><p>neighbor = df.loc[i,features] : Mengambil nilai fitur numerik dari data tetangga.</p></li>
+<li><p>d = euclidean(target.values,neighbor.values) : Menghitung jarak Euclidean antara data target dan tetangga.</p></li>
+<li><p>rows.append([ df.loc[i,”id”], df.loc[i,”step_count”], d ]) : Menyimpan ID, Step Count, dan jarak tetangga ke list rows.</p></li>
+<li><p>jarak_df = pd.DataFrame(rows,columns=[“id”,”step_count”,”jarak”]) : Mengubah list rows menjadi DataFrame dengan kolom id, step_count, dan jarak.</p></li>
+<li><p>print(jarak_df.round(3)) : Menampilkan tabel jarak dengan pembulatan 3 desimal untuk mempermudah pembacaan.</p></li>
+</ul>
+</section>
+<section id="menghitung-bobot-wknn">
+<h3>Menghitung Bobot WKNN<a class="headerlink" href="#menghitung-bobot-wknn" title="Link to this heading">#</a></h3>
+<p>Kode ini digunakan untuk menghitung bobot WKNN berdasarkan jarak yang sudah diperoleh. Semakin kecil jarak suatu tetangga terhadap data target, semakin besar bobotnya, sehingga tetangga yang lebih mirip memiliki pengaruh lebih besar pada imputasi Step Count.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">jarak_df</span><span class="p">[</span><span class="s2">&quot;bobot&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">/</span> <span class="n">jarak_df</span><span class="p">[</span><span class="s2">&quot;jarak&quot;</span><span class="p">]</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">jarak_df</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="mi">3</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    id  step_count  jarak   bobot
+0    1       0.424  0.189   5.299
+1    2       0.587  0.026  38.292
+2    3       0.349  0.263   3.801
+3    4       0.640  0.129   7.760
+4    5       0.508  0.095  10.515
+5    6       0.300  0.374   2.677
+6    7       0.614  0.255   3.926
+7    9       0.454  0.132   7.563
+8   10       0.564  0.074  13.574
+9   11       0.363  0.162   6.155
+10  12       0.515  0.101   9.857
+11  13       0.626  0.192   5.203
+12  14       0.323  0.329   3.043
+13  15       0.471  0.065  15.275
+</pre></div>
+</div>
+</div>
+</div>
+<p>Penjelasan Kode:</p>
+<ul class="simple">
+<li><p>jarak_df[“bobot”] = 1 / jarak_df[“jarak”] : Menghitung bobot tiap tetangga dengan rumus bobot = 1 / jarak, lalu menyimpannya sebagai kolom baru bobot di DataFrame jarak_df.</p></li>
+<li><p>print(jarak_df.round(3)) : Menampilkan tabel yang sudah memiliki kolom bobot, dengan pembulatan 3 desimal agar lebih mudah dibaca.</p></li>
+</ul>
+</section>
+<section id="melakukan-perankingan-dan-mengambil-3-tetangga-terdekat">
+<h3>Melakukan Perankingan dan Mengambil 3 Tetangga Terdekat<a class="headerlink" href="#melakukan-perankingan-dan-mengambil-3-tetangga-terdekat" title="Link to this heading">#</a></h3>
+<p>Kode ini digunakan untuk melakukan perankingan tetangga berdasarkan bobot WKNN, kemudian memilih 3 tetangga teratas sebagai tetangga terdekat yang akan digunakan untuk imputasi Step Count data target.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ranking_df</span> <span class="o">=</span> <span class="n">jarak_df</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="s2">&quot;bobot&quot;</span><span class="p">,</span><span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">ranking_df</span><span class="p">[</span><span class="s2">&quot;ranking&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">ranking_df</span><span class="o">.</span><span class="n">index</span> <span class="o">+</span> <span class="mi">1</span>
+<span class="n">k</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="n">top3</span> <span class="o">=</span> <span class="n">ranking_df</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="n">k</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">top3</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="mi">3</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   id  step_count  jarak   bobot  ranking
+0   2       0.587  0.026  38.292        1
+1  15       0.471  0.065  15.275        2
+2  10       0.564  0.074  13.574        3
+</pre></div>
+</div>
+</div>
+</div>
+<p>Penjelasan Kode:</p>
+<ul class="simple">
+<li><p>ranking_df = jarak_df.sort_values(by=”bobot”,ascending=False).reset_index(drop=True) : Mengurutkan tetangga dari bobot terbesar ke terkecil (tetangga paling mirip berada di atas) dan mereset indeks DataFrame.</p></li>
+<li><p>ranking_df[“ranking”] = ranking_df.index + 1 : Menambahkan kolom ranking berdasarkan urutan bobot.</p></li>
+<li><p>k = 3 : Menentukan jumlah tetangga terdekat yang digunakan (K = 3).</p></li>
+<li><p>top3 = ranking_df.head(k) : Mengambil 3 tetangga teratas berdasarkan ranking.</p></li>
+<li><p>print(top3.round(3)) : Menampilkan tabel 3 tetangga teratas dengan pembulatan 3 desimal.</p></li>
+</ul>
+</section>
+<section id="id1">
+<h3>Menghitung Nilai Imputasi Step Count<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
+<p>Kode ini digunakan untuk menghitung nilai imputasi Step Count pada data target menggunakan metode Weighted K-Nearest Neighbor (WKNN). Bobot tetangga digunakan untuk memberikan pengaruh yang lebih besar pada tetangga yang lebih dekat, kemudian dihitung nilai imputasi sebagai rata-rata berbobot.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">top3</span> <span class="o">=</span> <span class="n">top3</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="n">top3</span><span class="p">[</span><span class="s2">&quot;nilai_imputasi&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">top3</span><span class="p">[</span><span class="s2">&quot;bobot&quot;</span><span class="p">]</span> <span class="o">*</span> <span class="n">top3</span><span class="p">[</span><span class="s2">&quot;step_count&quot;</span><span class="p">]</span>
+
+<span class="n">jumlah_nilai_imputasi</span> <span class="o">=</span> <span class="n">top3</span><span class="p">[</span><span class="s2">&quot;nilai_imputasi&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+<span class="n">jumlah_bobot</span> <span class="o">=</span> <span class="n">top3</span><span class="p">[</span><span class="s2">&quot;bobot&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+
+<span class="n">step_impute</span> <span class="o">=</span> <span class="n">jumlah_nilai_imputasi</span> <span class="o">/</span> <span class="n">jumlah_bobot</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">top3</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="mi">3</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Jumlah nilai imputasi =&quot;</span><span class="p">,</span><span class="n">jumlah_nilai_imputasi</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Jumlah bobot =&quot;</span><span class="p">,</span><span class="n">jumlah_bobot</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Nilai imputasi Step Count =&quot;</span><span class="p">,</span><span class="n">step_impute</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   id  step_count  jarak   bobot  ranking  nilai_imputasi
+0   2       0.587  0.026  38.292        1          22.477
+1  15       0.471  0.065  15.275        2           7.194
+2  10       0.564  0.074  13.574        3           7.656
+Jumlah nilai imputasi = 37.327747582268785
+Jumlah bobot = 67.14110492652988
+Nilai imputasi Step Count = 0.5559596855475526
+</pre></div>
+</div>
+</div>
+</div>
+<p>Penjelasan Kode:</p>
+<ul class="simple">
+<li><p>top3 = top3.copy() : Membuat salinan DataFrame top3 agar perubahan kolom baru tidak memengaruhi DataFrame asli.</p></li>
+<li><p>top3[“nilai_imputasi”] = top3[“bobot”] * top3[“step_count”] : Menghitung kontribusi masing-masing tetangga terhadap imputasi dengan mengalikan bobot × Step Count.</p></li>
+<li><p>jumlah_nilai_imputasi = top3[“nilai_imputasi”].sum() : Menjumlahkan seluruh nilai imputasi dari 3 tetangga terdekat.</p></li>
+<li><p>jumlah_bobot = top3[“bobot”].sum() : Menjumlahkan seluruh bobot 3 tetangga terdekat.</p></li>
+<li><p>step_impute = jumlah_nilai_imputasi / jumlah_bobot : Menghitung nilai imputasi Step Count dengan rumus WKNN: jumlah nilai imputasi dibagi jumlah bobot.</p></li>
+<li><p>print(top3.round(3)) : Menampilkan tabel 3 tetangga teratas beserta kolom nilai_imputasi.</p></li>
+<li><p>print(“Jumlah nilai imputasi =”,jumlah_nilai_imputasi) : Menampilkan total nilai imputasi.</p></li>
+<li><p>print(“Jumlah bobot =”,jumlah_bobot) : Menampilkan total bobot.</p></li>
+<li><p>print(“Nilai imputasi Step Count =”,step_impute) : Menampilkan hasil Step Count yang sudah diimputasi untuk data target.</p></li>
+</ul>
+</section>
+<section id="mengisi-nilai-step-count-ke-dataset">
+<h3>Mengisi Nilai Step Count ke Dataset<a class="headerlink" href="#mengisi-nilai-step-count-ke-dataset" title="Link to this heading">#</a></h3>
+<p>Kode ini digunakan untuk mengisi nilai imputasi Step Count yang sudah dihitung ke dalam dataset asli pada data target. Setelah itu, data target ditampilkan untuk memastikan nilai imputasi sudah masuk dengan benar.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">target_index</span><span class="p">,</span><span class="s2">&quot;step_count&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">round</span><span class="p">(</span><span class="n">step_impute</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">target_index</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>id                       8
+heart_rate           0.445
+step_count           0.556
+sleep_hours          0.478
+calories_burned      0.494
+activity_type      Walking
+Name: 7, dtype: object
+</pre></div>
+</div>
+</div>
+</div>
+<p>Penjelasan Kode:</p>
+<ul class="simple">
+<li><p>df.loc[target_index,”step_count”] = round(step_impute,3) : Mengisi kolom step_count pada data target dengan nilai imputasi WKNN yang dibulatkan 3 desimal.</p></li>
+<li><p>print(df.loc[target_index]) : Menampilkan data target setelah Step Count diimputasi untuk memastikan perubahan sudah benar.</p></li>
+</ul>
+</section>
+<section id="id2">
+<h3>Mengimputasi Activity Type (Data Kategorikal)<a class="headerlink" href="#id2" title="Link to this heading">#</a></h3>
+<p>Kode ini digunakan untuk mengimputasi data kategorikal (activity_type) yang hilang. Metode yang dipakai adalah majority voting, yaitu mengambil kategori yang paling sering muncul pada dataset sebagai nilai pengganti.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">activity_counts</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;activity_type&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
+<span class="n">activity_impute</span> <span class="o">=</span> <span class="n">activity_counts</span><span class="o">.</span><span class="n">idxmax</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">activity_counts</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Nilai imputasi Activity Type =&quot;</span><span class="p">,</span><span class="n">activity_impute</span><span class="p">)</span>
+<span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;activity_type&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">isna</span><span class="p">(),</span><span class="s2">&quot;activity_type&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">activity_impute</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>activity_type
+Running    6
+Walking    4
+Cycling    3
+Resting    2
+Name: count, dtype: int64
+Nilai imputasi Activity Type = Running
+</pre></div>
+</div>
+</div>
+</div>
+<p>Penjelasan Kode:</p>
+<ul class="simple">
+<li><p>activity_counts = df[“activity_type”].value_counts() : Menghitung frekuensi kemunculan tiap kategori dalam kolom activity_type.</p></li>
+<li><p>activity_impute = activity_counts.idxmax() : Menentukan kategori yang paling banyak muncul sebagai nilai imputasi.</p></li>
+<li><p>print(activity_counts) : Menampilkan jumlah kemunculan tiap kategori.</p></li>
+<li><p>print(“Nilai imputasi Activity Type =”,activity_impute) : Menampilkan kategori yang akan digunakan sebagai imputasi.</p></li>
+<li><p>df.loc[df[“activity_type”].isna(),”activity_type”] = activity_impute : Mengisi nilai NaN pada kolom activity_type dengan kategori yang paling sering muncul.</p></li>
+</ul>
+</section>
+<section id="id3">
+<h3>Menampilkan Dataset Akhir<a class="headerlink" href="#id3" title="Link to this heading">#</a></h3>
+<p>Kode ini digunakan untuk menampilkan dataset akhir setelah semua proses imputasi selesai, baik Step Count numerik maupun Activity Type kategorikal, sehingga seluruh data kini lengkap dan siap dianalisis lebih lanjut.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="mi">3</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    id  heart_rate  step_count  sleep_hours  calories_burned activity_type
+0    1       0.314       0.424        0.510            0.362       Walking
+1    2       0.433       0.587        0.481            0.517       Running
+2    3       0.265       0.349        0.563            0.322       Cycling
+3    4       0.538       0.640        0.448            0.578       Running
+4    5       0.393       0.508        0.488            0.415       Walking
+5    6       0.207       0.300        0.626            0.247       Resting
+6    7       0.633       0.614        0.377            0.633       Running
+7    8       0.445       0.556        0.478            0.494       Walking
+8    9       0.370       0.454        0.555            0.417       Cycling
+9   10       0.488       0.564        0.431            0.531       Running
+10  11       0.338       0.363        0.510            0.376       Walking
+11  12       0.429       0.515        0.578            0.488       Cycling
+12  13       0.594       0.626        0.400            0.587       Running
+13  14       0.239       0.323        0.617            0.279       Resting
+14  15       0.416       0.471        0.501            0.440       Running
+</pre></div>
+</div>
+</div>
+</div>
+<p>Penjelasan Kode:</p>
+<ul class="simple">
+<li><p>print(df.round(3)) : Menampilkan seluruh dataset dengan pembulatan 3 desimal untuk mempermudah pembacaan.</p></li>
+</ul>
+</section>
+</section>
+<section id="kesimpulan-missing-values-dengan-metode-wknn">
+<h2>Kesimpulan Missing Values dengan Metode WKNN<a class="headerlink" href="#kesimpulan-missing-values-dengan-metode-wknn" title="Link to this heading">#</a></h2>
+<p>Missing value merupakan kondisi ketika terdapat data yang hilang atau tidak terisi pada suatu atribut dalam dataset. Salah satu metode yang dapat digunakan untuk mengatasi masalah ini adalah Weighted K-Nearest Neighbor (WKNN). Metode WKNN bekerja dengan mencari beberapa data yang paling mirip atau paling dekat dengan data yang memiliki nilai hilang, kemudian nilai tersebut diperkirakan menggunakan rata-rata berbobot dari tetangga terdekat.</p>
+<p>Dalam WKNN, data yang memiliki jarak lebih dekat akan diberikan bobot yang lebih besar, sehingga memiliki pengaruh lebih besar dalam menentukan nilai pengganti. Metode ini dapat digunakan pada berbagai tipe data dan mampu memberikan hasil yang lebih akurat karena mempertimbangkan kemiripan antar data, bukan hanya menggunakan rata-rata sederhana. Dengan demikian, WKNN menjadi salah satu metode yang efektif untuk mengatasi missing value dalam proses pengolahan data.</p>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="normalisasi-data">
+<h1>Normalisasi data<a class="headerlink" href="#normalisasi-data" title="Link to this heading">#</a></h1>
+<section id="pengertian-normalisasi">
+<h2>Pengertian Normalisasi<a class="headerlink" href="#pengertian-normalisasi" title="Link to this heading">#</a></h2>
+<p>Normalisasi data adalah proses mengubah skala nilai data menjadi rentang tertentu tanpa mengubah informasi dasar dari data tersebut. Normalisasi biasanya digunakan dalam pengolahan data dan machine learning agar setiap atribut memiliki pengaruh yang seimbang dalam proses analisis.</p>
+<p>Dalam sebuah dataset sering terdapat atribut yang memiliki skala nilai berbeda. Misalnya suatu dataset memiliki atribut jarak tempuh kendaraan, konsumsi bahan bakar, dan kapasitas mesin. Nilai dari atribut tersebut bisa memiliki rentang yang sangat berbeda. Jika data tersebut digunakan langsung dalam algoritma seperti KNN atau clustering, maka atribut dengan nilai lebih besar akan memiliki pengaruh lebih besar dalam perhitungan jarak.</p>
+<p>Oleh karena itu, normalisasi dilakukan agar semua atribut berada dalam skala yang sebanding sehingga proses analisis menjadi lebih adil dan akurat.</p>
+</section>
+<section id="macam-macam-normalisasi">
+<h2>Macam-Macam Normalisasi<a class="headerlink" href="#macam-macam-normalisasi" title="Link to this heading">#</a></h2>
+<section id="a-min-max-normalization">
+<h3>A. Min-Max Normalization<a class="headerlink" href="#a-min-max-normalization" title="Link to this heading">#</a></h3>
+<p>Min-Max Normalization adalah metode normalisasi yang mengubah nilai data ke dalam rentang tertentu, biasanya antara 0 sampai 1. Metode ini bekerja dengan cara mengurangi nilai data dengan nilai minimum kemudian membaginya dengan selisih antara nilai maksimum dan minimum.</p>
+<p>Tujuan dari metode ini adalah agar seluruh nilai data berada pada skala yang sama tanpa mengubah hubungan antar data.</p>
+<p>Rumus Min-Max Normalization:</p>
+<div class="math notranslate nohighlight">
+\[x' = \frac{x - min(x)}{max(x) - min(x)}\]</div>
+<p>Keterangan:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(x\)</span> = nilai data asli</p></li>
+<li><p><span class="math notranslate nohighlight">\(min(x)\)</span> = nilai minimum dalam dataset</p></li>
+<li><p><span class="math notranslate nohighlight">\(max(x)\)</span> = nilai maksimum dalam dataset</p></li>
+<li><p><span class="math notranslate nohighlight">\(x'\)</span> = nilai hasil normalisasi</p></li>
+</ul>
+<p><strong>Contoh Data</strong></p>
+<p>Dataset jumlah buku yang dibaca mahasiswa dalam satu bulan:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Mahasiswa</p></th>
+<th class="head"><p>Buku Dibaca</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>A</p></td>
+<td><p>2</p></td>
+</tr>
+<tr class="row-odd"><td><p>B</p></td>
+<td><p>5</p></td>
+</tr>
+<tr class="row-even"><td><p>C</p></td>
+<td><p>7</p></td>
+</tr>
+<tr class="row-odd"><td><p>D</p></td>
+<td><p>10</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Nilai minimum = 2</p>
+<p>Nilai maksimum = 10</p>
+<p><strong>Perhitungan</strong></p>
+<ul class="simple">
+<li><p>Mahasiswa A: <span class="math notranslate nohighlight">\((2 − 2) / (10 − 2) = 0\)</span></p></li>
+<li><p>Mahasiswa B: <span class="math notranslate nohighlight">\((5 − 2) / (10 − 2) = 0.37\)</span></p></li>
+<li><p>Mahasiswa C: <span class="math notranslate nohighlight">\((7 − 2) / (10 − 2) = 0.62\)</span></p></li>
+<li><p>Mahasiswa D: <span class="math notranslate nohighlight">\((10 − 2) / (10 − 2) = 1\)</span></p></li>
+</ul>
+<p><strong>Hasil Normalisasi</strong></p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Mahasiswa</p></th>
+<th class="head"><p>Buku Dibaca</p></th>
+<th class="head"><p>Normalisasi</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>A</p></td>
+<td><p>2</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-odd"><td><p>B</p></td>
+<td><p>5</p></td>
+<td><p>0.37</p></td>
+</tr>
+<tr class="row-even"><td><p>C</p></td>
+<td><p>7</p></td>
+<td><p>0.62</p></td>
+</tr>
+<tr class="row-odd"><td><p>D</p></td>
+<td><p>10</p></td>
+<td><p>1</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Metode ini sangat sering digunakan dalam algoritma berbasis jarak seperti KNN dan K-Means karena membuat skala data menjadi seragam.</p>
+</section>
+<section id="b-z-score-normalization-standardization">
+<h3>B. Z-Score Normalization (Standardization)<a class="headerlink" href="#b-z-score-normalization-standardization" title="Link to this heading">#</a></h3>
+<p>Z-score normalization atau standardization adalah metode normalisasi yang mengubah data berdasarkan rata-rata (mean) dan standar deviasi dari dataset.</p>
+<p>Metode ini menghasilkan data dengan:</p>
+<ul class="simple">
+<li><p>rata-rata = 0</p></li>
+<li><p>standar deviasi = 1</p></li>
+</ul>
+<p>Rumus Z-score:</p>
+<div class="math notranslate nohighlight">
+\[z = \frac{x - \mu}{\sigma}\]</div>
+<p>Keterangan:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(x\)</span> = nilai data</p></li>
+<li><p><span class="math notranslate nohighlight">\(\mu\)</span> = rata-rata data</p></li>
+<li><p><span class="math notranslate nohighlight">\(\sigma\)</span> = standar deviasi</p></li>
+</ul>
+<p><strong>Contoh Data</strong></p>
+<p>Dataset waktu belajar mahasiswa per hari (jam):</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Mahasiswa</p></th>
+<th class="head"><p>Jam Belajar</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>A</p></td>
+<td><p>2</p></td>
+</tr>
+<tr class="row-odd"><td><p>B</p></td>
+<td><p>4</p></td>
+</tr>
+<tr class="row-even"><td><p>C</p></td>
+<td><p>6</p></td>
+</tr>
+<tr class="row-odd"><td><p>D</p></td>
+<td><p>8</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Rata-rata : <span class="math notranslate nohighlight">\(5\)</span></p>
+<p>Standar deviasi</p>
+<ul class="simple">
+<li><p>Cari Rata-rata (<span class="math notranslate nohighlight">\(\bar{x}\)</span>)</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\bar{x} = \frac{2 + 4 + 6 + 8}{4} = \frac{20}{4} = 5\]</div>
+<ul class="simple">
+<li><p>Hitung Selisih Kuadrat dari Rata-rata
+kurangi setiap angka dengan rata-rata, lalu kuadratkan:</p>
+<ul>
+<li><p><span class="math notranslate nohighlight">\((2 - 5)^2 = (-3)^2 = 9\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\((4 - 5)^2 = (-1)^2 = 1\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\((6 - 5)^2 = (1)^2 = 1\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\((8 - 5)^2 = (3)^2 = 9\)</span></p></li>
+</ul>
+</li>
+<li><p>Total Jumlah Kuadrat (<span class="math notranslate nohighlight">\(\sum\)</span>):</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[9 + 1 + 1 + 9 = 20\]</div>
+<ul class="simple">
+<li><p>Hitung Varian <span class="math notranslate nohighlight">\(s^2\)</span>
+Karena ini dianggap sebagai satu kelompok data (populasi kecil), kita bagi totalnya dengan jumlah data (<span class="math notranslate nohighlight">\(n = 4\)</span>):</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[s^2 = \frac{20}{4} \approx 5\]</div>
+<ul class="simple">
+<li><p>Hitung Standar Deviasi (<span class="math notranslate nohighlight">\(s\)</span>)
+Akar kuadrat dari varian:
+$<span class="math notranslate nohighlight">\(s = \sqrt{5} \approx 2,236\)</span>$</p></li>
+</ul>
+<p><strong>Perhitungan</strong></p>
+<ul class="simple">
+<li><p>Mahasiswa A: <span class="math notranslate nohighlight">\((2 - 5) / 2,236 = -1,342\)</span></p></li>
+<li><p>Mahasiswa B: <span class="math notranslate nohighlight">\((4 - 5) / 2,236 = -0,447\)</span></p></li>
+<li><p>Mahasiswa C: <span class="math notranslate nohighlight">\((6 - 5) / 2,236 = 0,447\)</span></p></li>
+<li><p>Mahasiswa D: <span class="math notranslate nohighlight">\((8 - 5) / 2,236 = 1,342\)</span></p></li>
+</ul>
+<p><strong>Hasil Normalisasi</strong></p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Mahasiswa</p></th>
+<th class="head"><p>Jam Belajar</p></th>
+<th class="head"><p>Z-Score</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>A</p></td>
+<td><p>2</p></td>
+<td><p>−1,342</p></td>
+</tr>
+<tr class="row-odd"><td><p>B</p></td>
+<td><p>4</p></td>
+<td><p>−0,447</p></td>
+</tr>
+<tr class="row-even"><td><p>C</p></td>
+<td><p>6</p></td>
+<td><p>0,447</p></td>
+</tr>
+<tr class="row-odd"><td><p>D</p></td>
+<td><p>8</p></td>
+<td><p>1,342</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Nilai yang berada di bawah rata-rata akan memiliki nilai negatif, sedangkan nilai di atas rata-rata memiliki nilai positif.</p>
+</section>
+<section id="c-decimal-scaling-normalization">
+<h3>C. Decimal Scaling Normalization<a class="headerlink" href="#c-decimal-scaling-normalization" title="Link to this heading">#</a></h3>
+<p>Decimal Scaling adalah metode normalisasi yang dilakukan dengan cara membagi nilai data dengan pangkat 10 tertentu sehingga nilai data menjadi lebih kecil.</p>
+<p>Rumus:</p>
+<div class="math notranslate nohighlight">
+\[x' = \frac{x}{10^j}\]</div>
+<p>Keterangan:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(x\)</span> = nilai data asli</p></li>
+<li><p><span class="math notranslate nohighlight">\(j\)</span> = jumlah digit dari nilai terbesar dalam dataset</p></li>
+</ul>
+<p><strong>Contoh Data</strong></p>
+<p>Dataset jumlah pengunjung perpustakaan per minggu:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Minggu</p></th>
+<th class="head"><p>Pengunjung</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>1</p></td>
+<td><p>250</p></td>
+</tr>
+<tr class="row-odd"><td><p>2</p></td>
+<td><p>300</p></td>
+</tr>
+<tr class="row-even"><td><p>3</p></td>
+<td><p>450</p></td>
+</tr>
+<tr class="row-odd"><td><p>4</p></td>
+<td><p>500</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Nilai terbesar = 500
+Jumlah digit = 3</p>
+<p>Sehingga dibagi dengan 10³ = 1000</p>
+<p><strong>Perhitungan</strong></p>
+<ul class="simple">
+<li><p>Mahasiswa A: <span class="math notranslate nohighlight">\(250 / 1000 = 0.25\)</span></p></li>
+<li><p>Mahasiswa B: <span class="math notranslate nohighlight">\(300 / 1000 = 0.30\)</span></p></li>
+<li><p>Mahasiswa C: <span class="math notranslate nohighlight">\(450 / 1000 = 0.45\)</span></p></li>
+<li><p>Mahasiswa D: <span class="math notranslate nohighlight">\(500 / 1000 = 0.50\)</span></p></li>
+</ul>
+<p><strong>Hasil Normalisasi</strong></p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Minggu</p></th>
+<th class="head"><p>Pengunjung</p></th>
+<th class="head"><p>Normalisasi</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>1</p></td>
+<td><p>250</p></td>
+<td><p>0.25</p></td>
+</tr>
+<tr class="row-odd"><td><p>2</p></td>
+<td><p>300</p></td>
+<td><p>0.30</p></td>
+</tr>
+<tr class="row-even"><td><p>3</p></td>
+<td><p>450</p></td>
+<td><p>0.45</p></td>
+</tr>
+<tr class="row-odd"><td><p>4</p></td>
+<td><p>500</p></td>
+<td><p>0.50</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Metode ini lebih sederhana dibanding metode lainnya, namun tidak sepopuler Min-Max atau Z-score dalam aplikasi machine learning.</p>
+</section>
+</section>
+<section id="implementasi-normalisasi-menggunakan-library-sklearn-python">
+<h2>Implementasi Normalisasi Menggunakan (Library Sklearn) Python<a class="headerlink" href="#implementasi-normalisasi-menggunakan-library-sklearn-python" title="Link to this heading">#</a></h2>
+<section id="a-min-max-normalization-menggunakan-library-sklearn">
+<h3>A. Min-Max Normalization menggunakan library sklearn<a class="headerlink" href="#a-min-max-normalization-menggunakan-library-sklearn" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.preprocessing</span><span class="w"> </span><span class="kn">import</span> <span class="n">MinMaxScaler</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+
+<span class="n">data</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;Mahasiswa&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;A&#39;</span><span class="p">,</span> <span class="s1">&#39;B&#39;</span><span class="p">,</span> <span class="s1">&#39;C&#39;</span><span class="p">,</span> <span class="s1">&#39;D&#39;</span><span class="p">],</span>
+    <span class="s1">&#39;Buku Dibaca&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">10</span><span class="p">]</span>
+<span class="p">}</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+
+<span class="n">X</span> <span class="o">=</span> <span class="n">df</span><span class="p">[[</span><span class="s1">&#39;Buku Dibaca&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">values</span>
+<span class="n">scaler</span> <span class="o">=</span> <span class="n">MinMaxScaler</span><span class="p">()</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;Normalisasi&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">scaler</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hasil Min-Max Normalization:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Hasil Min-Max Normalization:
+  Mahasiswa  Buku Dibaca  Normalisasi
+0         A            2        0.000
+1         B            5        0.375
+2         C            7        0.625
+3         D           10        1.000
+</pre></div>
+</div>
+</div>
+</div>
+<p>Penjelasan:</p>
+<ul class="simple">
+<li><p>import numpy as np : digunakan untuk memanggil library NumPy untuk operasi numerik.</p></li>
+<li><p>from sklearn.preprocessing import MinMaxScaler : digunakan untuk mengimpor MinMaxScaler yang berfungsi melakukan normalisasi data dengan metode Min-Max.</p></li>
+<li><p>import pandas as pd : digunakan untuk memanggil library Pandas untuk mengolah data dalam bentuk tabel (DataFrame).</p></li>
+<li><p>data berisi dataset sederhana yang terdiri dari nama mahasiswa dan jumlah buku yang dibaca.</p></li>
+<li><p>pd.DataFrame(data) : mengubah data menjadi DataFrame agar mudah diolah.</p></li>
+<li><p>df[[‘Buku Dibaca’]].values : mengambil kolom Buku Dibaca sebagai data yang akan dinormalisasi.</p></li>
+<li><p>MinMaxScaler() : membuat objek untuk melakukan proses normalisasi Min-Max.</p></li>
+<li><p>fit_transform(X) : menghitung nilai minimum dan maksimum lalu menormalisasi data ke rentang 0–1.</p></li>
+<li><p>df[‘Normalisasi’] : menyimpan hasil normalisasi ke kolom baru.</p></li>
+<li><p>print(df) : menampilkan hasil data yang sudah dinormalisasi.</p></li>
+</ul>
+</section>
+<section id="b-z-score-normalization-menggunakan-library-sklearn">
+<h3>B. Z-Score Normalization menggunakan library sklearn<a class="headerlink" href="#b-z-score-normalization-menggunakan-library-sklearn" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.preprocessing</span><span class="w"> </span><span class="kn">import</span> <span class="n">StandardScaler</span>
+
+<span class="n">data</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;Mahasiswa&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;A&#39;</span><span class="p">,</span> <span class="s1">&#39;B&#39;</span><span class="p">,</span> <span class="s1">&#39;C&#39;</span><span class="p">,</span> <span class="s1">&#39;D&#39;</span><span class="p">],</span>
+    <span class="s1">&#39;Jam Belajar&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">8</span><span class="p">]</span>
+<span class="p">}</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+
+<span class="n">scaler</span> <span class="o">=</span> <span class="n">StandardScaler</span><span class="p">()</span>
+
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;Z-Score&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">scaler</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">df</span><span class="p">[[</span><span class="s1">&#39;Jam Belajar&#39;</span><span class="p">]])</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hasil Z-Score Normalization:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Hasil Z-Score Normalization:
+  Mahasiswa  Jam Belajar   Z-Score
+0         A            2 -1.341641
+1         B            4 -0.447214
+2         C            6  0.447214
+3         D            8  1.341641
+</pre></div>
+</div>
+</div>
+</div>
+<p>Penjelasan :</p>
+<ul class="simple">
+<li><p>import pandas as pd : digunakan untuk memanggil library Pandas yang berfungsi mengolah data dalam bentuk tabel (DataFrame).</p></li>
+<li><p>from sklearn.preprocessing import StandardScaler : digunakan untuk mengimpor StandardScaler yang digunakan untuk melakukan normalisasi dengan metode Z-Score.</p></li>
+<li><p>data berisi dataset sederhana yang terdiri dari nama mahasiswa dan jumlah jam belajar.</p></li>
+<li><p>pd.DataFrame(data) : mengubah data menjadi DataFrame agar lebih mudah diproses.</p></li>
+<li><p>StandardScaler() : membuat objek scaler yang digunakan untuk menghitung mean (rata-rata) dan standar deviasi pada data.</p></li>
+<li><p>scaler.fit_transform(df[[‘Jam Belajar’]]) : menghitung nilai rata-rata dan standar deviasi kemudian mengubah data menjadi Z-Score.</p></li>
+<li><p>df[‘Z-Score’] : menyimpan hasil normalisasi ke dalam kolom baru bernama Z-Score.</p></li>
+<li><p>print(df) : menampilkan hasil data yang sudah dinormalisasi menggunakan metode Z-Score Normalization.</p></li>
+</ul>
+</section>
+<section id="c-decimal-scaling-normalization-menggunakan-function">
+<h3>C. Decimal Scaling Normalization menggunakan Function<a class="headerlink" href="#c-decimal-scaling-normalization-menggunakan-function" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.preprocessing</span><span class="w"> </span><span class="kn">import</span> <span class="n">FunctionTransformer</span>
+
+<span class="n">data</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;Minggu&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">],</span>
+    <span class="s1">&#39;Pengunjung&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">250</span><span class="p">,</span> <span class="mi">300</span><span class="p">,</span> <span class="mi">450</span><span class="p">,</span> <span class="mi">500</span><span class="p">]</span>
+<span class="p">}</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+
+<span class="n">max_val</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Pengunjung&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">abs</span><span class="p">()</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
+<span class="n">k</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">max_val</span><span class="p">)))</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">decimal_scaler</span><span class="p">(</span><span class="n">X</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">X</span> <span class="o">/</span> <span class="p">(</span><span class="mi">10</span><span class="o">**</span><span class="n">k</span><span class="p">)</span>
+
+<span class="n">scaler</span> <span class="o">=</span> <span class="n">FunctionTransformer</span><span class="p">(</span><span class="n">decimal_scaler</span><span class="p">)</span>
+
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;Hasil Normalisasi&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">scaler</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">df</span><span class="p">[[</span><span class="s1">&#39;Pengunjung&#39;</span><span class="p">]])</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Nilai k yang digunakan: </span><span class="si">{</span><span class="n">k</span><span class="si">}</span><span class="s2"> (Pembagi: </span><span class="si">{</span><span class="mi">10</span><span class="o">**</span><span class="n">k</span><span class="si">}</span><span class="s2">)&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Table Hasil Decimal Scaling:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Nilai k yang digunakan: 3 (Pembagi: 1000)
+
+Table Hasil Decimal Scaling:
+   Minggu  Pengunjung  Hasil Normalisasi
+0       1         250               0.25
+1       2         300               0.30
+2       3         450               0.45
+3       4         500               0.50
+</pre></div>
+</div>
+</div>
+</div>
+<p>Penjelasan :</p>
+<ul class="simple">
+<li><p>import numpy as np : digunakan untuk memanggil library NumPy untuk operasi numerik.</p></li>
+<li><p>import pandas as pd : digunakan untuk memanggil library Pandas untuk mengolah data dalam bentuk tabel (DataFrame).</p></li>
+<li><p>from sklearn.preprocessing import FunctionTransformer : digunakan untuk mengimpor FunctionTransformer yang memungkinkan kita membuat fungsi normalisasi sendiri.</p></li>
+<li><p>data berisi dataset yang terdiri dari minggu dan jumlah pengunjung.</p></li>
+<li><p>pd.DataFrame(data) : mengubah data menjadi DataFrame agar mudah diproses.</p></li>
+<li><p>max_val = df[‘Pengunjung’].abs().max() : digunakan untuk mencari nilai maksimum dari kolom pengunjung.</p></li>
+<li><p>k = len(str(int(max_val))) : menghitung jumlah digit dari nilai maksimum untuk menentukan nilai k pada metode Decimal Scaling.</p></li>
+<li><p>decimal_scaler(X) : adalah fungsi yang membagi setiap nilai data dengan 10^k agar nilainya berada pada skala kecil.</p></li>
+<li><p>FunctionTransformer(decimal_scaler) : membuat objek scaler berdasarkan fungsi yang telah dibuat.</p></li>
+<li><p>scaler.transform(df[[‘Pengunjung’]]) : menerapkan fungsi Decimal Scaling pada data pengunjung.</p></li>
+<li><p>df[‘Hasil Normalisasi’] : menyimpan hasil normalisasi ke kolom baru.</p></li>
+<li><p>print() : digunakan untuk menampilkan nilai k yang digunakan serta tabel hasil normalisasi data.</p></li>
+</ul>
+</section>
+</section>
+<section id="kesimpulan-normalisasi-data">
+<h2>Kesimpulan Normalisasi data<a class="headerlink" href="#kesimpulan-normalisasi-data" title="Link to this heading">#</a></h2>
+<p>Normalisasi data adalah proses mengubah nilai data ke dalam skala tertentu agar perbedaan antar nilai tidak terlalu besar dan lebih mudah dianalisis. Proses ini sering digunakan dalam pengolahan data dan machine learning agar setiap atribut memiliki skala yang sebanding. Beberapa metode normalisasi yang umum digunakan adalah Min-Max Normalization, Z-Score Normalization, dan Decimal Scaling. Dengan melakukan normalisasi, data menjadi lebih konsisten, perhitungan menjadi lebih stabil, dan hasil analisis atau model yang dihasilkan menjadi lebih akurat.</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="Mengukur%20Jarak%20Data%20Campuran.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Menghitung Jarak Dataset Campuran</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="Data%20Preparation.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Data Preparation</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Proyek Missing Values Inputation + Materi Normalisasi data</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#missing-values">Missing values</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pengertian-missing-values">Pengertian Missing Values</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#imputasi-missing-values">Imputasi Missing Values</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#metode-mengatasi-missing-values-wknn">Metode Mengatasi Missing Values: WKNN</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#perhitungan-manual-wknn">Perhitungan Manual WKNN</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#menentukan-data-target">Menentukan Data Target</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#menghitung-jarak-euclidean-distance">Menghitung Jarak (Euclidean Distance)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#menghitung-bobot">Menghitung Bobot</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#menghitung-nilai-imputasi">Menghitung Nilai Imputasi</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#melakukan-perangkingan-jarak">Melakukan Perangkingan Jarak</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#menjumlahkan-bobot-dan-nilai-imputasi">Menjumlahkan Bobot dan Nilai Imputasi</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#menghitung-nilai-imputasi-step-count">Menghitung Nilai Imputasi Step Count</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hasil-imputasi">Hasil Imputasi</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mengimputasi-activity-type-data-kategorikal">Mengimputasi Activity Type (Data Kategorikal)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#menampilkan-dataset-akhir">Menampilkan Dataset Akhir.</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#perhitungan-wknn-code-python">Perhitungan WKNN Code (Python)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#import-library-dan-membuat-dataset">Import Library dan Membuat Dataset</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#menentukan-data-target-yang-akan-diimputasi">Menentukan Data Target yang Akan Diimputasi</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#menghitung-jarak-menggunakan-euclidean-distance">Menghitung Jarak Menggunakan Euclidean Distance</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#menghitung-jarak-antar-data">Menghitung Jarak Antar Data</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#menghitung-bobot-wknn">Menghitung Bobot WKNN</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#melakukan-perankingan-dan-mengambil-3-tetangga-terdekat">Melakukan Perankingan dan Mengambil 3 Tetangga Terdekat</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Menghitung Nilai Imputasi Step Count</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mengisi-nilai-step-count-ke-dataset">Mengisi Nilai Step Count ke Dataset</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Mengimputasi Activity Type (Data Kategorikal)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Menampilkan Dataset Akhir</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kesimpulan-missing-values-dengan-metode-wknn">Kesimpulan Missing Values dengan Metode WKNN</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#normalisasi-data">Normalisasi data</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pengertian-normalisasi">Pengertian Normalisasi</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#macam-macam-normalisasi">Macam-Macam Normalisasi</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-min-max-normalization">A. Min-Max Normalization</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#b-z-score-normalization-standardization">B. Z-Score Normalization (Standardization)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#c-decimal-scaling-normalization">C. Decimal Scaling Normalization</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#implementasi-normalisasi-menggunakan-library-sklearn-python">Implementasi Normalisasi Menggunakan (Library Sklearn) Python</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-min-max-normalization-menggunakan-library-sklearn">A. Min-Max Normalization menggunakan library sklearn</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#b-z-score-normalization-menggunakan-library-sklearn">B. Z-Score Normalization menggunakan library sklearn</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#c-decimal-scaling-normalization-menggunakan-function">C. Decimal Scaling Normalization menggunakan Function</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kesimpulan-normalisasi-data">Kesimpulan Normalisasi data</a></li>
+</ul>
+</li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Rian Renaldy (240411100053)
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2026.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
