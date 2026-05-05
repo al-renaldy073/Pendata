@@ -574,8 +574,8 @@ document.write(`
 <li><p>duration bervariasi</p></li>
 </ul>
 <p>Jika tidak dinormalisasi, model bisa bias terhadap fitur tertentu.</p>
-<p>Rumus Min-Max Normalization:
-$<span class="math notranslate nohighlight">\(x' = \frac{x - x_{min}}{x_{max} - x_{min}}x`\)</span>$</p>
+<p>Rumus Min-Max Normalization:</p>
+<div class="math notranslate nohighlight">\[x' = \frac{x - x_{min}}{x_{max} - x_{min}}x`\]</div>
 <p>Dengan normalisasi:</p>
 <ul class="simple">
 <li><p>Semua fitur berada pada skala yang sama (0–1)</p></li>
@@ -1012,10 +1012,11 @@ Accuracy digunakan untuk mengukur tingkat ketepatan model secara keseluruhan den
 </section>
 <section id="precision">
 <h2>Precision<a class="headerlink" href="#precision" title="Link to this heading">#</a></h2>
-<p><strong>Rumus:</strong>
-$<span class="math notranslate nohighlight">\(Precision = \frac{TP}{TP + FP}\)</span>$</p>
-<p><strong>Perhitungan:</strong>
-$<span class="math notranslate nohighlight">\(Precision = \frac{901}{901 + 256}\)</span>$$<span class="math notranslate nohighlight">\(Precision = \frac{901}{1157} = 0.779 (\approx 77.9\%)\)</span>$</p>
+<p><strong>Rumus:</strong></p>
+<div class="math notranslate nohighlight">\[Precision = \frac{TP}{TP + FP}\]</div>
+<p><strong>Perhitungan:</strong></p>
+<div class="math notranslate nohighlight">\[Precision = \frac{901}{901 + 256}\]</div>
+<div class="math notranslate nohighlight">\[Precision = \frac{901}{1157} = 0.779 (\approx 77.9\%)\]</div>
 <p><strong>Hasil:</strong></p>
 <div class="math notranslate nohighlight">
 \[Precision (kelas 1) = 0.779 (77.9\%)\]</div>
@@ -1024,12 +1025,13 @@ Precision mengukur seberapa tepat prediksi model ketika menyatakan seorang nasab
 </section>
 <section id="recall">
 <h2>Recall<a class="headerlink" href="#recall" title="Link to this heading">#</a></h2>
-<p><strong>Rumus:</strong>
-$<span class="math notranslate nohighlight">\(Recall = \frac{TP}{TP + FN}\)</span>$</p>
-<p><strong>Perhitungan:</strong>
-$<span class="math notranslate nohighlight">\(Recall = \frac{901}{901 + 686}\)</span>$$<span class="math notranslate nohighlight">\(Recall = \frac{901}{1587} = 0.568 (\approx 56.8\%)\)</span>$</p>
-<p><strong>Hasil:</strong>
-$<span class="math notranslate nohighlight">\(Recall (kelas 1) = 0.568 (56.8\%)\)</span>$</p>
+<p><strong>Rumus:</strong></p>
+<div class="math notranslate nohighlight">\[Recall = \frac{TP}{TP + FN}\]</div>
+<p><strong>Perhitungan:</strong></p>
+<div class="math notranslate nohighlight">\[Recall = \frac{901}{901 + 686}\]</div>
+<div class="math notranslate nohighlight">\[Recall = \frac{901}{1587} = 0.568 (\approx 56.8\%)\]</div>
+<p><strong>Hasil:</strong></p>
+<div class="math notranslate nohighlight">\[Recall (kelas 1) = 0.568 (56.8\%)\]</div>
 <p><strong>Penjelasan:</strong>
 Recall menunjukkan kemampuan model dalam mendeteksi seluruh nasabah yang benar-benar melakukan deposit. Nilai 56,8% berarti model hanya berhasil menemukan sekitar setengah dari nasabah yang seharusnya deposit. Dalam konteks perbankan, hal ini menunjukkan masih banyak nasabah potensial yang terlewat oleh model.</p>
 </section>
