@@ -1,0 +1,1256 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Analisis Perbandingan Naive Bayes dan Decision Tree pada Data Performa Mahasiswa Menggunakan KNIME &#8212; My sample book</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=9c3e77be" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=1ae7504c"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Analisis Perbandingan Naive Bayes dan Decision Tree pada Data Performa Mahasiswa Menggunakan KNIME';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Data Preparation" href="Data%20Preparation.html" />
+    <link rel="prev" title="Analisis Prediksi Permintaan Listrik Harian dengan Skforecast dan LightGBM" href="Analisis%20Prediksi%20Permintaan%20Listrik%20Harian%20dengan%20Skforecast%20dan%20LightGBM.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo.png" class="logo__image only-light" alt="My sample book - Home"/>
+    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="My sample book - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Halaman Depan
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="Business%20Understanding.html">Data Mining</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="Data%20Understanding.html">Data Understanding</a></li>
+
+
+<li class="toctree-l1"><a class="reference internal" href="Mengukur%20Jarak%20Data%20Campuran.html">Menghitung Jarak Dataset Campuran</a></li>
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="Proyek%20Missing%20Values%20Inputation%20%2B%20Materi%20Normalisasi%20data.html">Proyek Missing Values Inputation + Materi Normalisasi data</a></li>
+
+
+<li class="toctree-l1"><a class="reference internal" href="Analisa%20Data%20Kesuburan%20Tanah.html">Analisa Data Kesuburan Tanah</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Analisa%20Data%20Menggunakan%20Naive%20Bayes.html">Analisa Data Menggunakan Naive Bayes</a></li>
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="Analisa%20Data%20Menggunakan%20Pohon%20Keputusan%20%28Decision%20Tree%29.html">Analisa Data Menggunakan Pohon Keputusan (Decision Tree)</a></li>
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="Analisa%20Data%20Menggunakan%20Random%20Forest.html">Analisa Data Menggunakan Random Forest</a></li>
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="Analisa%20Data%20Menggunakan%20Regresi%20Linier.html">Analisa Data Menggunakan Regresi Linier</a></li>
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="Peramalan%20kadar%20NO2%20di%20daerah%20Pamekasan.html">Peramalan Kadar Nitrogen Dioksida (<span class="math notranslate nohighlight">\(NO_2\)</span>) Harian di Kabupaten Pamekasan Menggunakan K-Nearest Neighbor Regression</a></li>
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="Analisis%20Prediksi%20Permintaan%20Listrik%20Harian%20dengan%20Skforecast%20dan%20LightGBM.html">Analisis Prediksi Permintaan Listrik Harian dengan Skforecast dan LightGBM</a></li>
+
+
+
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Analisis Perbandingan Naive Bayes dan Decision Tree pada Data Performa Mahasiswa Menggunakan KNIME</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Data%20Preparation.html">Data Preparation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Modelling.html">Modelling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Evaluation.html">Evaluation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Deployment.html">Deployment</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2FAnalisis Perbandingan Naive Bayes dan Decision Tree pada Data Performa Mahasiswa Menggunakan KNIME.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/Analisis Perbandingan Naive Bayes dan Decision Tree pada Data Performa Mahasiswa Menggunakan KNIME.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Analisis Perbandingan Naive Bayes dan Decision Tree pada Data Performa Mahasiswa Menggunakan KNIME</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pendahuluan">1. Pendahuluan</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dataset">2. Dataset</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#atribut-dan-tipe-data">2.1 Atribut dan Tipe Data</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#karakteristik-dataset">2.2 Karakteristik Dataset</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#algoritma-klasifikasi">3. Algoritma Klasifikasi</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#naive-bayes">3.1 Naive Bayes</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pengertian">Pengertian</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#teorema-bayes">Teorema Bayes</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#kelebihan">Kelebihan</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#kekurangan">Kekurangan</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#decision-tree">3.2 Decision Tree</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Pengertian</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Kelebihan</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Kekurangan</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#alasan-pemilihan-metode-klasifikasi">3.3 Alasan Pemilihan Metode Klasifikasi</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#workflow-knime">4. Workflow KNIME</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#alur-workflow">4.1 Alur Workflow</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#penjelasan-workflow">4.2 Penjelasan Workflow</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#penjelasan-setiap-node">5. Penjelasan Setiap Node</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#csv-reader">5.1 CSV Reader</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#missing-value">5.2 Missing Value</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#column-filter">5.3 Column Filter</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#number-to-string">5.4 Number to String</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#table-partitioner">5.5 Table Partitioner</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#decision-tree-learner">5.6 Decision Tree Learner</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#decision-tree-predictor">5.7 Decision Tree Predictor</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#naive-bayes-learner">5.8 Naive Bayes Learner</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#naive-bayes-predictor">5.9 Naive Bayes Predictor</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#scorer">5.10 Scorer</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hasil-evaluasi">6. Hasil Evaluasi</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hasil-naive-bayes">6.1 Hasil Naive Bayes</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hasil-decision-tree">6.2 Hasil Decision Tree</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#perbandingan-hasil">6.3 Perbandingan Hasil</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#analisis-hasil">7. Analisis Hasil</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kesimpulan">8. Kesimpulan</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="analisis-perbandingan-naive-bayes-dan-decision-tree-pada-data-performa-mahasiswa-menggunakan-knime">
+<h1>Analisis Perbandingan Naive Bayes dan Decision Tree pada Data Performa Mahasiswa Menggunakan KNIME<a class="headerlink" href="#analisis-perbandingan-naive-bayes-dan-decision-tree-pada-data-performa-mahasiswa-menggunakan-knime" title="Link to this heading">#</a></h1>
+<section id="pendahuluan">
+<h2>1. Pendahuluan<a class="headerlink" href="#pendahuluan" title="Link to this heading">#</a></h2>
+<p>Data mining merupakan proses penggalian informasi atau pola tersembunyi dari sekumpulan data dengan memanfaatkan teknik statistik, <em>machine learning</em>, dan kecerdasan buatan. Salah satu proses utama dalam data mining adalah klasifikasi, yaitu metode untuk memprediksi suatu kategori berdasarkan pola yang terdapat pada data.</p>
+<p>Pada penelitian ini dilakukan analisis perbandingan dua algoritma klasifikasi, yaitu <strong>Naive Bayes</strong> dan <strong>Decision Tree</strong>, untuk memprediksi kategori nilai akhir mahasiswa (<strong>GRADE</strong>) berdasarkan faktor akademik dan non-akademik menggunakan aplikasi KNIME.</p>
+<p>Dataset yang digunakan adalah <em>Higher Education Students Performance Evaluation</em> yang diperoleh dari UCI Machine Learning Repository. Kedua algoritma diterapkan pada dataset yang sama, kemudian hasil evaluasi dibandingkan menggunakan metrik klasifikasi untuk mengetahui algoritma yang memiliki performa terbaik dalam melakukan prediksi kategori nilai mahasiswa.</p>
+</section>
+<hr class="docutils" />
+<section id="dataset">
+<h2>2. Dataset<a class="headerlink" href="#dataset" title="Link to this heading">#</a></h2>
+<p><strong>Nama Dataset:</strong> <em>Higher Education Students Performance Evaluation</em></p>
+<p><strong>Sumber Dataset:</strong> <a class="reference external" href="https://archive.ics.uci.edu/dataset/856/higher+education+students+performance+evaluation">UCI Machine Learning Repository</a></p>
+<p><strong>Jumlah baris data:</strong> 145 Record</p>
+<p><strong>Jumlah kolom:</strong> 33 AZtribut</p>
+<section id="atribut-dan-tipe-data">
+<h3>2.1 Atribut dan Tipe Data<a class="headerlink" href="#atribut-dan-tipe-data" title="Link to this heading">#</a></h3>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Atribut</p></th>
+<th class="head"><p>Tipe Data Asli</p></th>
+<th class="head"><p>Tipe Data Konseptual</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>STUDENT ID</p></td>
+<td><p>String</p></td>
+<td><p>Identifier</p></td>
+</tr>
+<tr class="row-odd"><td><p>COURSE ID</p></td>
+<td><p>Integer</p></td>
+<td><p>Nominal</p></td>
+</tr>
+<tr class="row-even"><td><p>Q1–Q30</p></td>
+<td><p>Integer</p></td>
+<td><p>Nominal</p></td>
+</tr>
+<tr class="row-odd"><td><p>GRADE</p></td>
+<td><p>Integer</p></td>
+<td><p>Nominal (Target)</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="karakteristik-dataset">
+<h3>2.2 Karakteristik Dataset<a class="headerlink" href="#karakteristik-dataset" title="Link to this heading">#</a></h3>
+<p>Dataset terdiri atas atribut berikut:</p>
+<ul class="simple">
+<li><p>STUDENT ID</p></li>
+<li><p>COURSE ID</p></li>
+<li><p>Q1 sampai Q30</p></li>
+<li><p>GRADE</p></li>
+</ul>
+<p>Target yang diprediksi adalah atribut <strong>GRADE</strong>, sedangkan atribut <strong>STUDENT ID</strong> hanya berfungsi sebagai identitas mahasiswa dan tidak digunakan dalam proses klasifikasi.</p>
+</section>
+</section>
+<hr class="docutils" />
+<section id="algoritma-klasifikasi">
+<h2>3. Algoritma Klasifikasi<a class="headerlink" href="#algoritma-klasifikasi" title="Link to this heading">#</a></h2>
+<section id="naive-bayes">
+<h3>3.1 Naive Bayes<a class="headerlink" href="#naive-bayes" title="Link to this heading">#</a></h3>
+<section id="pengertian">
+<h4>Pengertian<a class="headerlink" href="#pengertian" title="Link to this heading">#</a></h4>
+<p>Naive Bayes merupakan algoritma klasifikasi berbasis probabilitas yang menggunakan Teorema Bayes. Algoritma ini mengasumsikan bahwa setiap atribut bersifat independen terhadap atribut lainnya.</p>
+</section>
+<section id="teorema-bayes">
+<h4>Teorema Bayes<a class="headerlink" href="#teorema-bayes" title="Link to this heading">#</a></h4>
+<div class="math notranslate nohighlight">
+\[
+P(A \mid B) = \frac{P(B \mid A) \cdot P(A)}{P(B)}
+\]</div>
+<p>Keterangan:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(P(A \mid B)\)</span> : probabilitas terjadinya <span class="math notranslate nohighlight">\(A\)</span> jika <span class="math notranslate nohighlight">\(B\)</span> diketahui</p></li>
+<li><p><span class="math notranslate nohighlight">\(P(B \mid A)\)</span> : probabilitas terjadinya <span class="math notranslate nohighlight">\(B\)</span> jika <span class="math notranslate nohighlight">\(A\)</span> diketahui</p></li>
+<li><p><span class="math notranslate nohighlight">\(P(A)\)</span> : probabilitas awal (<em>prior</em>) dari <span class="math notranslate nohighlight">\(A\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(P(B)\)</span> : probabilitas terjadinya <span class="math notranslate nohighlight">\(B\)</span></p></li>
+</ul>
+</section>
+<section id="kelebihan">
+<h4>Kelebihan<a class="headerlink" href="#kelebihan" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p>Mudah diimplementasikan</p></li>
+<li><p>Cepat dalam proses pelatihan</p></li>
+<li><p>Cocok untuk data kategorikal</p></li>
+<li><p>Efektif pada dataset berukuran kecil</p></li>
+</ul>
+</section>
+<section id="kekurangan">
+<h4>Kekurangan<a class="headerlink" href="#kekurangan" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p>Mengasumsikan atribut saling independen</p></li>
+<li><p>Sensitif terhadap atribut yang saling berkorelasi</p></li>
+<li><p>Performa dapat menurun pada data yang kompleks</p></li>
+</ul>
+</section>
+</section>
+<hr class="docutils" />
+<section id="decision-tree">
+<h3>3.2 Decision Tree<a class="headerlink" href="#decision-tree" title="Link to this heading">#</a></h3>
+<section id="id1">
+<h4>Pengertian<a class="headerlink" href="#id1" title="Link to this heading">#</a></h4>
+<p>Decision Tree merupakan algoritma klasifikasi yang membentuk struktur pohon keputusan untuk menentukan kelas suatu data berdasarkan atribut yang paling berpengaruh. Setiap <em>node</em> pada pohon mewakili atribut, setiap cabang mewakili nilai atribut, dan setiap daun (<em>leaf</em>) mewakili hasil klasifikasi.</p>
+</section>
+<section id="id2">
+<h4>Kelebihan<a class="headerlink" href="#id2" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p>Mudah dipahami dan divisualisasikan</p></li>
+<li><p>Tidak memerlukan asumsi independensi antar atribut</p></li>
+<li><p>Mampu menangani hubungan kompleks antar atribut</p></li>
+</ul>
+</section>
+<section id="id3">
+<h4>Kekurangan<a class="headerlink" href="#id3" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p>Rentan terhadap <em>overfitting</em></p></li>
+<li><p>Performa dapat berubah signifikan jika data berubah sedikit</p></li>
+<li><p>Pohon yang terlalu besar sulit untuk diinterpretasikan</p></li>
+</ul>
+</section>
+</section>
+<hr class="docutils" />
+<section id="alasan-pemilihan-metode-klasifikasi">
+<h3>3.3 Alasan Pemilihan Metode Klasifikasi<a class="headerlink" href="#alasan-pemilihan-metode-klasifikasi" title="Link to this heading">#</a></h3>
+<p>Penelitian ini menggunakan dua algoritma klasifikasi, yaitu <strong>Naive Bayes</strong> dan <strong>Decision Tree</strong>, untuk membandingkan performa dalam memprediksi kategori nilai akhir mahasiswa (<strong>GRADE</strong>).</p>
+<p><strong>Naive Bayes</strong> dipilih karena merupakan algoritma berbasis probabilitas yang sederhana, cepat, dan sesuai untuk dataset berukuran kecil dengan atribut kategorikal.</p>
+<p><strong>Decision Tree</strong> dipilih karena mampu membentuk aturan keputusan berdasarkan atribut yang berpengaruh terhadap hasil klasifikasi serta menghasilkan model yang mudah dipahami.</p>
+<p>Perbandingan kedua algoritma dilakukan untuk mengetahui metode yang memiliki performa terbaik berdasarkan hasil evaluasi menggunakan <strong>Accuracy</strong>, <strong>Precision</strong>, <strong>Recall</strong>, <strong>F-Measure</strong>, dan <strong>Cohen’s Kappa</strong>.</p>
+</section>
+</section>
+<hr class="docutils" />
+<section id="workflow-knime">
+<h2>4. Workflow KNIME<a class="headerlink" href="#workflow-knime" title="Link to this heading">#</a></h2>
+<p>Workflow yang digunakan dalam penelitian ini ditunjukkan pada gambar berikut.</p>
+<p><img alt="image" src="https://hackmd.io/_uploads/ByUzaYMMGe.png" /></p>
+<section id="alur-workflow">
+<h3>4.1 Alur Workflow<a class="headerlink" href="#alur-workflow" title="Link to this heading">#</a></h3>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>                        CSV Reader
+                            │
+                       Missing Value
+                            │
+                       Column Filter
+                            │
+                     Number to String
+                            │
+                     Table Partitioner
+                       ┌────┴────┐
+              Decision Tree   Naive Bayes
+                 Learner         Learner
+                    │               │
+              Decision Tree   Naive Bayes
+                Predictor       Predictor
+                    │               │
+                 Scorer          Scorer
+</pre></div>
+</div>
+</section>
+<section id="penjelasan-workflow">
+<h3>4.2 Penjelasan Workflow<a class="headerlink" href="#penjelasan-workflow" title="Link to this heading">#</a></h3>
+<p>Dataset dibaca menggunakan node <strong>CSV Reader</strong>. Selanjutnya dilakukan penanganan nilai kosong menggunakan node <strong>Missing Value</strong>. Setelah itu dilakukan pemilihan atribut menggunakan <strong>Column Filter</strong> dan konversi tipe data menggunakan <strong>Number to String</strong>.</p>
+<p>Dataset kemudian dibagi menjadi data <em>training</em> dan data <em>testing</em> menggunakan node <strong>Table Partitioner</strong>. Data <em>training</em> digunakan untuk membangun model klasifikasi Decision Tree dan Naive Bayes, sedangkan data <em>testing</em> digunakan untuk menguji performa kedua model. Hasil prediksi masing-masing algoritma selanjutnya dievaluasi menggunakan node <strong>Scorer</strong>.</p>
+</section>
+</section>
+<hr class="docutils" />
+<section id="penjelasan-setiap-node">
+<h2>5. Penjelasan Setiap Node<a class="headerlink" href="#penjelasan-setiap-node" title="Link to this heading">#</a></h2>
+<section id="csv-reader">
+<h3>5.1 CSV Reader<a class="headerlink" href="#csv-reader" title="Link to this heading">#</a></h3>
+<p><img alt="CSV Reader" src="https://hackmd.io/_uploads/rJYun9JzGg.png" /></p>
+<p><strong>Fungsi</strong>
+Digunakan untuk membaca file dataset berformat CSV ke dalam KNIME.</p>
+<p><strong>Output</strong>
+Menghasilkan tabel yang berisi seluruh atribut dataset agar dapat diproses pada tahapan berikutnya.</p>
+</section>
+<hr class="docutils" />
+<section id="missing-value">
+<h3>5.2 Missing Value<a class="headerlink" href="#missing-value" title="Link to this heading">#</a></h3>
+<p><img alt="image" src="https://hackmd.io/_uploads/BJ3v6tGMzl.png" /></p>
+<p><strong>Fungsi</strong>
+Menangani nilai kosong (<em>missing value</em>) pada dataset sebelum diproses lebih lanjut, sehingga setiap atribut memiliki data yang lengkap pada tahap pemodelan.</p>
+<p><strong>Konfigurasi</strong></p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Tipe Data</p></th>
+<th class="head"><p>Treatment</p></th>
+<th class="head"><p>Keterangan</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>String</p></td>
+<td><p>Most Frequent Value</p></td>
+<td><p>Nilai kosong pada kolom bertipe string diisi menggunakan nilai yang paling sering muncul (mode)</p></td>
+</tr>
+<tr class="row-odd"><td><p>Number (Integer)</p></td>
+<td><p>Mean</p></td>
+<td><p>Nilai kosong pada kolom bertipe integer diisi menggunakan nilai rata-rata (<em>mean</em>) dari kolom tersebut</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>Input</strong>
+Tabel hasil pembacaan dataset dari node CSV Reader.</p>
+<p><strong>Output</strong>
+Tabel dengan nilai kosong yang telah digantikan sesuai aturan <em>treatment</em> pada masing-masing tipe data.</p>
+<p><strong>Alasan</strong>
+Penanganan nilai kosong dilakukan agar tidak terdapat data yang hilang pada saat proses pelatihan model. Atribut bertipe string ditangani dengan modus karena merepresentasikan kategori, sedangkan atribut bertipe integer ditangani dengan rata-rata karena bersifat numerik sebelum dikonversi menjadi nominal pada tahap berikutnya.</p>
+</section>
+<hr class="docutils" />
+<section id="column-filter">
+<h3>5.3 Column Filter<a class="headerlink" href="#column-filter" title="Link to this heading">#</a></h3>
+<p><img alt="Column Filter — Konfigurasi" src="https://hackmd.io/_uploads/ry3j3c1fzx.png" />
+<img alt="Column Filter — Hasil" src="https://hackmd.io/_uploads/rks6hqJzfe.png" /></p>
+<p><strong>Fungsi</strong>
+Memilih atribut yang digunakan dalam proses klasifikasi.</p>
+<p><strong>Kolom yang dihapus:</strong></p>
+<ul class="simple">
+<li><p>STUDENT ID</p></li>
+</ul>
+<p><strong>Kolom yang digunakan:</strong></p>
+<ul class="simple">
+<li><p>COURSE ID</p></li>
+<li><p>Q1–Q30</p></li>
+<li><p>GRADE</p></li>
+</ul>
+<p><strong>Alasan</strong>
+STUDENT ID hanya merupakan identitas unik mahasiswa sehingga tidak memiliki pengaruh terhadap kategori nilai akhir.</p>
+</section>
+<hr class="docutils" />
+<section id="number-to-string">
+<h3>5.4 Number to String<a class="headerlink" href="#number-to-string" title="Link to this heading">#</a></h3>
+<p><img alt="Number to String — Konfigurasi" src="https://hackmd.io/_uploads/rJEkpqkzfe.png" />
+<img alt="Number to String — Hasil" src="https://hackmd.io/_uploads/HJDg65JMzx.png" /></p>
+<p><strong>Fungsi</strong>
+Mengubah tipe data numerik menjadi tipe string (nominal) agar setiap nilai diperlakukan sebagai kategori, bukan sebagai nilai yang memiliki makna perhitungan matematis.</p>
+<p><strong>Konfigurasi</strong>
+Kolom yang dikonversi: COURSE ID, Q1–Q30, dan GRADE.</p>
+<p><strong>Alasan</strong>
+Kolom COURSE ID, Q1–Q30, dan GRADE direpresentasikan dalam bentuk angka, namun nilai tersebut merupakan kode kategori atau skala penilaian, bukan nilai numerik kontinu. Sebagai contoh, skala penilaian berikut:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Kode</p></th>
+<th class="head"><p>Kategori</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>1</p></td>
+<td><p>Sangat Rendah</p></td>
+</tr>
+<tr class="row-odd"><td><p>2</p></td>
+<td><p>Rendah</p></td>
+</tr>
+<tr class="row-even"><td><p>3</p></td>
+<td><p>Sedang</p></td>
+</tr>
+<tr class="row-odd"><td><p>4</p></td>
+<td><p>Tinggi</p></td>
+</tr>
+<tr class="row-even"><td><p>5</p></td>
+<td><p>Sangat Tinggi</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Karena merupakan kategori, atribut tersebut lebih sesuai diproses sebagai data nominal.</p>
+</section>
+<hr class="docutils" />
+<section id="table-partitioner">
+<h3>5.5 Table Partitioner<a class="headerlink" href="#table-partitioner" title="Link to this heading">#</a></h3>
+<p><img alt="Table Partitioner — Konfigurasi" src="https://hackmd.io/_uploads/SJ7Qa9kGMx.png" />
+<img alt="Table Partitioner — Hasil" src="https://hackmd.io/_uploads/rJ0mT9JzGl.png" /></p>
+<p><strong>Fungsi</strong>
+Membagi dataset menjadi data <em>training</em> dan data <em>testing</em>.</p>
+<p><strong>Konfigurasi</strong></p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Parameter</p></th>
+<th class="head"><p>Nilai</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Training Data</p></td>
+<td><p>70%</p></td>
+</tr>
+<tr class="row-odd"><td><p>Testing Data</p></td>
+<td><p>30%</p></td>
+</tr>
+<tr class="row-even"><td><p>Sampling Strategy</p></td>
+<td><p>Stratified</p></td>
+</tr>
+<tr class="row-odd"><td><p>Group Column</p></td>
+<td><p>GRADE</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>Alasan</strong>
+<em>Stratified sampling</em> digunakan agar distribusi kelas GRADE tetap seimbang pada kedua kelompok data.</p>
+</section>
+<hr class="docutils" />
+<section id="decision-tree-learner">
+<h3>5.6 Decision Tree Learner<a class="headerlink" href="#decision-tree-learner" title="Link to this heading">#</a></h3>
+<p><img alt="Decision Tree Learner" src="https://hackmd.io/_uploads/rJgAVYbzGe.png" /></p>
+<p><strong>Fungsi</strong>
+Membangun model klasifikasi menggunakan algoritma Decision Tree berdasarkan data <em>training</em>.</p>
+<p><strong>Konfigurasi</strong></p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Parameter</p></th>
+<th class="head"><p>Nilai</p></th>
+<th class="head"><p>Keterangan</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Class Column</p></td>
+<td><p>GRADE</p></td>
+<td><p>Menentukan kolom target yang akan diprediksi oleh model</p></td>
+</tr>
+<tr class="row-odd"><td><p>Quality Measure</p></td>
+<td><p>Gini Index</p></td>
+<td><p>Digunakan untuk memilih atribut terbaik pada setiap percabangan berdasarkan tingkat kemurnian</p></td>
+</tr>
+<tr class="row-even"><td><p>Pruning Method</p></td>
+<td><p>No Pruning</p></td>
+<td><p>Tidak dilakukan pemangkasan pohon sehingga seluruh aturan hasil pelatihan tetap dipertahankan</p></td>
+</tr>
+<tr class="row-odd"><td><p>Minimum Number of Records per Node</p></td>
+<td><p>2</p></td>
+<td><p>Jumlah minimum data yang harus terdapat pada setiap <em>node</em> agar dapat dilakukan pemisahan</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>Input</strong>
+Data <em>training</em> hasil node Table Partitioner.</p>
+<p><strong>Output</strong>
+Model Decision Tree. Struktur pohon keputusan yang terbentuk dapat divisualisasikan sebagai berikut.</p>
+<p><img alt="ttg" src="https://hackmd.io/_uploads/SJqflAzMMe.png" /></p>
+<p>Pohon keputusan yang terbentuk memiliki root node yang memisahkan data berdasarkan atribut COURSE ID. Selanjutnya, setiap cabang mengalami pemisahan berdasarkan atribut Q1–Q30 hingga mencapai leaf node sebagai hasil klasifikasi.</p>
+<p>Setiap node pada pohon menampilkan distribusi kelas GRADE yang terdiri dari kolom Category, %, dan n, serta jumlah keseluruhan data (Total) pada node tersebut.</p>
+<p>Konfigurasi Pruning Method yang menggunakan No Pruning dan nilai Minimum Number of Records per Node sebesar 2 menyebabkan pohon yang terbentuk memiliki struktur yang cukup kompleks, dengan banyak cabang dan leaf node yang hanya berisi satu atau dua data. Kondisi ini menunjukkan bahwa model memiliki potensi mengalami overfitting karena terlalu menyesuaikan pola pada data training dibandingkan pola umum dari data.</p>
+<p><strong>Alasan</strong>
+Decision Tree digunakan untuk mempelajari pola hubungan antara atribut mahasiswa dan kategori nilai akhir (GRADE) melalui pembentukan pohon keputusan yang digunakan pada proses prediksi.</p>
+</section>
+<hr class="docutils" />
+<section id="decision-tree-predictor">
+<h3>5.7 Decision Tree Predictor<a class="headerlink" href="#decision-tree-predictor" title="Link to this heading">#</a></h3>
+<p><img alt="Decision Tree Predictor" src="https://hackmd.io/_uploads/SkUDrtbGzl.png" /></p>
+<p><strong>Fungsi</strong>
+Menggunakan model Decision Tree yang telah dibangun untuk memprediksi kategori nilai akhir (GRADE) pada data <em>testing</em>.</p>
+<p><strong>Konfigurasi</strong></p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Parameter</p></th>
+<th class="head"><p>Nilai</p></th>
+<th class="head"><p>Keterangan</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Number of Patterns for Hiliting</p></td>
+<td><p>10.000</p></td>
+<td><p>Jumlah maksimum data yang dapat ditampilkan untuk proses visualisasi (<em>hiliting</em>)</p></td>
+</tr>
+<tr class="row-odd"><td><p>Change Prediction Column Name</p></td>
+<td><p>Tidak diaktifkan</p></td>
+<td><p>Menggunakan nama kolom prediksi bawaan dari KNIME</p></td>
+</tr>
+<tr class="row-even"><td><p>Append Columns with Normalized Class Distribution</p></td>
+<td><p>Tidak diaktifkan</p></td>
+<td><p>Tidak menambahkan informasi distribusi probabilitas tiap kelas pada hasil prediksi</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>Input</strong></p>
+<ul class="simple">
+<li><p>Model Decision Tree dari node Decision Tree Learner</p></li>
+<li><p>Data <em>testing</em> dari node Table Partitioner</p></li>
+</ul>
+<p><strong>Output</strong></p>
+<p><img alt="Hasil Prediksi Decision Tree" src="https://hackmd.io/_uploads/HJYvBF-Mfg.png" /></p>
+<p>Kolom baru <code class="docutils literal notranslate"><span class="pre">Prediction</span> <span class="pre">(GRADE)</span></code> yang berisi hasil prediksi kategori nilai mahasiswa berdasarkan model Decision Tree.</p>
+<p><strong>Alasan</strong>
+Node ini digunakan untuk menguji model yang telah dilatih dengan menerapkan aturan pohon keputusan pada data <em>testing</em> sehingga dapat dibandingkan dengan nilai aktual menggunakan node Scorer.</p>
+</section>
+<hr class="docutils" />
+<section id="naive-bayes-learner">
+<h3>5.8 Naive Bayes Learner<a class="headerlink" href="#naive-bayes-learner" title="Link to this heading">#</a></h3>
+<p><img alt="Naive Bayes Learner" src="https://hackmd.io/_uploads/S1-u6cyffl.png" /></p>
+<p><strong>Fungsi</strong>
+Membangun model klasifikasi menggunakan algoritma Naive Bayes berdasarkan data <em>training</em>.</p>
+<p><strong>Konfigurasi</strong></p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Parameter</p></th>
+<th class="head"><p>Nilai</p></th>
+<th class="head"><p>Keterangan</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Classification Column</p></td>
+<td><p>GRADE</p></td>
+<td><p>Menentukan kolom target yang akan diprediksi oleh model</p></td>
+</tr>
+<tr class="row-odd"><td><p>Default Probability</p></td>
+<td><p>0,0001</p></td>
+<td><p>Nilai probabilitas awal untuk menghindari probabilitas nol pada proses perhitungan</p></td>
+</tr>
+<tr class="row-even"><td><p>Minimum Standard Deviation</p></td>
+<td><p>0,0001</p></td>
+<td><p>Nilai minimum standar deviasi yang digunakan dalam perhitungan probabilitas</p></td>
+</tr>
+<tr class="row-odd"><td><p>Threshold Standard Deviation</p></td>
+<td><p>0</p></td>
+<td><p>Batas minimum standar deviasi yang digunakan dalam proses pembelajaran model</p></td>
+</tr>
+<tr class="row-even"><td><p>Maximum Number of Unique Nominal Values per Attribute</p></td>
+<td><p>20</p></td>
+<td><p>Jumlah maksimum kategori unik yang dapat diproses pada setiap atribut nominal</p></td>
+</tr>
+<tr class="row-odd"><td><p>Ignore Missing Values</p></td>
+<td><p>Tidak diaktifkan</p></td>
+<td><p>Data dengan nilai kosong tetap diproses sesuai konfigurasi bawaan</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>Input</strong>
+Data <em>training</em> hasil node Table Partitioner.</p>
+<p><strong>Output</strong>
+Model Naive Bayes.</p>
+<p><strong>Alasan</strong>
+Kolom GRADE digunakan sebagai target klasifikasi. Algoritma Naive Bayes mempelajari hubungan probabilistik antara atribut mahasiswa dan kategori nilai akhir untuk menghasilkan model yang digunakan pada tahap prediksi.</p>
+</section>
+<hr class="docutils" />
+<section id="naive-bayes-predictor">
+<h3>5.9 Naive Bayes Predictor<a class="headerlink" href="#naive-bayes-predictor" title="Link to this heading">#</a></h3>
+<p><img alt="Naive Bayes Predictor" src="https://hackmd.io/_uploads/S1zKUK-GGx.png" /></p>
+<p><strong>Fungsi</strong>
+Menggunakan model Naive Bayes yang telah dibangun untuk memprediksi kategori nilai akhir (GRADE) pada data <em>testing</em>.</p>
+<p><strong>Input</strong></p>
+<ul class="simple">
+<li><p>Model Naive Bayes dari node Naive Bayes Learner</p></li>
+<li><p>Data <em>testing</em> dari node Table Partitioner</p></li>
+</ul>
+<p><strong>Output</strong></p>
+<p><img alt="Hasil Prediksi Naive Bayes" src="https://hackmd.io/_uploads/B1s0691ffe.png" /></p>
+<p>Kolom baru <code class="docutils literal notranslate"><span class="pre">Prediction</span> <span class="pre">(GRADE)</span></code> yang berisi hasil prediksi kategori nilai mahasiswa berdasarkan model Naive Bayes.</p>
+</section>
+<hr class="docutils" />
+<section id="scorer">
+<h3>5.10 Scorer<a class="headerlink" href="#scorer" title="Link to this heading">#</a></h3>
+<p><img alt="Scorer" src="https://hackmd.io/_uploads/SkOZ05kzGg.png" /></p>
+<p><strong>Fungsi</strong>
+Mengevaluasi performa model klasifikasi.</p>
+<p><strong>Output</strong></p>
+<ul class="simple">
+<li><p>Confusion Matrix</p></li>
+<li><p>Accuracy</p></li>
+<li><p>Precision</p></li>
+<li><p>Recall</p></li>
+<li><p>F-Measure</p></li>
+<li><p>Cohen’s Kappa</p></li>
+</ul>
+</section>
+</section>
+<hr class="docutils" />
+<section id="hasil-evaluasi">
+<h2>6. Hasil Evaluasi<a class="headerlink" href="#hasil-evaluasi" title="Link to this heading">#</a></h2>
+<section id="hasil-naive-bayes">
+<h3>6.1 Hasil Naive Bayes<a class="headerlink" href="#hasil-naive-bayes" title="Link to this heading">#</a></h3>
+<p><img alt="Hasil Evaluasi Naive Bayes" src="https://hackmd.io/_uploads/BymYvFZzMg.png" /></p>
+<div class="math notranslate nohighlight">
+\[
+\text{Accuracy} = 31{,}8\%, \qquad \text{Cohen's Kappa} = 0{,}162
+\]</div>
+<p><strong>Interpretasi</strong>
+Model Naive Bayes berhasil mengklasifikasikan sekitar 31,8% data uji dengan benar. Nilai Cohen’s Kappa sebesar 0,162 menunjukkan bahwa tingkat kesesuaian antara prediksi dan data aktual masih tergolong rendah.</p>
+</section>
+<hr class="docutils" />
+<section id="hasil-decision-tree">
+<h3>6.2 Hasil Decision Tree<a class="headerlink" href="#hasil-decision-tree" title="Link to this heading">#</a></h3>
+<p><img alt="Hasil Evaluasi Decision Tree" src="https://hackmd.io/_uploads/r19LDtbffl.png" /></p>
+<div class="math notranslate nohighlight">
+\[
+\text{Accuracy} = 27{,}3\%, \qquad \text{Cohen's Kappa} = 0{,}139
+\]</div>
+<p><strong>Interpretasi</strong>
+Model Decision Tree berhasil mengklasifikasikan sekitar 27,3% data uji dengan benar. Nilai Cohen’s Kappa sebesar 0,139 menunjukkan bahwa tingkat kesesuaian antara prediksi dan data aktual masih tergolong rendah.</p>
+</section>
+<hr class="docutils" />
+<section id="perbandingan-hasil">
+<h3>6.3 Perbandingan Hasil<a class="headerlink" href="#perbandingan-hasil" title="Link to this heading">#</a></h3>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Algoritma</p></th>
+<th class="head"><p>Accuracy</p></th>
+<th class="head"><p>Cohen’s Kappa</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Naive Bayes</p></td>
+<td><p>31,8%</p></td>
+<td><p>0,162</p></td>
+</tr>
+<tr class="row-odd"><td><p>Decision Tree</p></td>
+<td><p>27,3%</p></td>
+<td><p>0,139</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Berdasarkan tabel di atas, algoritma Naive Bayes menghasilkan nilai <em>Accuracy</em> sebesar 31,8%, sedikit lebih tinggi dibandingkan Decision Tree yang memperoleh 27,3%. Selisih ini menunjukkan bahwa Naive Bayes mampu menebak kategori GRADE dengan benar pada proporsi data uji yang sedikit lebih besar dibandingkan Decision Tree.</p>
+<p>Nilai <em>Cohen’s Kappa</em> digunakan untuk mengukur tingkat kesesuaian antara hasil prediksi model dengan label aktual setelah memperhitungkan faktor kebetulan (<em>chance agreement</em>). Berdasarkan interpretasi umum nilai Kappa:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Rentang Nilai Kappa</p></th>
+<th class="head"><p>Tingkat Kesesuaian</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>&lt; 0,00</p></td>
+<td><p>Tidak ada kesesuaian</p></td>
+</tr>
+<tr class="row-odd"><td><p>0,00 – 0,20</p></td>
+<td><p>Sangat rendah</p></td>
+</tr>
+<tr class="row-even"><td><p>0,21 – 0,40</p></td>
+<td><p>Rendah</p></td>
+</tr>
+<tr class="row-odd"><td><p>0,41 – 0,60</p></td>
+<td><p>Cukup</p></td>
+</tr>
+<tr class="row-even"><td><p>0,61 – 0,80</p></td>
+<td><p>Tinggi</p></td>
+</tr>
+<tr class="row-odd"><td><p>0,81 – 1,00</p></td>
+<td><p>Sangat tinggi</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Nilai Kappa Naive Bayes (0,162) dan Decision Tree (0,139) keduanya berada pada rentang <em>sangat rendah</em>. Hal ini mengindikasikan bahwa meskipun kedua model memiliki nilai <em>Accuracy</em> di atas tebakan acak murni, tingkat kesesuaian sebenarnya antara prediksi dan data aktual masih jauh dari memuaskan setelah faktor kebetulan diperhitungkan.</p>
+<p>Secara keseluruhan, kedua metrik evaluasi tersebut konsisten menunjukkan keunggulan tipis Naive Bayes dibandingkan Decision Tree pada dataset ini. Namun, perbedaan nilai <em>Accuracy</em> (4,5 poin persen) dan <em>Cohen’s Kappa</em> (0,023 poin) yang relatif kecil mengindikasikan bahwa kedua algoritma sama-sama belum mampu melakukan klasifikasi kategori GRADE dengan tingkat akurasi yang tinggi pada dataset ini.</p>
+</section>
+</section>
+<hr class="docutils" />
+<section id="analisis-hasil">
+<h2>7. Analisis Hasil<a class="headerlink" href="#analisis-hasil" title="Link to this heading">#</a></h2>
+<p>Berdasarkan hasil evaluasi, algoritma Naive Bayes memperoleh performa yang lebih baik dibandingkan Decision Tree. Hal ini terlihat dari nilai <em>Accuracy</em> dan <em>Cohen’s Kappa</em> yang lebih tinggi pada Naive Bayes.</p>
+<p>Beberapa faktor yang diduga mempengaruhi hasil tersebut antara lain:</p>
+<ol class="arabic simple">
+<li><p>Dataset hanya terdiri dari sekitar 145 data sehingga jumlah data pelatihan relatif sedikit.</p></li>
+<li><p>Variabel target GRADE memiliki banyak kategori kelas.</p></li>
+<li><p>Data akademik memiliki hubungan antar atribut yang cukup kompleks.</p></li>
+<li><p>Decision Tree berpotensi mengalami <em>overfitting</em> pada dataset berukuran kecil.</p></li>
+<li><p>Data yang telah dikonversi menjadi atribut nominal lebih sesuai untuk pendekatan probabilistik yang digunakan oleh Naive Bayes.</p></li>
+</ol>
+<p>Meskipun demikian, kedua algoritma masih mampu melakukan klasifikasi terhadap kategori nilai mahasiswa dan menghasilkan prediksi yang dapat dievaluasi menggunakan <em>confusion matrix</em> serta metrik klasifikasi lainnya.</p>
+</section>
+<hr class="docutils" />
+<section id="kesimpulan">
+<h2>8. Kesimpulan<a class="headerlink" href="#kesimpulan" title="Link to this heading">#</a></h2>
+<p>Penelitian ini membandingkan algoritma Naive Bayes dan Decision Tree pada dataset <em>Higher Education Students Performance Evaluation</em> menggunakan KNIME. Tahapan penelitian meliputi pembacaan data, seleksi atribut, konversi tipe data, pembagian data menjadi <em>training</em> dan <em>testing</em>, pembangunan model klasifikasi, serta evaluasi menggunakan node Scorer.</p>
+<p>Berdasarkan hasil pengujian, diperoleh ringkasan sebagai berikut.</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Algoritma</p></th>
+<th class="head"><p>Accuracy</p></th>
+<th class="head"><p>Cohen’s Kappa</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Naive Bayes</p></td>
+<td><p>31,8%</p></td>
+<td><p>0,162</p></td>
+</tr>
+<tr class="row-odd"><td><p>Decision Tree</p></td>
+<td><p>27,3%</p></td>
+<td><p>0,139</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Hasil penelitian menunjukkan bahwa algoritma Naive Bayes memiliki performa yang lebih baik dibandingkan Decision Tree pada dataset <em>Higher Education Students Performance Evaluation</em>. Secara keseluruhan, <em>workflow</em> KNIME yang dibangun berhasil mengimplementasikan proses klasifikasi dan perbandingan dua algoritma data mining sehingga dapat digunakan untuk mengevaluasi performa metode klasifikasi pada data evaluasi mahasiswa.</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="Analisis%20Prediksi%20Permintaan%20Listrik%20Harian%20dengan%20Skforecast%20dan%20LightGBM.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Analisis Prediksi Permintaan Listrik Harian dengan Skforecast dan LightGBM</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="Data%20Preparation.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Data Preparation</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pendahuluan">1. Pendahuluan</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dataset">2. Dataset</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#atribut-dan-tipe-data">2.1 Atribut dan Tipe Data</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#karakteristik-dataset">2.2 Karakteristik Dataset</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#algoritma-klasifikasi">3. Algoritma Klasifikasi</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#naive-bayes">3.1 Naive Bayes</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pengertian">Pengertian</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#teorema-bayes">Teorema Bayes</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#kelebihan">Kelebihan</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#kekurangan">Kekurangan</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#decision-tree">3.2 Decision Tree</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Pengertian</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Kelebihan</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Kekurangan</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#alasan-pemilihan-metode-klasifikasi">3.3 Alasan Pemilihan Metode Klasifikasi</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#workflow-knime">4. Workflow KNIME</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#alur-workflow">4.1 Alur Workflow</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#penjelasan-workflow">4.2 Penjelasan Workflow</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#penjelasan-setiap-node">5. Penjelasan Setiap Node</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#csv-reader">5.1 CSV Reader</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#missing-value">5.2 Missing Value</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#column-filter">5.3 Column Filter</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#number-to-string">5.4 Number to String</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#table-partitioner">5.5 Table Partitioner</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#decision-tree-learner">5.6 Decision Tree Learner</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#decision-tree-predictor">5.7 Decision Tree Predictor</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#naive-bayes-learner">5.8 Naive Bayes Learner</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#naive-bayes-predictor">5.9 Naive Bayes Predictor</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#scorer">5.10 Scorer</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hasil-evaluasi">6. Hasil Evaluasi</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hasil-naive-bayes">6.1 Hasil Naive Bayes</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hasil-decision-tree">6.2 Hasil Decision Tree</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#perbandingan-hasil">6.3 Perbandingan Hasil</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#analisis-hasil">7. Analisis Hasil</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kesimpulan">8. Kesimpulan</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Rian Renaldy (240411100053)
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2026.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
